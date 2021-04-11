@@ -23,7 +23,7 @@ A Swift package to directly interact with [Steam](https://store.steampowered.com
 
 Add the following to the `dependencies` of your `Package.swift` file:
 
-`.package(url: "https://github.com/sebj/Steam.git", .upToNextMinor(from: "0.1"))`
+`.package(url: "https://github.com/sebj/Steam.git", .upToNextMinor(from: "0.1.0"))`
 
 ## Usage
 
@@ -34,7 +34,7 @@ Add the following to the `dependencies` of your `Package.swift` file:
 
 ## Protobufs
 
-Several Steam Protobufs from [SteamDatabase/Protobufs](https://github.com/SteamDatabase/Protobufs) and their converted Swift models (via [Swift Protobuf](https://github.com/apple/swift-protobuf)) are bundled with this library, as Swift packages do not currently support running scripts/custom build phase actions (which would ideally be used to clone the Protobufs repo and convert & copy the relevant files).
+Several Steam Protobufs from [SteamDatabase/Protobufs](https://github.com/SteamDatabase/Protobufs) and their converted Swift models (via [Swift Protobuf](https://github.com/apple/swift-protobuf)) are bundled with this library, as Swift packages do not currently support running scripts/custom build phase actions (which would ideally be used to clone the Protobufs repo, convert and copy the relevant files).
 
 ## Related Libraries
 
