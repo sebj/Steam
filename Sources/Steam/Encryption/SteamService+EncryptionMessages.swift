@@ -18,10 +18,7 @@ extension SteamService {
             return
         }
 
-        guard let sessionKeyData = try? makeSessionEncryptionData() else {
-            connection?.disconnect()
-            return
-        }
+        let sessionKeyData = makeSessionEncryptionData()
 
         let hmac = encryptionRequest.challenge
         guard let encryptedSessionKeyData = try? encryptSessionKey(plainKeyData: sessionKeyData.plainData, hmac: hmac) else {

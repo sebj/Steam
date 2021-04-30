@@ -5,6 +5,7 @@
 //
 
 import CryptoSwift
+import CryptoKit
 import Foundation
 import SwCrypt
 
@@ -19,13 +20,9 @@ extension SteamService {
 // MARK: - Session Key
 
 extension SteamService {
-    enum SessionKeyError: Error {
-        case failedToGenerateUnencryptedData
-    }
-
-    func makeSessionEncryptionData() throws -> EncryptionData {
-        guard let keyData = Data(randomByteCount: 32) else {
-            throw SessionKeyError.failedToGenerateUnencryptedData
+    func makeSessionEncryptionData() -> EncryptionData {
+        let keyData = SymmetricKey(size: .bits256).withUnsafeBytes { body in
+            Data(body)
         }
 
         return EncryptionData(keyData)
@@ -55,8 +52,8 @@ extension SteamService {
 extension SteamService {
     func symmetricEncrypt(_ input: Data, key: Data, hmacSecret: Data) throws -> [UInt8] {
         let prefix = Data(randomByteCount: 3)!
-        let data: [UInt8] = prefix.bytes + input.bytes
-        let hmac = try HMAC(key: hmacSecret.bytes, variant: .sha1).authenticate(data)
+        let hmacKey = SymmetricKey(data: hmacSecret)
+        let hmac = CryptoKit.HMAC<CryptoKit.Insecure.SHA1>.authenticationCode(for: prefix + input, using: hmacKey)
         let iv = hmac.prefix(13) + prefix
         return try symmetricEncrypt(input, key: key, iv: Data(iv))
     }
@@ -80,9 +77,11 @@ enum DecryptError: Error {
 func symmetricDecrypt(_ input: Data, key: Data, hmacSecret: Data) throws -> [UInt8] {
     let iv = try AES(key: key.bytes, blockMode: ECB()).decrypt(input.prefix(16).bytes)
     let message = try symmetricDecrypt(input, key: key, iv: Data(iv))
-    let hmac = try HMAC(key: hmacSecret.bytes, variant: .sha1).authenticate(iv.suffix(3) + message)
-
-    if iv.prefix(13) != hmac.prefix(13) {
+    
+    let hmacKey = SymmetricKey(data: hmacSecret)
+    let hmac = CryptoKit.HMAC<CryptoKit.Insecure.SHA1>.authenticationCode(for: iv.suffix(3) + message, using: hmacKey)
+    
+    if iv.prefix(13) != Array(Data(hmac)).prefix(13) {
         throw DecryptError.hmacDoesNotMatch
     }
 
