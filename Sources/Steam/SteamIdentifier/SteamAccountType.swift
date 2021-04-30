@@ -1,10 +1,10 @@
 //
-//  AccountType.swift
+//  SteamAccountType.swift
 //
 //  Copyright © 2020-2021 Sebastian Jachec. All rights reserved.
 //
 
-public enum AccountType: UInt32 {
+public enum SteamAccountType: UInt32 {
     case invalid = 0
     /// A regular user account.
     case individual = 1

@@ -1,12 +1,12 @@
 //
-//  Universe.swift
+//  SteamUniverse.swift
 //
 //  Copyright © 2021 Sebastian Jachec. All rights reserved.
 //
 
-/// Steam universes. Each universe is a self-contained Steam instance.
+/// A Steam universe is a self-contained Steam instance.
 /// Seealso: https://partner.steamgames.com/doc/api/steam_api#EUniverse
-public enum Universe: UInt32 {
+public enum SteamUniverse: UInt32 {
     case invalid
     /// The standard public universe.
     case `public`
