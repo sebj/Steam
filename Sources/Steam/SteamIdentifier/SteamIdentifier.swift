@@ -9,14 +9,14 @@
 public struct SteamIdentifier: Hashable, Equatable {
     public var accountIdentifier: UInt32
     public var instance: UInt32
-    public var universe: Universe
-    public var accountType: AccountType
+    public var universe: SteamUniverse
+    public var accountType: SteamAccountType
 
     public init(
         accountIdentifier: UInt32 = 0,
         instance: UInt32 = 1,
-        universe: Universe = .public,
-        accountType: AccountType = .individual)
+        universe: SteamUniverse = .public,
+        accountType: SteamAccountType = .individual)
     {
         self.accountIdentifier = accountIdentifier
         self.instance = instance
@@ -28,13 +28,13 @@ public struct SteamIdentifier: Hashable, Equatable {
         accountIdentifier = UInt32(rawValue & 0xFFFFFFFF)
         instance = UInt32((rawValue >> 32) & 0xFFFFF)
 
-        guard let universe = Universe(rawValue: UInt32((rawValue >> 56) & 0xFF)) else {
+        guard let universe = SteamUniverse(rawValue: UInt32((rawValue >> 56) & 0xFF)) else {
             return nil
         }
 
         self.universe = universe
 
-        guard let accountType = AccountType(rawValue: UInt32((rawValue >> 52) & 0xF)) else {
+        guard let accountType = SteamAccountType(rawValue: UInt32((rawValue >> 52) & 0xF)) else {
             return nil
         }
 

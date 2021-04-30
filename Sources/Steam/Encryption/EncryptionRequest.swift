@@ -8,7 +8,7 @@ import Foundation
 
 struct EncryptionRequest {
     let protocolVersion: UInt32
-    let universe: Universe
+    let universe: SteamUniverse
     let challenge: Data
 
     init(data: Data) throws {
@@ -16,7 +16,7 @@ struct EncryptionRequest {
         protocolVersion = reader.read()
 
         let universeValue: UInt32 = reader.read()
-        guard let universe = Universe(rawValue: universeValue) else {
+        guard let universe = SteamUniverse(rawValue: universeValue) else {
             throw Error.invalidUniverse
         }
 
