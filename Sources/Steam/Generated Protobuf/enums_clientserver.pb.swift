@@ -571,6 +571,10 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgGchinviteUserToLobby // = 2238
   case kEmsgGchupdateMultipleSessions // = 2239
   case kEmsgGchmarkAppSessionsAuthoritative // = 2240
+  case kEmsgGchrecurringSubscriptionStatusChange // = 2241
+  case kEmsgGchappCheersReceived // = 2242
+  case kEmsgGchappCheersGetAllowedTypes // = 2243
+  case kEmsgGchappCheersGetAllowedTypesResponse // = 2244
   case kEmsgBaseP2P // = 2500
   case kEmsgP2PintroducerMessage // = 2502
   case kEmsgBaseSm // = 2900
@@ -2055,6 +2059,10 @@ enum EMsg: SwiftProtobuf.Enum {
     case 2238: self = .kEmsgGchinviteUserToLobby
     case 2239: self = .kEmsgGchupdateMultipleSessions
     case 2240: self = .kEmsgGchmarkAppSessionsAuthoritative
+    case 2241: self = .kEmsgGchrecurringSubscriptionStatusChange
+    case 2242: self = .kEmsgGchappCheersReceived
+    case 2243: self = .kEmsgGchappCheersGetAllowedTypes
+    case 2244: self = .kEmsgGchappCheersGetAllowedTypesResponse
     case 2500: self = .kEmsgBaseP2P
     case 2502: self = .kEmsgP2PintroducerMessage
     case 2900: self = .kEmsgBaseSm
@@ -3519,6 +3527,10 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgGchinviteUserToLobby: return 2238
     case .kEmsgGchupdateMultipleSessions: return 2239
     case .kEmsgGchmarkAppSessionsAuthoritative: return 2240
+    case .kEmsgGchrecurringSubscriptionStatusChange: return 2241
+    case .kEmsgGchappCheersReceived: return 2242
+    case .kEmsgGchappCheersGetAllowedTypes: return 2243
+    case .kEmsgGchappCheersGetAllowedTypesResponse: return 2244
     case .kEmsgBaseP2P: return 2500
     case .kEmsgP2PintroducerMessage: return 2502
     case .kEmsgBaseSm: return 2900
@@ -3974,13 +3986,13 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgClientVerifyPassword: return 5483
     case .kEmsgClientVerifyPasswordResponse: return 5484
     case .kEmsgClientDrmdownloadRequest: return 5485
+    default: break
+    }
+    switch self {
     case .kEmsgClientDrmdownloadResponse: return 5486
     case .kEmsgClientDrmfinalResult: return 5487
     case .kEmsgClientGetFriendsWhoPlayGame: return 5488
     case .kEmsgClientGetFriendsWhoPlayGameResponse: return 5489
-    default: break
-    }
-    switch self {
     case .kEmsgClientOgsbeginSession: return 5490
     case .kEmsgClientOgsbeginSessionResponse: return 5491
     case .kEmsgClientOgsendSession: return 5492
@@ -5170,6 +5182,10 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     2238: .same(proto: "k_EMsgGCHInviteUserToLobby"),
     2239: .same(proto: "k_EMsgGCHUpdateMultipleSessions"),
     2240: .same(proto: "k_EMsgGCHMarkAppSessionsAuthoritative"),
+    2241: .same(proto: "k_EMsgGCHRecurringSubscriptionStatusChange"),
+    2242: .same(proto: "k_EMsgGCHAppCheersReceived"),
+    2243: .same(proto: "k_EMsgGCHAppCheersGetAllowedTypes"),
+    2244: .same(proto: "k_EMsgGCHAppCheersGetAllowedTypesResponse"),
     2500: .same(proto: "k_EMsgBaseP2P"),
     2502: .same(proto: "k_EMsgP2PIntroducerMessage"),
     2900: .same(proto: "k_EMsgBaseSM"),

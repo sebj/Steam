@@ -20,1388 +20,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-struct CMsgClientUCMAddScreenshot {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var appid: UInt32 {
-    get {return _appid ?? 0}
-    set {_appid = newValue}
-  }
-  /// Returns true if `appid` has been explicitly set.
-  var hasAppid: Bool {return self._appid != nil}
-  /// Clears the value of `appid`. Subsequent reads from it will return its default value.
-  mutating func clearAppid() {self._appid = nil}
-
-  var filename: String {
-    get {return _filename ?? String()}
-    set {_filename = newValue}
-  }
-  /// Returns true if `filename` has been explicitly set.
-  var hasFilename: Bool {return self._filename != nil}
-  /// Clears the value of `filename`. Subsequent reads from it will return its default value.
-  mutating func clearFilename() {self._filename = nil}
-
-  var thumbname: String {
-    get {return _thumbname ?? String()}
-    set {_thumbname = newValue}
-  }
-  /// Returns true if `thumbname` has been explicitly set.
-  var hasThumbname: Bool {return self._thumbname != nil}
-  /// Clears the value of `thumbname`. Subsequent reads from it will return its default value.
-  mutating func clearThumbname() {self._thumbname = nil}
-
-  var vrFilename: String {
-    get {return _vrFilename ?? String()}
-    set {_vrFilename = newValue}
-  }
-  /// Returns true if `vrFilename` has been explicitly set.
-  var hasVrFilename: Bool {return self._vrFilename != nil}
-  /// Clears the value of `vrFilename`. Subsequent reads from it will return its default value.
-  mutating func clearVrFilename() {self._vrFilename = nil}
-
-  var rtime32Created: UInt32 {
-    get {return _rtime32Created ?? 0}
-    set {_rtime32Created = newValue}
-  }
-  /// Returns true if `rtime32Created` has been explicitly set.
-  var hasRtime32Created: Bool {return self._rtime32Created != nil}
-  /// Clears the value of `rtime32Created`. Subsequent reads from it will return its default value.
-  mutating func clearRtime32Created() {self._rtime32Created = nil}
-
-  var width: UInt32 {
-    get {return _width ?? 0}
-    set {_width = newValue}
-  }
-  /// Returns true if `width` has been explicitly set.
-  var hasWidth: Bool {return self._width != nil}
-  /// Clears the value of `width`. Subsequent reads from it will return its default value.
-  mutating func clearWidth() {self._width = nil}
-
-  var height: UInt32 {
-    get {return _height ?? 0}
-    set {_height = newValue}
-  }
-  /// Returns true if `height` has been explicitly set.
-  var hasHeight: Bool {return self._height != nil}
-  /// Clears the value of `height`. Subsequent reads from it will return its default value.
-  mutating func clearHeight() {self._height = nil}
-
-  var permissions: UInt32 {
-    get {return _permissions ?? 0}
-    set {_permissions = newValue}
-  }
-  /// Returns true if `permissions` has been explicitly set.
-  var hasPermissions: Bool {return self._permissions != nil}
-  /// Clears the value of `permissions`. Subsequent reads from it will return its default value.
-  mutating func clearPermissions() {self._permissions = nil}
-
-  var caption: String {
-    get {return _caption ?? String()}
-    set {_caption = newValue}
-  }
-  /// Returns true if `caption` has been explicitly set.
-  var hasCaption: Bool {return self._caption != nil}
-  /// Clears the value of `caption`. Subsequent reads from it will return its default value.
-  mutating func clearCaption() {self._caption = nil}
-
-  var shortcutName: String {
-    get {return _shortcutName ?? String()}
-    set {_shortcutName = newValue}
-  }
-  /// Returns true if `shortcutName` has been explicitly set.
-  var hasShortcutName: Bool {return self._shortcutName != nil}
-  /// Clears the value of `shortcutName`. Subsequent reads from it will return its default value.
-  mutating func clearShortcutName() {self._shortcutName = nil}
-
-  var tag: [CMsgClientUCMAddScreenshot.Tag] = []
-
-  var taggedSteamid: [UInt64] = []
-
-  var spoilerTag: Bool {
-    get {return _spoilerTag ?? false}
-    set {_spoilerTag = newValue}
-  }
-  /// Returns true if `spoilerTag` has been explicitly set.
-  var hasSpoilerTag: Bool {return self._spoilerTag != nil}
-  /// Clears the value of `spoilerTag`. Subsequent reads from it will return its default value.
-  mutating func clearSpoilerTag() {self._spoilerTag = nil}
-
-  var taggedPublishedfileid: [UInt64] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct Tag {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var tagName: String {
-      get {return _tagName ?? String()}
-      set {_tagName = newValue}
-    }
-    /// Returns true if `tagName` has been explicitly set.
-    var hasTagName: Bool {return self._tagName != nil}
-    /// Clears the value of `tagName`. Subsequent reads from it will return its default value.
-    mutating func clearTagName() {self._tagName = nil}
-
-    var tagValue: String {
-      get {return _tagValue ?? String()}
-      set {_tagValue = newValue}
-    }
-    /// Returns true if `tagValue` has been explicitly set.
-    var hasTagValue: Bool {return self._tagValue != nil}
-    /// Clears the value of `tagValue`. Subsequent reads from it will return its default value.
-    mutating func clearTagValue() {self._tagValue = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _tagName: String? = nil
-    fileprivate var _tagValue: String? = nil
-  }
-
-  init() {}
-
-  fileprivate var _appid: UInt32? = nil
-  fileprivate var _filename: String? = nil
-  fileprivate var _thumbname: String? = nil
-  fileprivate var _vrFilename: String? = nil
-  fileprivate var _rtime32Created: UInt32? = nil
-  fileprivate var _width: UInt32? = nil
-  fileprivate var _height: UInt32? = nil
-  fileprivate var _permissions: UInt32? = nil
-  fileprivate var _caption: String? = nil
-  fileprivate var _shortcutName: String? = nil
-  fileprivate var _spoilerTag: Bool? = nil
-}
-
-struct CMsgClientUCMAddScreenshotResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var screenshotid: UInt64 {
-    get {return _screenshotid ?? 18446744073709551615}
-    set {_screenshotid = newValue}
-  }
-  /// Returns true if `screenshotid` has been explicitly set.
-  var hasScreenshotid: Bool {return self._screenshotid != nil}
-  /// Clears the value of `screenshotid`. Subsequent reads from it will return its default value.
-  mutating func clearScreenshotid() {self._screenshotid = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-  fileprivate var _screenshotid: UInt64? = nil
-}
-
-struct CMsgClientUCMDeleteScreenshot {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var screenshotid: UInt64 {
-    get {return _screenshotid ?? 18446744073709551615}
-    set {_screenshotid = newValue}
-  }
-  /// Returns true if `screenshotid` has been explicitly set.
-  var hasScreenshotid: Bool {return self._screenshotid != nil}
-  /// Clears the value of `screenshotid`. Subsequent reads from it will return its default value.
-  mutating func clearScreenshotid() {self._screenshotid = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _screenshotid: UInt64? = nil
-}
-
-struct CMsgClientUCMDeleteScreenshotResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-}
-
-struct CMsgClientUCMPublishFile {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var fileName: String {
-    get {return _fileName ?? String()}
-    set {_fileName = newValue}
-  }
-  /// Returns true if `fileName` has been explicitly set.
-  var hasFileName: Bool {return self._fileName != nil}
-  /// Clears the value of `fileName`. Subsequent reads from it will return its default value.
-  mutating func clearFileName() {self._fileName = nil}
-
-  var previewFileName: String {
-    get {return _previewFileName ?? String()}
-    set {_previewFileName = newValue}
-  }
-  /// Returns true if `previewFileName` has been explicitly set.
-  var hasPreviewFileName: Bool {return self._previewFileName != nil}
-  /// Clears the value of `previewFileName`. Subsequent reads from it will return its default value.
-  mutating func clearPreviewFileName() {self._previewFileName = nil}
-
-  var consumerAppID: UInt32 {
-    get {return _consumerAppID ?? 0}
-    set {_consumerAppID = newValue}
-  }
-  /// Returns true if `consumerAppID` has been explicitly set.
-  var hasConsumerAppID: Bool {return self._consumerAppID != nil}
-  /// Clears the value of `consumerAppID`. Subsequent reads from it will return its default value.
-  mutating func clearConsumerAppID() {self._consumerAppID = nil}
-
-  var title: String {
-    get {return _title ?? String()}
-    set {_title = newValue}
-  }
-  /// Returns true if `title` has been explicitly set.
-  var hasTitle: Bool {return self._title != nil}
-  /// Clears the value of `title`. Subsequent reads from it will return its default value.
-  mutating func clearTitle() {self._title = nil}
-
-  var description_p: String {
-    get {return _description_p ?? String()}
-    set {_description_p = newValue}
-  }
-  /// Returns true if `description_p` has been explicitly set.
-  var hasDescription_p: Bool {return self._description_p != nil}
-  /// Clears the value of `description_p`. Subsequent reads from it will return its default value.
-  mutating func clearDescription_p() {self._description_p = nil}
-
-  var tags: [String] = []
-
-  var workshopFile: Bool {
-    get {return _workshopFile ?? false}
-    set {_workshopFile = newValue}
-  }
-  /// Returns true if `workshopFile` has been explicitly set.
-  var hasWorkshopFile: Bool {return self._workshopFile != nil}
-  /// Clears the value of `workshopFile`. Subsequent reads from it will return its default value.
-  mutating func clearWorkshopFile() {self._workshopFile = nil}
-
-  var visibility: Int32 {
-    get {return _visibility ?? 0}
-    set {_visibility = newValue}
-  }
-  /// Returns true if `visibility` has been explicitly set.
-  var hasVisibility: Bool {return self._visibility != nil}
-  /// Clears the value of `visibility`. Subsequent reads from it will return its default value.
-  mutating func clearVisibility() {self._visibility = nil}
-
-  var fileType: UInt32 {
-    get {return _fileType ?? 0}
-    set {_fileType = newValue}
-  }
-  /// Returns true if `fileType` has been explicitly set.
-  var hasFileType: Bool {return self._fileType != nil}
-  /// Clears the value of `fileType`. Subsequent reads from it will return its default value.
-  mutating func clearFileType() {self._fileType = nil}
-
-  var url: String {
-    get {return _url ?? String()}
-    set {_url = newValue}
-  }
-  /// Returns true if `url` has been explicitly set.
-  var hasURL: Bool {return self._url != nil}
-  /// Clears the value of `url`. Subsequent reads from it will return its default value.
-  mutating func clearURL() {self._url = nil}
-
-  var videoProvider: UInt32 {
-    get {return _videoProvider ?? 0}
-    set {_videoProvider = newValue}
-  }
-  /// Returns true if `videoProvider` has been explicitly set.
-  var hasVideoProvider: Bool {return self._videoProvider != nil}
-  /// Clears the value of `videoProvider`. Subsequent reads from it will return its default value.
-  mutating func clearVideoProvider() {self._videoProvider = nil}
-
-  var videoAccountName: String {
-    get {return _videoAccountName ?? String()}
-    set {_videoAccountName = newValue}
-  }
-  /// Returns true if `videoAccountName` has been explicitly set.
-  var hasVideoAccountName: Bool {return self._videoAccountName != nil}
-  /// Clears the value of `videoAccountName`. Subsequent reads from it will return its default value.
-  mutating func clearVideoAccountName() {self._videoAccountName = nil}
-
-  var videoIdentifier: String {
-    get {return _videoIdentifier ?? String()}
-    set {_videoIdentifier = newValue}
-  }
-  /// Returns true if `videoIdentifier` has been explicitly set.
-  var hasVideoIdentifier: Bool {return self._videoIdentifier != nil}
-  /// Clears the value of `videoIdentifier`. Subsequent reads from it will return its default value.
-  mutating func clearVideoIdentifier() {self._videoIdentifier = nil}
-
-  var inProgress: Bool {
-    get {return _inProgress ?? false}
-    set {_inProgress = newValue}
-  }
-  /// Returns true if `inProgress` has been explicitly set.
-  var hasInProgress: Bool {return self._inProgress != nil}
-  /// Clears the value of `inProgress`. Subsequent reads from it will return its default value.
-  mutating func clearInProgress() {self._inProgress = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _appID: UInt32? = nil
-  fileprivate var _fileName: String? = nil
-  fileprivate var _previewFileName: String? = nil
-  fileprivate var _consumerAppID: UInt32? = nil
-  fileprivate var _title: String? = nil
-  fileprivate var _description_p: String? = nil
-  fileprivate var _workshopFile: Bool? = nil
-  fileprivate var _visibility: Int32? = nil
-  fileprivate var _fileType: UInt32? = nil
-  fileprivate var _url: String? = nil
-  fileprivate var _videoProvider: UInt32? = nil
-  fileprivate var _videoAccountName: String? = nil
-  fileprivate var _videoIdentifier: String? = nil
-  fileprivate var _inProgress: Bool? = nil
-}
-
-struct CMsgClientUCMPublishFileResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var publishedFileID: UInt64 {
-    get {return _publishedFileID ?? 18446744073709551615}
-    set {_publishedFileID = newValue}
-  }
-  /// Returns true if `publishedFileID` has been explicitly set.
-  var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-  /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-  mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-  var needsWorkshopLegalAgreementAcceptance: Bool {
-    get {return _needsWorkshopLegalAgreementAcceptance ?? false}
-    set {_needsWorkshopLegalAgreementAcceptance = newValue}
-  }
-  /// Returns true if `needsWorkshopLegalAgreementAcceptance` has been explicitly set.
-  var hasNeedsWorkshopLegalAgreementAcceptance: Bool {return self._needsWorkshopLegalAgreementAcceptance != nil}
-  /// Clears the value of `needsWorkshopLegalAgreementAcceptance`. Subsequent reads from it will return its default value.
-  mutating func clearNeedsWorkshopLegalAgreementAcceptance() {self._needsWorkshopLegalAgreementAcceptance = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-  fileprivate var _publishedFileID: UInt64? = nil
-  fileprivate var _needsWorkshopLegalAgreementAcceptance: Bool? = nil
-}
-
-struct CMsgClientUCMUpdatePublishedFile {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var appID: UInt32 {
-    get {return _storage._appID ?? 0}
-    set {_uniqueStorage()._appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return _storage._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {_uniqueStorage()._appID = nil}
-
-  var publishedFileID: UInt64 {
-    get {return _storage._publishedFileID ?? 0}
-    set {_uniqueStorage()._publishedFileID = newValue}
-  }
-  /// Returns true if `publishedFileID` has been explicitly set.
-  var hasPublishedFileID: Bool {return _storage._publishedFileID != nil}
-  /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-  mutating func clearPublishedFileID() {_uniqueStorage()._publishedFileID = nil}
-
-  var fileName: String {
-    get {return _storage._fileName ?? String()}
-    set {_uniqueStorage()._fileName = newValue}
-  }
-  /// Returns true if `fileName` has been explicitly set.
-  var hasFileName: Bool {return _storage._fileName != nil}
-  /// Clears the value of `fileName`. Subsequent reads from it will return its default value.
-  mutating func clearFileName() {_uniqueStorage()._fileName = nil}
-
-  var previewFileName: String {
-    get {return _storage._previewFileName ?? String()}
-    set {_uniqueStorage()._previewFileName = newValue}
-  }
-  /// Returns true if `previewFileName` has been explicitly set.
-  var hasPreviewFileName: Bool {return _storage._previewFileName != nil}
-  /// Clears the value of `previewFileName`. Subsequent reads from it will return its default value.
-  mutating func clearPreviewFileName() {_uniqueStorage()._previewFileName = nil}
-
-  var title: String {
-    get {return _storage._title ?? String()}
-    set {_uniqueStorage()._title = newValue}
-  }
-  /// Returns true if `title` has been explicitly set.
-  var hasTitle: Bool {return _storage._title != nil}
-  /// Clears the value of `title`. Subsequent reads from it will return its default value.
-  mutating func clearTitle() {_uniqueStorage()._title = nil}
-
-  var description_p: String {
-    get {return _storage._description_p ?? String()}
-    set {_uniqueStorage()._description_p = newValue}
-  }
-  /// Returns true if `description_p` has been explicitly set.
-  var hasDescription_p: Bool {return _storage._description_p != nil}
-  /// Clears the value of `description_p`. Subsequent reads from it will return its default value.
-  mutating func clearDescription_p() {_uniqueStorage()._description_p = nil}
-
-  var tags: [String] {
-    get {return _storage._tags}
-    set {_uniqueStorage()._tags = newValue}
-  }
-
-  var visibility: Int32 {
-    get {return _storage._visibility ?? 0}
-    set {_uniqueStorage()._visibility = newValue}
-  }
-  /// Returns true if `visibility` has been explicitly set.
-  var hasVisibility: Bool {return _storage._visibility != nil}
-  /// Clears the value of `visibility`. Subsequent reads from it will return its default value.
-  mutating func clearVisibility() {_uniqueStorage()._visibility = nil}
-
-  var updateFile: Bool {
-    get {return _storage._updateFile ?? false}
-    set {_uniqueStorage()._updateFile = newValue}
-  }
-  /// Returns true if `updateFile` has been explicitly set.
-  var hasUpdateFile: Bool {return _storage._updateFile != nil}
-  /// Clears the value of `updateFile`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateFile() {_uniqueStorage()._updateFile = nil}
-
-  var updatePreviewFile: Bool {
-    get {return _storage._updatePreviewFile ?? false}
-    set {_uniqueStorage()._updatePreviewFile = newValue}
-  }
-  /// Returns true if `updatePreviewFile` has been explicitly set.
-  var hasUpdatePreviewFile: Bool {return _storage._updatePreviewFile != nil}
-  /// Clears the value of `updatePreviewFile`. Subsequent reads from it will return its default value.
-  mutating func clearUpdatePreviewFile() {_uniqueStorage()._updatePreviewFile = nil}
-
-  var updateTitle: Bool {
-    get {return _storage._updateTitle ?? false}
-    set {_uniqueStorage()._updateTitle = newValue}
-  }
-  /// Returns true if `updateTitle` has been explicitly set.
-  var hasUpdateTitle: Bool {return _storage._updateTitle != nil}
-  /// Clears the value of `updateTitle`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateTitle() {_uniqueStorage()._updateTitle = nil}
-
-  var updateDescription: Bool {
-    get {return _storage._updateDescription ?? false}
-    set {_uniqueStorage()._updateDescription = newValue}
-  }
-  /// Returns true if `updateDescription` has been explicitly set.
-  var hasUpdateDescription: Bool {return _storage._updateDescription != nil}
-  /// Clears the value of `updateDescription`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateDescription() {_uniqueStorage()._updateDescription = nil}
-
-  var updateTags: Bool {
-    get {return _storage._updateTags ?? false}
-    set {_uniqueStorage()._updateTags = newValue}
-  }
-  /// Returns true if `updateTags` has been explicitly set.
-  var hasUpdateTags: Bool {return _storage._updateTags != nil}
-  /// Clears the value of `updateTags`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateTags() {_uniqueStorage()._updateTags = nil}
-
-  var updateVisibility: Bool {
-    get {return _storage._updateVisibility ?? false}
-    set {_uniqueStorage()._updateVisibility = newValue}
-  }
-  /// Returns true if `updateVisibility` has been explicitly set.
-  var hasUpdateVisibility: Bool {return _storage._updateVisibility != nil}
-  /// Clears the value of `updateVisibility`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateVisibility() {_uniqueStorage()._updateVisibility = nil}
-
-  var changeDescription: String {
-    get {return _storage._changeDescription ?? String()}
-    set {_uniqueStorage()._changeDescription = newValue}
-  }
-  /// Returns true if `changeDescription` has been explicitly set.
-  var hasChangeDescription: Bool {return _storage._changeDescription != nil}
-  /// Clears the value of `changeDescription`. Subsequent reads from it will return its default value.
-  mutating func clearChangeDescription() {_uniqueStorage()._changeDescription = nil}
-
-  var updateURL: Bool {
-    get {return _storage._updateURL ?? false}
-    set {_uniqueStorage()._updateURL = newValue}
-  }
-  /// Returns true if `updateURL` has been explicitly set.
-  var hasUpdateURL: Bool {return _storage._updateURL != nil}
-  /// Clears the value of `updateURL`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateURL() {_uniqueStorage()._updateURL = nil}
-
-  var url: String {
-    get {return _storage._url ?? String()}
-    set {_uniqueStorage()._url = newValue}
-  }
-  /// Returns true if `url` has been explicitly set.
-  var hasURL: Bool {return _storage._url != nil}
-  /// Clears the value of `url`. Subsequent reads from it will return its default value.
-  mutating func clearURL() {_uniqueStorage()._url = nil}
-
-  var updateContentManifest: Bool {
-    get {return _storage._updateContentManifest ?? false}
-    set {_uniqueStorage()._updateContentManifest = newValue}
-  }
-  /// Returns true if `updateContentManifest` has been explicitly set.
-  var hasUpdateContentManifest: Bool {return _storage._updateContentManifest != nil}
-  /// Clears the value of `updateContentManifest`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateContentManifest() {_uniqueStorage()._updateContentManifest = nil}
-
-  var contentManifest: UInt64 {
-    get {return _storage._contentManifest ?? 0}
-    set {_uniqueStorage()._contentManifest = newValue}
-  }
-  /// Returns true if `contentManifest` has been explicitly set.
-  var hasContentManifest: Bool {return _storage._contentManifest != nil}
-  /// Clears the value of `contentManifest`. Subsequent reads from it will return its default value.
-  mutating func clearContentManifest() {_uniqueStorage()._contentManifest = nil}
-
-  var metadata: String {
-    get {return _storage._metadata ?? String()}
-    set {_uniqueStorage()._metadata = newValue}
-  }
-  /// Returns true if `metadata` has been explicitly set.
-  var hasMetadata: Bool {return _storage._metadata != nil}
-  /// Clears the value of `metadata`. Subsequent reads from it will return its default value.
-  mutating func clearMetadata() {_uniqueStorage()._metadata = nil}
-
-  var updateMetadata: Bool {
-    get {return _storage._updateMetadata ?? false}
-    set {_uniqueStorage()._updateMetadata = newValue}
-  }
-  /// Returns true if `updateMetadata` has been explicitly set.
-  var hasUpdateMetadata: Bool {return _storage._updateMetadata != nil}
-  /// Clears the value of `updateMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateMetadata() {_uniqueStorage()._updateMetadata = nil}
-
-  var language: Int32 {
-    get {return _storage._language ?? 0}
-    set {_uniqueStorage()._language = newValue}
-  }
-  /// Returns true if `language` has been explicitly set.
-  var hasLanguage: Bool {return _storage._language != nil}
-  /// Clears the value of `language`. Subsequent reads from it will return its default value.
-  mutating func clearLanguage() {_uniqueStorage()._language = nil}
-
-  var removedKvtags: [String] {
-    get {return _storage._removedKvtags}
-    set {_uniqueStorage()._removedKvtags = newValue}
-  }
-
-  var kvtags: [CMsgClientUCMUpdatePublishedFile.KeyValueTag] {
-    get {return _storage._kvtags}
-    set {_uniqueStorage()._kvtags = newValue}
-  }
-
-  var previews: [CMsgClientUCMUpdatePublishedFile.AdditionalPreview] {
-    get {return _storage._previews}
-    set {_uniqueStorage()._previews = newValue}
-  }
-
-  var previewsToRemove: [Int32] {
-    get {return _storage._previewsToRemove}
-    set {_uniqueStorage()._previewsToRemove = newValue}
-  }
-
-  var clearInProgress_p: Bool {
-    get {return _storage._clearInProgress_p ?? false}
-    set {_uniqueStorage()._clearInProgress_p = newValue}
-  }
-  /// Returns true if `clearInProgress_p` has been explicitly set.
-  var hasClearInProgress_p: Bool {return _storage._clearInProgress_p != nil}
-  /// Clears the value of `clearInProgress_p`. Subsequent reads from it will return its default value.
-  mutating func clearClearInProgress_p() {_uniqueStorage()._clearInProgress_p = nil}
-
-  var removeAllKvtags: Bool {
-    get {return _storage._removeAllKvtags ?? false}
-    set {_uniqueStorage()._removeAllKvtags = newValue}
-  }
-  /// Returns true if `removeAllKvtags` has been explicitly set.
-  var hasRemoveAllKvtags: Bool {return _storage._removeAllKvtags != nil}
-  /// Clears the value of `removeAllKvtags`. Subsequent reads from it will return its default value.
-  mutating func clearRemoveAllKvtags() {_uniqueStorage()._removeAllKvtags = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct KeyValueTag {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var key: String {
-      get {return _key ?? String()}
-      set {_key = newValue}
-    }
-    /// Returns true if `key` has been explicitly set.
-    var hasKey: Bool {return self._key != nil}
-    /// Clears the value of `key`. Subsequent reads from it will return its default value.
-    mutating func clearKey() {self._key = nil}
-
-    var value: String {
-      get {return _value ?? String()}
-      set {_value = newValue}
-    }
-    /// Returns true if `value` has been explicitly set.
-    var hasValue: Bool {return self._value != nil}
-    /// Clears the value of `value`. Subsequent reads from it will return its default value.
-    mutating func clearValue() {self._value = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _key: String? = nil
-    fileprivate var _value: String? = nil
-  }
-
-  struct AdditionalPreview {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var originalFileName: String {
-      get {return _originalFileName ?? String()}
-      set {_originalFileName = newValue}
-    }
-    /// Returns true if `originalFileName` has been explicitly set.
-    var hasOriginalFileName: Bool {return self._originalFileName != nil}
-    /// Clears the value of `originalFileName`. Subsequent reads from it will return its default value.
-    mutating func clearOriginalFileName() {self._originalFileName = nil}
-
-    var internalFileName: String {
-      get {return _internalFileName ?? String()}
-      set {_internalFileName = newValue}
-    }
-    /// Returns true if `internalFileName` has been explicitly set.
-    var hasInternalFileName: Bool {return self._internalFileName != nil}
-    /// Clears the value of `internalFileName`. Subsequent reads from it will return its default value.
-    mutating func clearInternalFileName() {self._internalFileName = nil}
-
-    var videoid: String {
-      get {return _videoid ?? String()}
-      set {_videoid = newValue}
-    }
-    /// Returns true if `videoid` has been explicitly set.
-    var hasVideoid: Bool {return self._videoid != nil}
-    /// Clears the value of `videoid`. Subsequent reads from it will return its default value.
-    mutating func clearVideoid() {self._videoid = nil}
-
-    var previewType: UInt32 {
-      get {return _previewType ?? 0}
-      set {_previewType = newValue}
-    }
-    /// Returns true if `previewType` has been explicitly set.
-    var hasPreviewType: Bool {return self._previewType != nil}
-    /// Clears the value of `previewType`. Subsequent reads from it will return its default value.
-    mutating func clearPreviewType() {self._previewType = nil}
-
-    var updateIndex: Int32 {
-      get {return _updateIndex ?? -1}
-      set {_updateIndex = newValue}
-    }
-    /// Returns true if `updateIndex` has been explicitly set.
-    var hasUpdateIndex: Bool {return self._updateIndex != nil}
-    /// Clears the value of `updateIndex`. Subsequent reads from it will return its default value.
-    mutating func clearUpdateIndex() {self._updateIndex = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _originalFileName: String? = nil
-    fileprivate var _internalFileName: String? = nil
-    fileprivate var _videoid: String? = nil
-    fileprivate var _previewType: UInt32? = nil
-    fileprivate var _updateIndex: Int32? = nil
-  }
-
-  init() {}
-
-  fileprivate var _storage = _StorageClass.defaultInstance
-}
-
-struct CMsgClientUCMUpdatePublishedFileResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var needsWorkshopLegalAgreementAcceptance: Bool {
-    get {return _needsWorkshopLegalAgreementAcceptance ?? false}
-    set {_needsWorkshopLegalAgreementAcceptance = newValue}
-  }
-  /// Returns true if `needsWorkshopLegalAgreementAcceptance` has been explicitly set.
-  var hasNeedsWorkshopLegalAgreementAcceptance: Bool {return self._needsWorkshopLegalAgreementAcceptance != nil}
-  /// Clears the value of `needsWorkshopLegalAgreementAcceptance`. Subsequent reads from it will return its default value.
-  mutating func clearNeedsWorkshopLegalAgreementAcceptance() {self._needsWorkshopLegalAgreementAcceptance = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-  fileprivate var _needsWorkshopLegalAgreementAcceptance: Bool? = nil
-}
-
-struct CMsgClientUCMDeletePublishedFile {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var publishedFileID: UInt64 {
-    get {return _publishedFileID ?? 0}
-    set {_publishedFileID = newValue}
-  }
-  /// Returns true if `publishedFileID` has been explicitly set.
-  var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-  /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-  mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _publishedFileID: UInt64? = nil
-  fileprivate var _appID: UInt32? = nil
-}
-
-struct CMsgClientUCMDeletePublishedFileResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-}
-
-struct CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var startIndex: UInt32 {
-    get {return _startIndex ?? 0}
-    set {_startIndex = newValue}
-  }
-  /// Returns true if `startIndex` has been explicitly set.
-  var hasStartIndex: Bool {return self._startIndex != nil}
-  /// Clears the value of `startIndex`. Subsequent reads from it will return its default value.
-  mutating func clearStartIndex() {self._startIndex = nil}
-
-  var startTime: UInt32 {
-    get {return _startTime ?? 0}
-    set {_startTime = newValue}
-  }
-  /// Returns true if `startTime` has been explicitly set.
-  var hasStartTime: Bool {return self._startTime != nil}
-  /// Clears the value of `startTime`. Subsequent reads from it will return its default value.
-  mutating func clearStartTime() {self._startTime = nil}
-
-  var desiredRevision: UInt32 {
-    get {return _desiredRevision ?? 0}
-    set {_desiredRevision = newValue}
-  }
-  /// Returns true if `desiredRevision` has been explicitly set.
-  var hasDesiredRevision: Bool {return self._desiredRevision != nil}
-  /// Clears the value of `desiredRevision`. Subsequent reads from it will return its default value.
-  mutating func clearDesiredRevision() {self._desiredRevision = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _appID: UInt32? = nil
-  fileprivate var _startIndex: UInt32? = nil
-  fileprivate var _startTime: UInt32? = nil
-  fileprivate var _desiredRevision: UInt32? = nil
-}
-
-struct CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var subscribedFiles: [CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse.PublishedFileId] = []
-
-  var totalResults: UInt32 {
-    get {return _totalResults ?? 0}
-    set {_totalResults = newValue}
-  }
-  /// Returns true if `totalResults` has been explicitly set.
-  var hasTotalResults: Bool {return self._totalResults != nil}
-  /// Clears the value of `totalResults`. Subsequent reads from it will return its default value.
-  mutating func clearTotalResults() {self._totalResults = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct PublishedFileId {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var publishedFileID: UInt64 {
-      get {return _publishedFileID ?? 0}
-      set {_publishedFileID = newValue}
-    }
-    /// Returns true if `publishedFileID` has been explicitly set.
-    var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-    /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-    mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-    var rtime32Subscribed: UInt32 {
-      get {return _rtime32Subscribed ?? 0}
-      set {_rtime32Subscribed = newValue}
-    }
-    /// Returns true if `rtime32Subscribed` has been explicitly set.
-    var hasRtime32Subscribed: Bool {return self._rtime32Subscribed != nil}
-    /// Clears the value of `rtime32Subscribed`. Subsequent reads from it will return its default value.
-    mutating func clearRtime32Subscribed() {self._rtime32Subscribed = nil}
-
-    var appid: UInt32 {
-      get {return _appid ?? 0}
-      set {_appid = newValue}
-    }
-    /// Returns true if `appid` has been explicitly set.
-    var hasAppid: Bool {return self._appid != nil}
-    /// Clears the value of `appid`. Subsequent reads from it will return its default value.
-    mutating func clearAppid() {self._appid = nil}
-
-    var fileHcontent: UInt64 {
-      get {return _fileHcontent ?? 0}
-      set {_fileHcontent = newValue}
-    }
-    /// Returns true if `fileHcontent` has been explicitly set.
-    var hasFileHcontent: Bool {return self._fileHcontent != nil}
-    /// Clears the value of `fileHcontent`. Subsequent reads from it will return its default value.
-    mutating func clearFileHcontent() {self._fileHcontent = nil}
-
-    var fileSize: UInt32 {
-      get {return _fileSize ?? 0}
-      set {_fileSize = newValue}
-    }
-    /// Returns true if `fileSize` has been explicitly set.
-    var hasFileSize: Bool {return self._fileSize != nil}
-    /// Clears the value of `fileSize`. Subsequent reads from it will return its default value.
-    mutating func clearFileSize() {self._fileSize = nil}
-
-    var rtime32LastUpdated: UInt32 {
-      get {return _rtime32LastUpdated ?? 0}
-      set {_rtime32LastUpdated = newValue}
-    }
-    /// Returns true if `rtime32LastUpdated` has been explicitly set.
-    var hasRtime32LastUpdated: Bool {return self._rtime32LastUpdated != nil}
-    /// Clears the value of `rtime32LastUpdated`. Subsequent reads from it will return its default value.
-    mutating func clearRtime32LastUpdated() {self._rtime32LastUpdated = nil}
-
-    var isDepotContent: Bool {
-      get {return _isDepotContent ?? false}
-      set {_isDepotContent = newValue}
-    }
-    /// Returns true if `isDepotContent` has been explicitly set.
-    var hasIsDepotContent: Bool {return self._isDepotContent != nil}
-    /// Clears the value of `isDepotContent`. Subsequent reads from it will return its default value.
-    mutating func clearIsDepotContent() {self._isDepotContent = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _publishedFileID: UInt64? = nil
-    fileprivate var _rtime32Subscribed: UInt32? = nil
-    fileprivate var _appid: UInt32? = nil
-    fileprivate var _fileHcontent: UInt64? = nil
-    fileprivate var _fileSize: UInt32? = nil
-    fileprivate var _rtime32LastUpdated: UInt32? = nil
-    fileprivate var _isDepotContent: Bool? = nil
-  }
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-  fileprivate var _totalResults: UInt32? = nil
-}
-
-struct CMsgClientUCMPublishedFileUpdated {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var publishedFileID: UInt64 {
-    get {return _publishedFileID ?? 0}
-    set {_publishedFileID = newValue}
-  }
-  /// Returns true if `publishedFileID` has been explicitly set.
-  var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-  /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-  mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var timeUpdated: UInt32 {
-    get {return _timeUpdated ?? 0}
-    set {_timeUpdated = newValue}
-  }
-  /// Returns true if `timeUpdated` has been explicitly set.
-  var hasTimeUpdated: Bool {return self._timeUpdated != nil}
-  /// Clears the value of `timeUpdated`. Subsequent reads from it will return its default value.
-  mutating func clearTimeUpdated() {self._timeUpdated = nil}
-
-  var hcontent: UInt64 {
-    get {return _hcontent ?? 0}
-    set {_hcontent = newValue}
-  }
-  /// Returns true if `hcontent` has been explicitly set.
-  var hasHcontent: Bool {return self._hcontent != nil}
-  /// Clears the value of `hcontent`. Subsequent reads from it will return its default value.
-  mutating func clearHcontent() {self._hcontent = nil}
-
-  var fileSize: UInt32 {
-    get {return _fileSize ?? 0}
-    set {_fileSize = newValue}
-  }
-  /// Returns true if `fileSize` has been explicitly set.
-  var hasFileSize: Bool {return self._fileSize != nil}
-  /// Clears the value of `fileSize`. Subsequent reads from it will return its default value.
-  mutating func clearFileSize() {self._fileSize = nil}
-
-  var isDepotContent: Bool {
-    get {return _isDepotContent ?? false}
-    set {_isDepotContent = newValue}
-  }
-  /// Returns true if `isDepotContent` has been explicitly set.
-  var hasIsDepotContent: Bool {return self._isDepotContent != nil}
-  /// Clears the value of `isDepotContent`. Subsequent reads from it will return its default value.
-  mutating func clearIsDepotContent() {self._isDepotContent = nil}
-
-  var revision: UInt32 {
-    get {return _revision ?? 0}
-    set {_revision = newValue}
-  }
-  /// Returns true if `revision` has been explicitly set.
-  var hasRevision: Bool {return self._revision != nil}
-  /// Clears the value of `revision`. Subsequent reads from it will return its default value.
-  mutating func clearRevision() {self._revision = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _publishedFileID: UInt64? = nil
-  fileprivate var _appID: UInt32? = nil
-  fileprivate var _timeUpdated: UInt32? = nil
-  fileprivate var _hcontent: UInt64? = nil
-  fileprivate var _fileSize: UInt32? = nil
-  fileprivate var _isDepotContent: Bool? = nil
-  fileprivate var _revision: UInt32? = nil
-}
-
-struct CMsgClientWorkshopItemChangesRequest {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var lastTimeUpdated: UInt32 {
-    get {return _lastTimeUpdated ?? 0}
-    set {_lastTimeUpdated = newValue}
-  }
-  /// Returns true if `lastTimeUpdated` has been explicitly set.
-  var hasLastTimeUpdated: Bool {return self._lastTimeUpdated != nil}
-  /// Clears the value of `lastTimeUpdated`. Subsequent reads from it will return its default value.
-  mutating func clearLastTimeUpdated() {self._lastTimeUpdated = nil}
-
-  var numItemsNeeded: UInt32 {
-    get {return _numItemsNeeded ?? 0}
-    set {_numItemsNeeded = newValue}
-  }
-  /// Returns true if `numItemsNeeded` has been explicitly set.
-  var hasNumItemsNeeded: Bool {return self._numItemsNeeded != nil}
-  /// Clears the value of `numItemsNeeded`. Subsequent reads from it will return its default value.
-  mutating func clearNumItemsNeeded() {self._numItemsNeeded = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _appID: UInt32? = nil
-  fileprivate var _lastTimeUpdated: UInt32? = nil
-  fileprivate var _numItemsNeeded: UInt32? = nil
-}
-
-struct CMsgClientWorkshopItemChangesResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var updateTime: UInt32 {
-    get {return _updateTime ?? 0}
-    set {_updateTime = newValue}
-  }
-  /// Returns true if `updateTime` has been explicitly set.
-  var hasUpdateTime: Bool {return self._updateTime != nil}
-  /// Clears the value of `updateTime`. Subsequent reads from it will return its default value.
-  mutating func clearUpdateTime() {self._updateTime = nil}
-
-  var workshopItems: [CMsgClientWorkshopItemChangesResponse.WorkshopItemInfo] = []
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct WorkshopItemInfo {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var publishedFileID: UInt64 {
-      get {return _publishedFileID ?? 0}
-      set {_publishedFileID = newValue}
-    }
-    /// Returns true if `publishedFileID` has been explicitly set.
-    var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-    /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-    mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-    var timeUpdated: UInt32 {
-      get {return _timeUpdated ?? 0}
-      set {_timeUpdated = newValue}
-    }
-    /// Returns true if `timeUpdated` has been explicitly set.
-    var hasTimeUpdated: Bool {return self._timeUpdated != nil}
-    /// Clears the value of `timeUpdated`. Subsequent reads from it will return its default value.
-    mutating func clearTimeUpdated() {self._timeUpdated = nil}
-
-    var manifestID: UInt64 {
-      get {return _manifestID ?? 0}
-      set {_manifestID = newValue}
-    }
-    /// Returns true if `manifestID` has been explicitly set.
-    var hasManifestID: Bool {return self._manifestID != nil}
-    /// Clears the value of `manifestID`. Subsequent reads from it will return its default value.
-    mutating func clearManifestID() {self._manifestID = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _publishedFileID: UInt64? = nil
-    fileprivate var _timeUpdated: UInt32? = nil
-    fileprivate var _manifestID: UInt64? = nil
-  }
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-  fileprivate var _updateTime: UInt32? = nil
-}
-
-struct CMsgClientUCMSetUserPublishedFileAction {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var publishedFileID: UInt64 {
-    get {return _publishedFileID ?? 0}
-    set {_publishedFileID = newValue}
-  }
-  /// Returns true if `publishedFileID` has been explicitly set.
-  var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-  /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-  mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var action: Int32 {
-    get {return _action ?? 0}
-    set {_action = newValue}
-  }
-  /// Returns true if `action` has been explicitly set.
-  var hasAction: Bool {return self._action != nil}
-  /// Clears the value of `action`. Subsequent reads from it will return its default value.
-  mutating func clearAction() {self._action = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _publishedFileID: UInt64? = nil
-  fileprivate var _appID: UInt32? = nil
-  fileprivate var _action: Int32? = nil
-}
-
-struct CMsgClientUCMSetUserPublishedFileActionResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-}
-
-struct CMsgClientUCMEnumeratePublishedFilesByUserAction {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var appID: UInt32 {
-    get {return _appID ?? 0}
-    set {_appID = newValue}
-  }
-  /// Returns true if `appID` has been explicitly set.
-  var hasAppID: Bool {return self._appID != nil}
-  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
-  mutating func clearAppID() {self._appID = nil}
-
-  var startIndex: UInt32 {
-    get {return _startIndex ?? 0}
-    set {_startIndex = newValue}
-  }
-  /// Returns true if `startIndex` has been explicitly set.
-  var hasStartIndex: Bool {return self._startIndex != nil}
-  /// Clears the value of `startIndex`. Subsequent reads from it will return its default value.
-  mutating func clearStartIndex() {self._startIndex = nil}
-
-  var action: Int32 {
-    get {return _action ?? 0}
-    set {_action = newValue}
-  }
-  /// Returns true if `action` has been explicitly set.
-  var hasAction: Bool {return self._action != nil}
-  /// Clears the value of `action`. Subsequent reads from it will return its default value.
-  mutating func clearAction() {self._action = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-
-  fileprivate var _appID: UInt32? = nil
-  fileprivate var _startIndex: UInt32? = nil
-  fileprivate var _action: Int32? = nil
-}
-
-struct CMsgClientUCMEnumeratePublishedFilesByUserActionResponse {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var eresult: Int32 {
-    get {return _eresult ?? 2}
-    set {_eresult = newValue}
-  }
-  /// Returns true if `eresult` has been explicitly set.
-  var hasEresult: Bool {return self._eresult != nil}
-  /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
-  mutating func clearEresult() {self._eresult = nil}
-
-  var publishedFiles: [CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.PublishedFileId] = []
-
-  var totalResults: UInt32 {
-    get {return _totalResults ?? 0}
-    set {_totalResults = newValue}
-  }
-  /// Returns true if `totalResults` has been explicitly set.
-  var hasTotalResults: Bool {return self._totalResults != nil}
-  /// Clears the value of `totalResults`. Subsequent reads from it will return its default value.
-  mutating func clearTotalResults() {self._totalResults = nil}
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  struct PublishedFileId {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    var publishedFileID: UInt64 {
-      get {return _publishedFileID ?? 0}
-      set {_publishedFileID = newValue}
-    }
-    /// Returns true if `publishedFileID` has been explicitly set.
-    var hasPublishedFileID: Bool {return self._publishedFileID != nil}
-    /// Clears the value of `publishedFileID`. Subsequent reads from it will return its default value.
-    mutating func clearPublishedFileID() {self._publishedFileID = nil}
-
-    var rtimeTimeStamp: UInt32 {
-      get {return _rtimeTimeStamp ?? 0}
-      set {_rtimeTimeStamp = newValue}
-    }
-    /// Returns true if `rtimeTimeStamp` has been explicitly set.
-    var hasRtimeTimeStamp: Bool {return self._rtimeTimeStamp != nil}
-    /// Clears the value of `rtimeTimeStamp`. Subsequent reads from it will return its default value.
-    mutating func clearRtimeTimeStamp() {self._rtimeTimeStamp = nil}
-
-    var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    init() {}
-
-    fileprivate var _publishedFileID: UInt64? = nil
-    fileprivate var _rtimeTimeStamp: UInt32? = nil
-  }
-
-  init() {}
-
-  fileprivate var _eresult: Int32? = nil
-  fileprivate var _totalResults: UInt32? = nil
-}
-
-struct CMsgClientScreenshotsChanged {
-  // SwiftProtobuf.Message conformance is added in an extension below. See the
-  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-  // methods supported on all messages.
-
-  var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  init() {}
-}
-
 struct CMsgClientUpdateUserGameInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -5943,6 +4561,15 @@ struct CMsgClientServiceCall {
   /// Clears the value of `maxOutstandingCalls`. Subsequent reads from it will return its default value.
   mutating func clearMaxOutstandingCalls() {self._maxOutstandingCalls = nil}
 
+  var appID: UInt32 {
+    get {return _appID ?? 0}
+    set {_appID = newValue}
+  }
+  /// Returns true if `appID` has been explicitly set.
+  var hasAppID: Bool {return self._appID != nil}
+  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
+  mutating func clearAppID() {self._appID = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -5957,6 +4584,7 @@ struct CMsgClientServiceCall {
   fileprivate var _callparameter: Data? = nil
   fileprivate var _pingOnly: Bool? = nil
   fileprivate var _maxOutstandingCalls: UInt32? = nil
+  fileprivate var _appID: UInt32? = nil
 }
 
 struct CMsgClientServiceModule {
@@ -6460,1481 +5088,6 @@ struct CMsgBadgeCraftedNotification {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-extension CMsgClientUCMAddScreenshot: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMAddScreenshot"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "appid"),
-    2: .same(proto: "filename"),
-    3: .same(proto: "thumbname"),
-    14: .standard(proto: "vr_filename"),
-    4: .standard(proto: "rtime32_created"),
-    5: .same(proto: "width"),
-    6: .same(proto: "height"),
-    7: .same(proto: "permissions"),
-    8: .same(proto: "caption"),
-    9: .standard(proto: "shortcut_name"),
-    10: .same(proto: "tag"),
-    11: .standard(proto: "tagged_steamid"),
-    12: .standard(proto: "spoiler_tag"),
-    13: .standard(proto: "tagged_publishedfileid"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._appid) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self._filename) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self._thumbname) }()
-      case 4: try { try decoder.decodeSingularFixed32Field(value: &self._rtime32Created) }()
-      case 5: try { try decoder.decodeSingularUInt32Field(value: &self._width) }()
-      case 6: try { try decoder.decodeSingularUInt32Field(value: &self._height) }()
-      case 7: try { try decoder.decodeSingularUInt32Field(value: &self._permissions) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self._caption) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self._shortcutName) }()
-      case 10: try { try decoder.decodeRepeatedMessageField(value: &self.tag) }()
-      case 11: try { try decoder.decodeRepeatedFixed64Field(value: &self.taggedSteamid) }()
-      case 12: try { try decoder.decodeSingularBoolField(value: &self._spoilerTag) }()
-      case 13: try { try decoder.decodeRepeatedUInt64Field(value: &self.taggedPublishedfileid) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self._vrFilename) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appid {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._filename {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._thumbname {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._rtime32Created {
-      try visitor.visitSingularFixed32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._width {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._height {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._permissions {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._caption {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 8)
-    }
-    if let v = self._shortcutName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 9)
-    }
-    if !self.tag.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.tag, fieldNumber: 10)
-    }
-    if !self.taggedSteamid.isEmpty {
-      try visitor.visitRepeatedFixed64Field(value: self.taggedSteamid, fieldNumber: 11)
-    }
-    if let v = self._spoilerTag {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 12)
-    }
-    if !self.taggedPublishedfileid.isEmpty {
-      try visitor.visitRepeatedUInt64Field(value: self.taggedPublishedfileid, fieldNumber: 13)
-    }
-    if let v = self._vrFilename {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 14)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMAddScreenshot, rhs: CMsgClientUCMAddScreenshot) -> Bool {
-    if lhs._appid != rhs._appid {return false}
-    if lhs._filename != rhs._filename {return false}
-    if lhs._thumbname != rhs._thumbname {return false}
-    if lhs._vrFilename != rhs._vrFilename {return false}
-    if lhs._rtime32Created != rhs._rtime32Created {return false}
-    if lhs._width != rhs._width {return false}
-    if lhs._height != rhs._height {return false}
-    if lhs._permissions != rhs._permissions {return false}
-    if lhs._caption != rhs._caption {return false}
-    if lhs._shortcutName != rhs._shortcutName {return false}
-    if lhs.tag != rhs.tag {return false}
-    if lhs.taggedSteamid != rhs.taggedSteamid {return false}
-    if lhs._spoilerTag != rhs._spoilerTag {return false}
-    if lhs.taggedPublishedfileid != rhs.taggedPublishedfileid {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMAddScreenshot.Tag: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = CMsgClientUCMAddScreenshot.protoMessageName + ".Tag"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tag_name"),
-    2: .standard(proto: "tag_value"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self._tagName) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self._tagValue) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._tagName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._tagValue {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMAddScreenshot.Tag, rhs: CMsgClientUCMAddScreenshot.Tag) -> Bool {
-    if lhs._tagName != rhs._tagName {return false}
-    if lhs._tagValue != rhs._tagValue {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMAddScreenshotResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMAddScreenshotResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-    2: .same(proto: "screenshotid"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      case 2: try { try decoder.decodeSingularFixed64Field(value: &self._screenshotid) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._screenshotid {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMAddScreenshotResponse, rhs: CMsgClientUCMAddScreenshotResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs._screenshotid != rhs._screenshotid {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMDeleteScreenshot: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMDeleteScreenshot"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "screenshotid"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._screenshotid) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._screenshotid {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMDeleteScreenshot, rhs: CMsgClientUCMDeleteScreenshot) -> Bool {
-    if lhs._screenshotid != rhs._screenshotid {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMDeleteScreenshotResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMDeleteScreenshotResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMDeleteScreenshotResponse, rhs: CMsgClientUCMDeleteScreenshotResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMPublishFile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMPublishFile"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_id"),
-    2: .standard(proto: "file_name"),
-    3: .standard(proto: "preview_file_name"),
-    4: .standard(proto: "consumer_app_id"),
-    5: .same(proto: "title"),
-    6: .same(proto: "description"),
-    8: .same(proto: "tags"),
-    9: .standard(proto: "workshop_file"),
-    10: .same(proto: "visibility"),
-    11: .standard(proto: "file_type"),
-    12: .same(proto: "url"),
-    13: .standard(proto: "video_provider"),
-    14: .standard(proto: "video_account_name"),
-    15: .standard(proto: "video_identifier"),
-    16: .standard(proto: "in_progress"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self._fileName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self._previewFileName) }()
-      case 4: try { try decoder.decodeSingularUInt32Field(value: &self._consumerAppID) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self._title) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self._description_p) }()
-      case 8: try { try decoder.decodeRepeatedStringField(value: &self.tags) }()
-      case 9: try { try decoder.decodeSingularBoolField(value: &self._workshopFile) }()
-      case 10: try { try decoder.decodeSingularInt32Field(value: &self._visibility) }()
-      case 11: try { try decoder.decodeSingularUInt32Field(value: &self._fileType) }()
-      case 12: try { try decoder.decodeSingularStringField(value: &self._url) }()
-      case 13: try { try decoder.decodeSingularUInt32Field(value: &self._videoProvider) }()
-      case 14: try { try decoder.decodeSingularStringField(value: &self._videoAccountName) }()
-      case 15: try { try decoder.decodeSingularStringField(value: &self._videoIdentifier) }()
-      case 16: try { try decoder.decodeSingularBoolField(value: &self._inProgress) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._fileName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._previewFileName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._consumerAppID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._title {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-    }
-    if let v = self._description_p {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-    }
-    if !self.tags.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 8)
-    }
-    if let v = self._workshopFile {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
-    }
-    if let v = self._visibility {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 10)
-    }
-    if let v = self._fileType {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 11)
-    }
-    if let v = self._url {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 12)
-    }
-    if let v = self._videoProvider {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 13)
-    }
-    if let v = self._videoAccountName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 14)
-    }
-    if let v = self._videoIdentifier {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 15)
-    }
-    if let v = self._inProgress {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMPublishFile, rhs: CMsgClientUCMPublishFile) -> Bool {
-    if lhs._appID != rhs._appID {return false}
-    if lhs._fileName != rhs._fileName {return false}
-    if lhs._previewFileName != rhs._previewFileName {return false}
-    if lhs._consumerAppID != rhs._consumerAppID {return false}
-    if lhs._title != rhs._title {return false}
-    if lhs._description_p != rhs._description_p {return false}
-    if lhs.tags != rhs.tags {return false}
-    if lhs._workshopFile != rhs._workshopFile {return false}
-    if lhs._visibility != rhs._visibility {return false}
-    if lhs._fileType != rhs._fileType {return false}
-    if lhs._url != rhs._url {return false}
-    if lhs._videoProvider != rhs._videoProvider {return false}
-    if lhs._videoAccountName != rhs._videoAccountName {return false}
-    if lhs._videoIdentifier != rhs._videoIdentifier {return false}
-    if lhs._inProgress != rhs._inProgress {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMPublishFileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMPublishFileResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-    2: .standard(proto: "published_file_id"),
-    3: .standard(proto: "needs_workshop_legal_agreement_acceptance"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      case 2: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self._needsWorkshopLegalAgreementAcceptance) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._needsWorkshopLegalAgreementAcceptance {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMPublishFileResponse, rhs: CMsgClientUCMPublishFileResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._needsWorkshopLegalAgreementAcceptance != rhs._needsWorkshopLegalAgreementAcceptance {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMUpdatePublishedFile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMUpdatePublishedFile"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_id"),
-    2: .standard(proto: "published_file_id"),
-    3: .standard(proto: "file_name"),
-    4: .standard(proto: "preview_file_name"),
-    5: .same(proto: "title"),
-    6: .same(proto: "description"),
-    7: .same(proto: "tags"),
-    8: .same(proto: "visibility"),
-    9: .standard(proto: "update_file"),
-    10: .standard(proto: "update_preview_file"),
-    11: .standard(proto: "update_title"),
-    12: .standard(proto: "update_description"),
-    13: .standard(proto: "update_tags"),
-    14: .standard(proto: "update_visibility"),
-    15: .standard(proto: "change_description"),
-    16: .standard(proto: "update_url"),
-    17: .same(proto: "url"),
-    18: .standard(proto: "update_content_manifest"),
-    19: .standard(proto: "content_manifest"),
-    20: .same(proto: "metadata"),
-    21: .standard(proto: "update_metadata"),
-    22: .same(proto: "language"),
-    23: .standard(proto: "removed_kvtags"),
-    24: .same(proto: "kvtags"),
-    25: .same(proto: "previews"),
-    26: .standard(proto: "previews_to_remove"),
-    27: .standard(proto: "clear_in_progress"),
-    28: .standard(proto: "remove_all_kvtags"),
-  ]
-
-  fileprivate class _StorageClass {
-    var _appID: UInt32? = nil
-    var _publishedFileID: UInt64? = nil
-    var _fileName: String? = nil
-    var _previewFileName: String? = nil
-    var _title: String? = nil
-    var _description_p: String? = nil
-    var _tags: [String] = []
-    var _visibility: Int32? = nil
-    var _updateFile: Bool? = nil
-    var _updatePreviewFile: Bool? = nil
-    var _updateTitle: Bool? = nil
-    var _updateDescription: Bool? = nil
-    var _updateTags: Bool? = nil
-    var _updateVisibility: Bool? = nil
-    var _changeDescription: String? = nil
-    var _updateURL: Bool? = nil
-    var _url: String? = nil
-    var _updateContentManifest: Bool? = nil
-    var _contentManifest: UInt64? = nil
-    var _metadata: String? = nil
-    var _updateMetadata: Bool? = nil
-    var _language: Int32? = nil
-    var _removedKvtags: [String] = []
-    var _kvtags: [CMsgClientUCMUpdatePublishedFile.KeyValueTag] = []
-    var _previews: [CMsgClientUCMUpdatePublishedFile.AdditionalPreview] = []
-    var _previewsToRemove: [Int32] = []
-    var _clearInProgress_p: Bool? = nil
-    var _removeAllKvtags: Bool? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _appID = source._appID
-      _publishedFileID = source._publishedFileID
-      _fileName = source._fileName
-      _previewFileName = source._previewFileName
-      _title = source._title
-      _description_p = source._description_p
-      _tags = source._tags
-      _visibility = source._visibility
-      _updateFile = source._updateFile
-      _updatePreviewFile = source._updatePreviewFile
-      _updateTitle = source._updateTitle
-      _updateDescription = source._updateDescription
-      _updateTags = source._updateTags
-      _updateVisibility = source._updateVisibility
-      _changeDescription = source._changeDescription
-      _updateURL = source._updateURL
-      _url = source._url
-      _updateContentManifest = source._updateContentManifest
-      _contentManifest = source._contentManifest
-      _metadata = source._metadata
-      _updateMetadata = source._updateMetadata
-      _language = source._language
-      _removedKvtags = source._removedKvtags
-      _kvtags = source._kvtags
-      _previews = source._previews
-      _previewsToRemove = source._previewsToRemove
-      _clearInProgress_p = source._clearInProgress_p
-      _removeAllKvtags = source._removeAllKvtags
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        // The use of inline closures is to circumvent an issue where the compiler
-        // allocates stack space for every case branch when no optimizations are
-        // enabled. https://github.com/apple/swift-protobuf/issues/1034
-        switch fieldNumber {
-        case 1: try { try decoder.decodeSingularUInt32Field(value: &_storage._appID) }()
-        case 2: try { try decoder.decodeSingularFixed64Field(value: &_storage._publishedFileID) }()
-        case 3: try { try decoder.decodeSingularStringField(value: &_storage._fileName) }()
-        case 4: try { try decoder.decodeSingularStringField(value: &_storage._previewFileName) }()
-        case 5: try { try decoder.decodeSingularStringField(value: &_storage._title) }()
-        case 6: try { try decoder.decodeSingularStringField(value: &_storage._description_p) }()
-        case 7: try { try decoder.decodeRepeatedStringField(value: &_storage._tags) }()
-        case 8: try { try decoder.decodeSingularInt32Field(value: &_storage._visibility) }()
-        case 9: try { try decoder.decodeSingularBoolField(value: &_storage._updateFile) }()
-        case 10: try { try decoder.decodeSingularBoolField(value: &_storage._updatePreviewFile) }()
-        case 11: try { try decoder.decodeSingularBoolField(value: &_storage._updateTitle) }()
-        case 12: try { try decoder.decodeSingularBoolField(value: &_storage._updateDescription) }()
-        case 13: try { try decoder.decodeSingularBoolField(value: &_storage._updateTags) }()
-        case 14: try { try decoder.decodeSingularBoolField(value: &_storage._updateVisibility) }()
-        case 15: try { try decoder.decodeSingularStringField(value: &_storage._changeDescription) }()
-        case 16: try { try decoder.decodeSingularBoolField(value: &_storage._updateURL) }()
-        case 17: try { try decoder.decodeSingularStringField(value: &_storage._url) }()
-        case 18: try { try decoder.decodeSingularBoolField(value: &_storage._updateContentManifest) }()
-        case 19: try { try decoder.decodeSingularFixed64Field(value: &_storage._contentManifest) }()
-        case 20: try { try decoder.decodeSingularStringField(value: &_storage._metadata) }()
-        case 21: try { try decoder.decodeSingularBoolField(value: &_storage._updateMetadata) }()
-        case 22: try { try decoder.decodeSingularInt32Field(value: &_storage._language) }()
-        case 23: try { try decoder.decodeRepeatedStringField(value: &_storage._removedKvtags) }()
-        case 24: try { try decoder.decodeRepeatedMessageField(value: &_storage._kvtags) }()
-        case 25: try { try decoder.decodeRepeatedMessageField(value: &_storage._previews) }()
-        case 26: try { try decoder.decodeRepeatedInt32Field(value: &_storage._previewsToRemove) }()
-        case 27: try { try decoder.decodeSingularBoolField(value: &_storage._clearInProgress_p) }()
-        case 28: try { try decoder.decodeSingularBoolField(value: &_storage._removeAllKvtags) }()
-        default: break
-        }
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._appID {
-        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._publishedFileID {
-        try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._fileName {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._previewFileName {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._title {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._description_p {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-      }
-      if !_storage._tags.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._tags, fieldNumber: 7)
-      }
-      if let v = _storage._visibility {
-        try visitor.visitSingularInt32Field(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._updateFile {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._updatePreviewFile {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._updateTitle {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._updateDescription {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._updateTags {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._updateVisibility {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._changeDescription {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._updateURL {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._url {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 17)
-      }
-      if let v = _storage._updateContentManifest {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 18)
-      }
-      if let v = _storage._contentManifest {
-        try visitor.visitSingularFixed64Field(value: v, fieldNumber: 19)
-      }
-      if let v = _storage._metadata {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._updateMetadata {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._language {
-        try visitor.visitSingularInt32Field(value: v, fieldNumber: 22)
-      }
-      if !_storage._removedKvtags.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._removedKvtags, fieldNumber: 23)
-      }
-      if !_storage._kvtags.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._kvtags, fieldNumber: 24)
-      }
-      if !_storage._previews.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._previews, fieldNumber: 25)
-      }
-      if !_storage._previewsToRemove.isEmpty {
-        try visitor.visitRepeatedInt32Field(value: _storage._previewsToRemove, fieldNumber: 26)
-      }
-      if let v = _storage._clearInProgress_p {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 27)
-      }
-      if let v = _storage._removeAllKvtags {
-        try visitor.visitSingularBoolField(value: v, fieldNumber: 28)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMUpdatePublishedFile, rhs: CMsgClientUCMUpdatePublishedFile) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._appID != rhs_storage._appID {return false}
-        if _storage._publishedFileID != rhs_storage._publishedFileID {return false}
-        if _storage._fileName != rhs_storage._fileName {return false}
-        if _storage._previewFileName != rhs_storage._previewFileName {return false}
-        if _storage._title != rhs_storage._title {return false}
-        if _storage._description_p != rhs_storage._description_p {return false}
-        if _storage._tags != rhs_storage._tags {return false}
-        if _storage._visibility != rhs_storage._visibility {return false}
-        if _storage._updateFile != rhs_storage._updateFile {return false}
-        if _storage._updatePreviewFile != rhs_storage._updatePreviewFile {return false}
-        if _storage._updateTitle != rhs_storage._updateTitle {return false}
-        if _storage._updateDescription != rhs_storage._updateDescription {return false}
-        if _storage._updateTags != rhs_storage._updateTags {return false}
-        if _storage._updateVisibility != rhs_storage._updateVisibility {return false}
-        if _storage._changeDescription != rhs_storage._changeDescription {return false}
-        if _storage._updateURL != rhs_storage._updateURL {return false}
-        if _storage._url != rhs_storage._url {return false}
-        if _storage._updateContentManifest != rhs_storage._updateContentManifest {return false}
-        if _storage._contentManifest != rhs_storage._contentManifest {return false}
-        if _storage._metadata != rhs_storage._metadata {return false}
-        if _storage._updateMetadata != rhs_storage._updateMetadata {return false}
-        if _storage._language != rhs_storage._language {return false}
-        if _storage._removedKvtags != rhs_storage._removedKvtags {return false}
-        if _storage._kvtags != rhs_storage._kvtags {return false}
-        if _storage._previews != rhs_storage._previews {return false}
-        if _storage._previewsToRemove != rhs_storage._previewsToRemove {return false}
-        if _storage._clearInProgress_p != rhs_storage._clearInProgress_p {return false}
-        if _storage._removeAllKvtags != rhs_storage._removeAllKvtags {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMUpdatePublishedFile.KeyValueTag: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = CMsgClientUCMUpdatePublishedFile.protoMessageName + ".KeyValueTag"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "key"),
-    2: .same(proto: "value"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self._key) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self._value) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._key {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._value {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMUpdatePublishedFile.KeyValueTag, rhs: CMsgClientUCMUpdatePublishedFile.KeyValueTag) -> Bool {
-    if lhs._key != rhs._key {return false}
-    if lhs._value != rhs._value {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMUpdatePublishedFile.AdditionalPreview: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = CMsgClientUCMUpdatePublishedFile.protoMessageName + ".AdditionalPreview"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "original_file_name"),
-    2: .standard(proto: "internal_file_name"),
-    3: .same(proto: "videoid"),
-    4: .standard(proto: "preview_type"),
-    5: .standard(proto: "update_index"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularStringField(value: &self._originalFileName) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self._internalFileName) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self._videoid) }()
-      case 4: try { try decoder.decodeSingularUInt32Field(value: &self._previewType) }()
-      case 5: try { try decoder.decodeSingularInt32Field(value: &self._updateIndex) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._originalFileName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._internalFileName {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._videoid {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._previewType {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._updateIndex {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 5)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMUpdatePublishedFile.AdditionalPreview, rhs: CMsgClientUCMUpdatePublishedFile.AdditionalPreview) -> Bool {
-    if lhs._originalFileName != rhs._originalFileName {return false}
-    if lhs._internalFileName != rhs._internalFileName {return false}
-    if lhs._videoid != rhs._videoid {return false}
-    if lhs._previewType != rhs._previewType {return false}
-    if lhs._updateIndex != rhs._updateIndex {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMUpdatePublishedFileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMUpdatePublishedFileResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-    2: .standard(proto: "needs_workshop_legal_agreement_acceptance"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      case 2: try { try decoder.decodeSingularBoolField(value: &self._needsWorkshopLegalAgreementAcceptance) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._needsWorkshopLegalAgreementAcceptance {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMUpdatePublishedFileResponse, rhs: CMsgClientUCMUpdatePublishedFileResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs._needsWorkshopLegalAgreementAcceptance != rhs._needsWorkshopLegalAgreementAcceptance {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMDeletePublishedFile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMDeletePublishedFile"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "published_file_id"),
-    2: .standard(proto: "app_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMDeletePublishedFile, rhs: CMsgClientUCMDeletePublishedFile) -> Bool {
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._appID != rhs._appID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMDeletePublishedFileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMDeletePublishedFileResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMDeletePublishedFileResponse, rhs: CMsgClientUCMDeletePublishedFileResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_id"),
-    2: .standard(proto: "start_index"),
-    3: .standard(proto: "start_time"),
-    4: .standard(proto: "desired_revision"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._startIndex) }()
-      case 3: try { try decoder.decodeSingularFixed32Field(value: &self._startTime) }()
-      case 4: try { try decoder.decodeSingularUInt32Field(value: &self._desiredRevision) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._startIndex {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._startTime {
-      try visitor.visitSingularFixed32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._desiredRevision {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates, rhs: CMsgClientUCMEnumerateUserSubscribedFilesWithUpdates) -> Bool {
-    if lhs._appID != rhs._appID {return false}
-    if lhs._startIndex != rhs._startIndex {return false}
-    if lhs._startTime != rhs._startTime {return false}
-    if lhs._desiredRevision != rhs._desiredRevision {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-    2: .standard(proto: "subscribed_files"),
-    3: .standard(proto: "total_results"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.subscribedFiles) }()
-      case 3: try { try decoder.decodeSingularUInt32Field(value: &self._totalResults) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if !self.subscribedFiles.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.subscribedFiles, fieldNumber: 2)
-    }
-    if let v = self._totalResults {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse, rhs: CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs.subscribedFiles != rhs.subscribedFiles {return false}
-    if lhs._totalResults != rhs._totalResults {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse.PublishedFileId: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse.protoMessageName + ".PublishedFileId"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "published_file_id"),
-    2: .standard(proto: "rtime32_subscribed"),
-    3: .same(proto: "appid"),
-    4: .standard(proto: "file_hcontent"),
-    5: .standard(proto: "file_size"),
-    6: .standard(proto: "rtime32_last_updated"),
-    7: .standard(proto: "is_depot_content"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 2: try { try decoder.decodeSingularFixed32Field(value: &self._rtime32Subscribed) }()
-      case 3: try { try decoder.decodeSingularUInt32Field(value: &self._appid) }()
-      case 4: try { try decoder.decodeSingularFixed64Field(value: &self._fileHcontent) }()
-      case 5: try { try decoder.decodeSingularUInt32Field(value: &self._fileSize) }()
-      case 6: try { try decoder.decodeSingularFixed32Field(value: &self._rtime32LastUpdated) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self._isDepotContent) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._rtime32Subscribed {
-      try visitor.visitSingularFixed32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._appid {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._fileHcontent {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._fileSize {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._rtime32LastUpdated {
-      try visitor.visitSingularFixed32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._isDepotContent {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse.PublishedFileId, rhs: CMsgClientUCMEnumerateUserSubscribedFilesWithUpdatesResponse.PublishedFileId) -> Bool {
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._rtime32Subscribed != rhs._rtime32Subscribed {return false}
-    if lhs._appid != rhs._appid {return false}
-    if lhs._fileHcontent != rhs._fileHcontent {return false}
-    if lhs._fileSize != rhs._fileSize {return false}
-    if lhs._rtime32LastUpdated != rhs._rtime32LastUpdated {return false}
-    if lhs._isDepotContent != rhs._isDepotContent {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMPublishedFileUpdated: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMPublishedFileUpdated"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "published_file_id"),
-    2: .standard(proto: "app_id"),
-    3: .standard(proto: "time_updated"),
-    4: .same(proto: "hcontent"),
-    5: .standard(proto: "file_size"),
-    6: .standard(proto: "is_depot_content"),
-    7: .same(proto: "revision"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      case 3: try { try decoder.decodeSingularUInt32Field(value: &self._timeUpdated) }()
-      case 4: try { try decoder.decodeSingularFixed64Field(value: &self._hcontent) }()
-      case 5: try { try decoder.decodeSingularFixed32Field(value: &self._fileSize) }()
-      case 6: try { try decoder.decodeSingularBoolField(value: &self._isDepotContent) }()
-      case 7: try { try decoder.decodeSingularUInt32Field(value: &self._revision) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._timeUpdated {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._hcontent {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._fileSize {
-      try visitor.visitSingularFixed32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._isDepotContent {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
-    }
-    if let v = self._revision {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMPublishedFileUpdated, rhs: CMsgClientUCMPublishedFileUpdated) -> Bool {
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._appID != rhs._appID {return false}
-    if lhs._timeUpdated != rhs._timeUpdated {return false}
-    if lhs._hcontent != rhs._hcontent {return false}
-    if lhs._fileSize != rhs._fileSize {return false}
-    if lhs._isDepotContent != rhs._isDepotContent {return false}
-    if lhs._revision != rhs._revision {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientWorkshopItemChangesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientWorkshopItemChangesRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_id"),
-    2: .standard(proto: "last_time_updated"),
-    3: .standard(proto: "num_items_needed"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._lastTimeUpdated) }()
-      case 3: try { try decoder.decodeSingularUInt32Field(value: &self._numItemsNeeded) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._lastTimeUpdated {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._numItemsNeeded {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientWorkshopItemChangesRequest, rhs: CMsgClientWorkshopItemChangesRequest) -> Bool {
-    if lhs._appID != rhs._appID {return false}
-    if lhs._lastTimeUpdated != rhs._lastTimeUpdated {return false}
-    if lhs._numItemsNeeded != rhs._numItemsNeeded {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientWorkshopItemChangesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientWorkshopItemChangesResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-    2: .standard(proto: "update_time"),
-    5: .standard(proto: "workshop_items"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._updateTime) }()
-      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.workshopItems) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._updateTime {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if !self.workshopItems.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.workshopItems, fieldNumber: 5)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientWorkshopItemChangesResponse, rhs: CMsgClientWorkshopItemChangesResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs._updateTime != rhs._updateTime {return false}
-    if lhs.workshopItems != rhs.workshopItems {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientWorkshopItemChangesResponse.WorkshopItemInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = CMsgClientWorkshopItemChangesResponse.protoMessageName + ".WorkshopItemInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "published_file_id"),
-    2: .standard(proto: "time_updated"),
-    3: .standard(proto: "manifest_id"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._timeUpdated) }()
-      case 3: try { try decoder.decodeSingularFixed64Field(value: &self._manifestID) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._timeUpdated {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._manifestID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientWorkshopItemChangesResponse.WorkshopItemInfo, rhs: CMsgClientWorkshopItemChangesResponse.WorkshopItemInfo) -> Bool {
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._timeUpdated != rhs._timeUpdated {return false}
-    if lhs._manifestID != rhs._manifestID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMSetUserPublishedFileAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMSetUserPublishedFileAction"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "published_file_id"),
-    2: .standard(proto: "app_id"),
-    3: .same(proto: "action"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self._action) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._action {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMSetUserPublishedFileAction, rhs: CMsgClientUCMSetUserPublishedFileAction) -> Bool {
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._appID != rhs._appID {return false}
-    if lhs._action != rhs._action {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMSetUserPublishedFileActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMSetUserPublishedFileActionResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMSetUserPublishedFileActionResponse, rhs: CMsgClientUCMSetUserPublishedFileActionResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMEnumeratePublishedFilesByUserAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMEnumeratePublishedFilesByUserAction"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_id"),
-    2: .standard(proto: "start_index"),
-    3: .same(proto: "action"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
-      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._startIndex) }()
-      case 3: try { try decoder.decodeSingularInt32Field(value: &self._action) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._startIndex {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._action {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMEnumeratePublishedFilesByUserAction, rhs: CMsgClientUCMEnumeratePublishedFilesByUserAction) -> Bool {
-    if lhs._appID != rhs._appID {return false}
-    if lhs._startIndex != rhs._startIndex {return false}
-    if lhs._action != rhs._action {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMEnumeratePublishedFilesByUserActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientUCMEnumeratePublishedFilesByUserActionResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "eresult"),
-    2: .standard(proto: "published_files"),
-    3: .standard(proto: "total_results"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularInt32Field(value: &self._eresult) }()
-      case 2: try { try decoder.decodeRepeatedMessageField(value: &self.publishedFiles) }()
-      case 3: try { try decoder.decodeSingularUInt32Field(value: &self._totalResults) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if !self.publishedFiles.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.publishedFiles, fieldNumber: 2)
-    }
-    if let v = self._totalResults {
-      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMEnumeratePublishedFilesByUserActionResponse, rhs: CMsgClientUCMEnumeratePublishedFilesByUserActionResponse) -> Bool {
-    if lhs._eresult != rhs._eresult {return false}
-    if lhs.publishedFiles != rhs.publishedFiles {return false}
-    if lhs._totalResults != rhs._totalResults {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.PublishedFileId: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.protoMessageName + ".PublishedFileId"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "published_file_id"),
-    2: .standard(proto: "rtime_time_stamp"),
-  ]
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._publishedFileID) }()
-      case 2: try { try decoder.decodeSingularFixed32Field(value: &self._rtimeTimeStamp) }()
-      default: break
-      }
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._rtimeTimeStamp {
-      try visitor.visitSingularFixed32Field(value: v, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.PublishedFileId, rhs: CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.PublishedFileId) -> Bool {
-    if lhs._publishedFileID != rhs._publishedFileID {return false}
-    if lhs._rtimeTimeStamp != rhs._rtimeTimeStamp {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension CMsgClientScreenshotsChanged: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = "CMsgClientScreenshotsChanged"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
-
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
-    }
-  }
-
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  static func ==(lhs: CMsgClientScreenshotsChanged, rhs: CMsgClientScreenshotsChanged) -> Bool {
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
 extension CMsgClientUpdateUserGameInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CMsgClientUpdateUserGameInfo"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -7962,21 +5115,25 @@ extension CMsgClientUpdateUserGameInfo: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamidIdgs {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamidIdgs {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._gameid {
+    } }()
+    try { if let v = self._gameid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._gameIp {
+    } }()
+    try { if let v = self._gameIp {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._gamePort {
+    } }()
+    try { if let v = self._gamePort {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._token {
+    } }()
+    try { if let v = self._token {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8012,9 +5169,13 @@ extension CMsgClientRichPresenceUpload: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._richPresenceKv {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._richPresenceKv {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.steamidBroadcast.isEmpty {
       try visitor.visitRepeatedFixed64Field(value: self.steamidBroadcast, fieldNumber: 2)
     }
@@ -8114,12 +5275,16 @@ extension CMsgClientRichPresenceInfo.RichPresence: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamidUser {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamidUser {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._richPresenceKv {
+    } }()
+    try { if let v = self._richPresenceKv {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8150,9 +5315,13 @@ extension CMsgClientCheckFileSignature: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8200,36 +5369,40 @@ extension CMsgClientCheckFileSignatureResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._pid {
+    } }()
+    try { if let v = self._pid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._eresult {
+    } }()
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._filename {
+    } }()
+    try { if let v = self._filename {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    }
-    if let v = self._esignatureresult {
+    } }()
+    try { if let v = self._esignatureresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._shaFile {
+    } }()
+    try { if let v = self._shaFile {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 6)
-    }
-    if let v = self._signatureheader {
+    } }()
+    try { if let v = self._signatureheader {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 7)
-    }
-    if let v = self._filesize {
+    } }()
+    try { if let v = self._filesize {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
-    }
-    if let v = self._getlasterror {
+    } }()
+    try { if let v = self._getlasterror {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 9)
-    }
-    if let v = self._evalvesignaturecheckdetail {
+    } }()
+    try { if let v = self._evalvesignaturecheckdetail {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 10)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8272,15 +5445,19 @@ extension CMsgClientReadMachineAuth: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._filename {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._filename {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._offset {
+    } }()
+    try { if let v = self._offset {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._cubtoread {
+    } }()
+    try { if let v = self._cubtoread {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8328,33 +5505,37 @@ extension CMsgClientReadMachineAuthResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._filename {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._filename {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._eresult {
+    } }()
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._filesize {
+    } }()
+    try { if let v = self._filesize {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._shaFile {
+    } }()
+    try { if let v = self._shaFile {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._getlasterror {
+    } }()
+    try { if let v = self._getlasterror {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._offset {
+    } }()
+    try { if let v = self._offset {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._cubread {
+    } }()
+    try { if let v = self._cubread {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._bytesRead {
+    } }()
+    try { if let v = self._bytesRead {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 8)
-    }
-    if let v = self._filenameSentry {
+    } }()
+    try { if let v = self._filenameSentry {
       try visitor.visitSingularStringField(value: v, fieldNumber: 9)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8406,30 +5587,34 @@ extension CMsgClientUpdateMachineAuth: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._filename {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._filename {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._offset {
+    } }()
+    try { if let v = self._offset {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._cubtowrite {
+    } }()
+    try { if let v = self._cubtowrite {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._bytes {
+    } }()
+    try { if let v = self._bytes {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._otpType {
+    } }()
+    try { if let v = self._otpType {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._otpIdentifier {
+    } }()
+    try { if let v = self._otpIdentifier {
       try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-    }
-    if let v = self._otpSharedsecret {
+    } }()
+    try { if let v = self._otpSharedsecret {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 7)
-    }
-    if let v = self._otpTimedrift {
+    } }()
+    try { if let v = self._otpTimedrift {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8484,36 +5669,40 @@ extension CMsgClientUpdateMachineAuthResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._filename {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._filename {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._eresult {
+    } }()
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._filesize {
+    } }()
+    try { if let v = self._filesize {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._shaFile {
+    } }()
+    try { if let v = self._shaFile {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._getlasterror {
+    } }()
+    try { if let v = self._getlasterror {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._offset {
+    } }()
+    try { if let v = self._offset {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._cubwrote {
+    } }()
+    try { if let v = self._cubwrote {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._otpType {
+    } }()
+    try { if let v = self._otpType {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 8)
-    }
-    if let v = self._otpValue {
+    } }()
+    try { if let v = self._otpValue {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 9)
-    }
-    if let v = self._otpIdentifier {
+    } }()
+    try { if let v = self._otpIdentifier {
       try visitor.visitSingularStringField(value: v, fieldNumber: 10)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8572,39 +5761,43 @@ extension CMsgClientRequestMachineAuth: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._filename {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._filename {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._eresultSentryfile {
+    } }()
+    try { if let v = self._eresultSentryfile {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._filesize {
+    } }()
+    try { if let v = self._filesize {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._shaSentryfile {
+    } }()
+    try { if let v = self._shaSentryfile {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._lockAccountAction {
+    } }()
+    try { if let v = self._lockAccountAction {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._otpType {
+    } }()
+    try { if let v = self._otpType {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._otpIdentifier {
+    } }()
+    try { if let v = self._otpIdentifier {
       try visitor.visitSingularStringField(value: v, fieldNumber: 8)
-    }
-    if let v = self._otpSharedsecret {
+    } }()
+    try { if let v = self._otpSharedsecret {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 9)
-    }
-    if let v = self._otpValue {
+    } }()
+    try { if let v = self._otpValue {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 10)
-    }
-    if let v = self._machineName {
+    } }()
+    try { if let v = self._machineName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 11)
-    }
-    if let v = self._machineNameUserchosen {
+    } }()
+    try { if let v = self._machineNameUserchosen {
       try visitor.visitSingularStringField(value: v, fieldNumber: 12)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8644,9 +5837,13 @@ extension CMsgClientRequestMachineAuthResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8676,9 +5873,13 @@ extension CMsgClientRegisterKey: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._key {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._key {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8712,15 +5913,19 @@ extension CMsgClientPurchaseResponse: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._purchaseResultDetails {
+    } }()
+    try { if let v = self._purchaseResultDetails {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._purchaseReceiptInfo {
+    } }()
+    try { if let v = self._purchaseReceiptInfo {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8762,24 +5967,28 @@ extension CMsgClientActivateOEMLicense: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._biosManufacturer {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._biosManufacturer {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._biosSerialnumber {
+    } }()
+    try { if let v = self._biosSerialnumber {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._licenseFile {
+    } }()
+    try { if let v = self._licenseFile {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    if let v = self._mainboardManufacturer {
+    } }()
+    try { if let v = self._mainboardManufacturer {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    }
-    if let v = self._mainboardProduct {
+    } }()
+    try { if let v = self._mainboardProduct {
       try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-    }
-    if let v = self._mainboardSerialnumber {
+    } }()
+    try { if let v = self._mainboardSerialnumber {
       try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8814,9 +6023,13 @@ extension CMsgClientRegisterOEMMachine: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._oemRegisterFile {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._oemRegisterFile {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8846,9 +6059,13 @@ extension CMsgClientRegisterOEMMachineResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8880,12 +6097,16 @@ extension CMsgClientPurchaseWithMachineID: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._packageID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._packageID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._machineInfo {
+    } }()
+    try { if let v = self._machineInfo {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8920,15 +6141,19 @@ extension CMsgTrading_InitiateTradeRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._tradeRequestID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._tradeRequestID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._otherSteamid {
+    } }()
+    try { if let v = self._otherSteamid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._otherName {
+    } }()
+    try { if let v = self._otherName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -8976,33 +6201,37 @@ extension CMsgTrading_InitiateTradeResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._response {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._response {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._tradeRequestID {
+    } }()
+    try { if let v = self._tradeRequestID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._otherSteamid {
+    } }()
+    try { if let v = self._otherSteamid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._steamguardRequiredDays {
+    } }()
+    try { if let v = self._steamguardRequiredDays {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._newDeviceCooldownDays {
+    } }()
+    try { if let v = self._newDeviceCooldownDays {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._defaultPasswordResetProbationDays {
+    } }()
+    try { if let v = self._defaultPasswordResetProbationDays {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._passwordResetProbationDays {
+    } }()
+    try { if let v = self._passwordResetProbationDays {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._defaultEmailChangeProbationDays {
+    } }()
+    try { if let v = self._defaultEmailChangeProbationDays {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
-    }
-    if let v = self._emailChangeProbationDays {
+    } }()
+    try { if let v = self._emailChangeProbationDays {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 9)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9040,9 +6269,13 @@ extension CMsgTrading_CancelTradeRequest: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._otherSteamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._otherSteamid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9072,9 +6305,13 @@ extension CMsgTrading_StartSession: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._otherSteamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._otherSteamid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9108,15 +6345,19 @@ extension CMsgClientGetCDNAuthToken: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._depotID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._depotID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._hostName {
+    } }()
+    try { if let v = self._hostName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._appID {
+    } }()
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9150,12 +6391,16 @@ extension CMsgClientGetDepotDecryptionKey: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._depotID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._depotID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appID {
+    } }()
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9190,15 +6435,19 @@ extension CMsgClientGetDepotDecryptionKeyResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._depotID {
+    } }()
+    try { if let v = self._depotID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._depotEncryptionKey {
+    } }()
+    try { if let v = self._depotEncryptionKey {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9234,15 +6483,19 @@ extension CMsgClientCheckAppBetaPassword: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._betapassword {
+    } }()
+    try { if let v = self._betapassword {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._language {
+    } }()
+    try { if let v = self._language {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9276,9 +6529,13 @@ extension CMsgClientCheckAppBetaPasswordResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.betapasswords.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.betapasswords, fieldNumber: 4)
     }
@@ -9316,15 +6573,19 @@ extension CMsgClientCheckAppBetaPasswordResponse.BetaPassword: SwiftProtobuf.Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._betaname {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._betaname {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._betapassword {
+    } }()
+    try { if let v = self._betapassword {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._betadescription {
+    } }()
+    try { if let v = self._betadescription {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9463,72 +6724,76 @@ extension CMsgClientUpdateAppJobReport: SwiftProtobuf.Message, SwiftProtobuf._Me
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._appID {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._appID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-      }
+      } }()
       if !_storage._depotIds.isEmpty {
         try visitor.visitRepeatedUInt32Field(value: _storage._depotIds, fieldNumber: 2)
       }
-      if let v = _storage._appState {
+      try { if let v = _storage._appState {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._jobAppError {
+      } }()
+      try { if let v = _storage._jobAppError {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._errorDetails {
+      } }()
+      try { if let v = _storage._errorDetails {
         try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._jobDuration {
+      } }()
+      try { if let v = _storage._jobDuration {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._filesValidationFailed {
+      } }()
+      try { if let v = _storage._filesValidationFailed {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._jobBytesDownloaded {
+      } }()
+      try { if let v = _storage._jobBytesDownloaded {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._jobBytesStaged {
+      } }()
+      try { if let v = _storage._jobBytesStaged {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._bytesComitted {
+      } }()
+      try { if let v = _storage._bytesComitted {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._startAppState {
+      } }()
+      try { if let v = _storage._startAppState {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._statsMachineID {
+      } }()
+      try { if let v = _storage._statsMachineID {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._branchName {
+      } }()
+      try { if let v = _storage._branchName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._totalBytesDownloaded {
+      } }()
+      try { if let v = _storage._totalBytesDownloaded {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._totalBytesStaged {
+      } }()
+      try { if let v = _storage._totalBytesStaged {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._totalBytesRestored {
+      } }()
+      try { if let v = _storage._totalBytesRestored {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._isBorrowed {
+      } }()
+      try { if let v = _storage._isBorrowed {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 17)
-      }
-      if let v = _storage._isFreeWeekend {
+      } }()
+      try { if let v = _storage._isFreeWeekend {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 18)
-      }
-      if let v = _storage._totalBytesLegacy {
+      } }()
+      try { if let v = _storage._totalBytesLegacy {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 19)
-      }
-      if let v = _storage._totalBytesPatched {
+      } }()
+      try { if let v = _storage._totalBytesPatched {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._totalBytesSaved {
+      } }()
+      try { if let v = _storage._totalBytesSaved {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._cellID {
+      } }()
+      try { if let v = _storage._cellID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 22)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -9600,27 +6865,31 @@ extension CMsgClientDPContentStatsReport: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._statsMachineID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._statsMachineID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._countryCode {
+    } }()
+    try { if let v = self._countryCode {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._osType {
+    } }()
+    try { if let v = self._osType {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._language {
+    } }()
+    try { if let v = self._language {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._numInstallFolders {
+    } }()
+    try { if let v = self._numInstallFolders {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._numInstalledGames {
+    } }()
+    try { if let v = self._numInstalledGames {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._sizeInstalledGames {
+    } }()
+    try { if let v = self._sizeInstalledGames {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9660,15 +6929,19 @@ extension CMsgClientGetCDNAuthTokenResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._token {
+    } }()
+    try { if let v = self._token {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._expirationTime {
+    } }()
+    try { if let v = self._expirationTime {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9706,18 +6979,22 @@ extension CMsgDownloadRateStatistics: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._cellID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._cellID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.stats.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stats, fieldNumber: 2)
     }
-    if let v = self._throttlingKbps {
+    try { if let v = self._throttlingKbps {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._steamRealm {
+    } }()
+    try { if let v = self._steamRealm {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9764,30 +7041,34 @@ extension CMsgDownloadRateStatistics.StatsInfo: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._sourceType {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sourceType {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._sourceID {
+    } }()
+    try { if let v = self._sourceID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._seconds {
+    } }()
+    try { if let v = self._seconds {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._bytes {
+    } }()
+    try { if let v = self._bytes {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._hostName {
+    } }()
+    try { if let v = self._hostName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-    }
-    if let v = self._microseconds {
+    } }()
+    try { if let v = self._microseconds {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._usedIpv6 {
+    } }()
+    try { if let v = self._usedIpv6 {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
-    }
-    if let v = self._proxied {
+    } }()
+    try { if let v = self._proxied {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9826,12 +7107,16 @@ extension CMsgClientRequestAccountData: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._accountOrEmail {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._accountOrEmail {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._action {
+    } }()
+    try { if let v = self._action {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9874,27 +7159,31 @@ extension CMsgClientRequestAccountDataResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._action {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._action {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._eresult {
+    } }()
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._accountName {
+    } }()
+    try { if let v = self._accountName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._ctMatches {
+    } }()
+    try { if let v = self._ctMatches {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._accountNameSuggestion1 {
+    } }()
+    try { if let v = self._accountNameSuggestion1 {
       try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-    }
-    if let v = self._accountNameSuggestion2 {
+    } }()
+    try { if let v = self._accountNameSuggestion2 {
       try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-    }
-    if let v = self._accountNameSuggestion3 {
+    } }()
+    try { if let v = self._accountNameSuggestion3 {
       try visitor.visitSingularStringField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9938,21 +7227,25 @@ extension CMsgClientUGSGetGlobalStats: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._gameid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._gameid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._historyDaysRequested {
+    } }()
+    try { if let v = self._historyDaysRequested {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._timeLastRequested {
+    } }()
+    try { if let v = self._timeLastRequested {
       try visitor.visitSingularFixed32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._firstDayCached {
+    } }()
+    try { if let v = self._firstDayCached {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._daysCached {
+    } }()
+    try { if let v = self._daysCached {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -9992,15 +7285,19 @@ extension CMsgClientUGSGetGlobalStatsResponse: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._timestamp {
+    } }()
+    try { if let v = self._timestamp {
       try visitor.visitSingularFixed32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._dayCurrent {
+    } }()
+    try { if let v = self._dayCurrent {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.days.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.days, fieldNumber: 4)
     }
@@ -10038,9 +7335,13 @@ extension CMsgClientUGSGetGlobalStatsResponse.Day: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._dayID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._dayID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.stats.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stats, fieldNumber: 2)
     }
@@ -10076,12 +7377,16 @@ extension CMsgClientUGSGetGlobalStatsResponse.Day.Stat: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._statID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._statID {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._data {
+    } }()
+    try { if let v = self._data {
       try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10112,9 +7417,13 @@ extension CMsgClientRedeemGuestPass: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._guestPassID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._guestPassID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10148,15 +7457,19 @@ extension CMsgClientRedeemGuestPassResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._packageID {
+    } }()
+    try { if let v = self._packageID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._mustOwnAppid {
+    } }()
+    try { if let v = self._mustOwnAppid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10220,9 +7533,13 @@ extension CMsgClientGetClanActivityCountsResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10260,21 +7577,25 @@ extension CMsgClientOGSReportString: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._accumulated {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._accumulated {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
-    }
-    if let v = self._sessionid {
+    } }()
+    try { if let v = self._sessionid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._severity {
+    } }()
+    try { if let v = self._severity {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._formatter {
+    } }()
+    try { if let v = self._formatter {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    }
-    if let v = self._varargs {
+    } }()
+    try { if let v = self._varargs {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10312,15 +7633,19 @@ extension CMsgClientOGSReportBug: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._sessionid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sessionid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._bugtext {
+    } }()
+    try { if let v = self._bugtext {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._screenshot {
+    } }()
+    try { if let v = self._screenshot {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10381,24 +7706,28 @@ extension CMsgGCClient: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._msgtype {
+    } }()
+    try { if let v = self._msgtype {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._payload {
+    } }()
+    try { if let v = self._payload {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    if let v = self._steamid {
+    } }()
+    try { if let v = self._steamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._gcname {
+    } }()
+    try { if let v = self._gcname {
       try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-    }
-    if let v = self._ip {
+    } }()
+    try { if let v = self._ip {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10469,9 +7798,13 @@ extension CMsgClientRequestFreeLicenseResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.grantedPackageids.isEmpty {
       try visitor.visitRepeatedUInt32Field(value: self.grantedPackageids, fieldNumber: 2)
     }
@@ -10523,30 +7856,34 @@ extension CMsgDRMDownloadRequestWithCrashData: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._downloadFlags {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._downloadFlags {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._downloadTypesKnown {
+    } }()
+    try { if let v = self._downloadTypesKnown {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._guidDrm {
+    } }()
+    try { if let v = self._guidDrm {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
-    if let v = self._guidSplit {
+    } }()
+    try { if let v = self._guidSplit {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._guidMerge {
+    } }()
+    try { if let v = self._guidMerge {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 5)
-    }
-    if let v = self._moduleName {
+    } }()
+    try { if let v = self._moduleName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-    }
-    if let v = self._modulePath {
+    } }()
+    try { if let v = self._modulePath {
       try visitor.visitSingularStringField(value: v, fieldNumber: 7)
-    }
-    if let v = self._crashData {
+    } }()
+    try { if let v = self._crashData {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10597,30 +7934,34 @@ extension CMsgDRMDownloadResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appID {
+    } }()
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._blobDownloadType {
+    } }()
+    try { if let v = self._blobDownloadType {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._mergeGuid {
+    } }()
+    try { if let v = self._mergeGuid {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._downloadFileDfsIp {
+    } }()
+    try { if let v = self._downloadFileDfsIp {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._downloadFileDfsPort {
+    } }()
+    try { if let v = self._downloadFileDfsPort {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._downloadFileURL {
+    } }()
+    try { if let v = self._downloadFileURL {
       try visitor.visitSingularStringField(value: v, fieldNumber: 7)
-    }
-    if let v = self._modulePath {
+    } }()
+    try { if let v = self._modulePath {
       try visitor.visitSingularStringField(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10671,30 +8012,34 @@ extension CMsgDRMFinalResult: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eResult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eResult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appID {
+    } }()
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._blobDownloadType {
+    } }()
+    try { if let v = self._blobDownloadType {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._errorDetail {
+    } }()
+    try { if let v = self._errorDetail {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._mergeGuid {
+    } }()
+    try { if let v = self._mergeGuid {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 5)
-    }
-    if let v = self._downloadFileDfsIp {
+    } }()
+    try { if let v = self._downloadFileDfsIp {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._downloadFileDfsPort {
+    } }()
+    try { if let v = self._downloadFileDfsPort {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._downloadFileURL {
+    } }()
+    try { if let v = self._downloadFileURL {
       try visitor.visitSingularStringField(value: v, fieldNumber: 8)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10731,9 +8076,13 @@ extension CMsgClientDPCheckSpecialSurvey: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._surveyID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._surveyID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10773,24 +8122,28 @@ extension CMsgClientDPCheckSpecialSurveyResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eResult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eResult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._state {
+    } }()
+    try { if let v = self._state {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._name {
+    } }()
+    try { if let v = self._name {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._customURL {
+    } }()
+    try { if let v = self._customURL {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    }
-    if let v = self._includeSoftware {
+    } }()
+    try { if let v = self._includeSoftware {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    }
-    if let v = self._token {
+    } }()
+    try { if let v = self._token {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10827,12 +8180,16 @@ extension CMsgClientDPSendSpecialSurveyResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._surveyID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._surveyID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._data {
+    } }()
+    try { if let v = self._data {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10865,12 +8222,16 @@ extension CMsgClientDPSendSpecialSurveyResponseReply: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eResult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eResult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._token {
+    } }()
+    try { if let v = self._token {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10903,12 +8264,16 @@ extension CMsgClientRequestForgottenPasswordEmail: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._accountName {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._accountName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._passwordTried {
+    } }()
+    try { if let v = self._passwordTried {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10941,12 +8306,16 @@ extension CMsgClientRequestForgottenPasswordEmailResponse: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eResult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eResult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._useSecretQuestion {
+    } }()
+    try { if let v = self._useSecretQuestion {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -10979,9 +8348,13 @@ extension CMsgClientItemAnnouncements: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._countNewItems {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._countNewItems {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.unseenItems.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.unseenItems, fieldNumber: 2)
     }
@@ -11025,24 +8398,28 @@ extension CMsgClientItemAnnouncements.UnseenItem: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._contextID {
+    } }()
+    try { if let v = self._contextID {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._assetID {
+    } }()
+    try { if let v = self._assetID {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._amount {
+    } }()
+    try { if let v = self._amount {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._rtime32Gained {
+    } }()
+    try { if let v = self._rtime32Gained {
       try visitor.visitSingularFixed32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._sourceAppid {
+    } }()
+    try { if let v = self._sourceAppid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11130,12 +8507,16 @@ extension CMsgClientUserNotifications.Notification: SwiftProtobuf.Message, Swift
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._userNotificationType {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._userNotificationType {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._count {
+    } }()
+    try { if let v = self._count {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11170,15 +8551,19 @@ extension CMsgClientCommentNotifications: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._countNewComments {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._countNewComments {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._countNewCommentsOwner {
+    } }()
+    try { if let v = self._countNewCommentsOwner {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._countNewCommentsSubscriptions {
+    } }()
+    try { if let v = self._countNewCommentsSubscriptions {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11231,9 +8616,13 @@ extension CMsgClientOfflineMessageNotification: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._offlineMessages {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._offlineMessages {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.friendsWithOfflineMessages.isEmpty {
       try visitor.visitRepeatedUInt32Field(value: self.friendsWithOfflineMessages, fieldNumber: 2)
     }
@@ -11286,9 +8675,13 @@ extension CMsgClientChatGetFriendMessageHistory: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11322,12 +8715,16 @@ extension CMsgClientChatGetFriendMessageHistoryResponse: SwiftProtobuf.Message, 
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._success {
+    } }()
+    try { if let v = self._success {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.messages.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.messages, fieldNumber: 3)
     }
@@ -11368,18 +8765,22 @@ extension CMsgClientChatGetFriendMessageHistoryResponse.FriendMessage: SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._accountid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._accountid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._timestamp {
+    } }()
+    try { if let v = self._timestamp {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._message {
+    } }()
+    try { if let v = self._message {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._unread {
+    } }()
+    try { if let v = self._unread {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11497,12 +8898,16 @@ extension CMsgClientFSGetFriendsSteamLevelsResponse.Friend: SwiftProtobuf.Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._accountid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._accountid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._level {
+    } }()
+    try { if let v = self._level {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11543,24 +8948,28 @@ extension CMsgClientEmailAddrInfo: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._emailAddress {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._emailAddress {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._emailIsValidated {
+    } }()
+    try { if let v = self._emailIsValidated {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
-    if let v = self._emailValidationChanged {
+    } }()
+    try { if let v = self._emailValidationChanged {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
-    }
-    if let v = self._credentialChangeRequiresCode {
+    } }()
+    try { if let v = self._credentialChangeRequiresCode {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
-    }
-    if let v = self._passwordOrSecretqaChangeRequiresCode {
+    } }()
+    try { if let v = self._passwordOrSecretqaChangeRequiresCode {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    }
-    if let v = self._remindUserAboutEmail {
+    } }()
+    try { if let v = self._remindUserAboutEmail {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11627,9 +9036,13 @@ extension CMsgCREItemVoteSummary.PublishedFileId: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._publishedFileID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11661,9 +9074,13 @@ extension CMsgCREItemVoteSummaryResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.itemVoteSummaries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.itemVoteSummaries, fieldNumber: 2)
     }
@@ -11705,21 +9122,25 @@ extension CMsgCREItemVoteSummaryResponse.ItemVoteSummary: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._publishedFileID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._votesFor {
+    } }()
+    try { if let v = self._votesFor {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._votesAgainst {
+    } }()
+    try { if let v = self._votesAgainst {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._reports {
+    } }()
+    try { if let v = self._reports {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._score {
+    } }()
+    try { if let v = self._score {
       try visitor.visitSingularFloatField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11755,12 +9176,16 @@ extension CMsgCREUpdateUserPublishedItemVote: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._publishedFileID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._voteUp {
+    } }()
+    try { if let v = self._voteUp {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11791,9 +9216,13 @@ extension CMsgCREUpdateUserPublishedItemVoteResponse: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11855,9 +9284,13 @@ extension CMsgCREGetUserPublishedItemVoteDetails.PublishedFileId: SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._publishedFileID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11889,9 +9322,13 @@ extension CMsgCREGetUserPublishedItemVoteDetailsResponse: SwiftProtobuf.Message,
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.userItemVoteDetails.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.userItemVoteDetails, fieldNumber: 2)
     }
@@ -11927,12 +9364,16 @@ extension CMsgCREGetUserPublishedItemVoteDetailsResponse.UserItemVoteDetail: Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._publishedFileID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._publishedFileID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._vote {
+    } }()
+    try { if let v = self._vote {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11963,9 +9404,13 @@ extension CMsgFSGetFollowerCount: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -11997,12 +9442,16 @@ extension CMsgFSGetFollowerCountResponse: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._count {
+    } }()
+    try { if let v = self._count {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12033,9 +9482,13 @@ extension CMsgFSGetIsFollowing: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12067,12 +9520,16 @@ extension CMsgFSGetIsFollowingResponse: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._isFollowing {
+    } }()
+    try { if let v = self._isFollowing {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12103,9 +9560,13 @@ extension CMsgFSEnumerateFollowingList: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._startIndex {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._startIndex {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12139,12 +9600,16 @@ extension CMsgFSEnumerateFollowingListResponse: SwiftProtobuf.Message, SwiftProt
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._totalResults {
+    } }()
+    try { if let v = self._totalResults {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     if !self.steamIds.isEmpty {
       try visitor.visitRepeatedFixed64Field(value: self.steamIds, fieldNumber: 3)
     }
@@ -12179,9 +9644,13 @@ extension CMsgDPGetNumberOfCurrentPlayers: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12213,12 +9682,16 @@ extension CMsgDPGetNumberOfCurrentPlayersResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._playerCount {
+    } }()
+    try { if let v = self._playerCount {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12253,15 +9726,19 @@ extension CMsgClientFriendUserStatusPublished: SwiftProtobuf.Message, SwiftProto
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._friendSteamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._friendSteamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appid {
+    } }()
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._statusText {
+    } }()
+    try { if let v = self._statusText {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12297,15 +9774,19 @@ extension CMsgClientServiceMethodLegacy: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._methodName {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._methodName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._serializedMethod {
+    } }()
+    try { if let v = self._serializedMethod {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
-    if let v = self._isNotification {
+    } }()
+    try { if let v = self._isNotification {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12339,12 +9820,16 @@ extension CMsgClientServiceMethodLegacyResponse: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._methodName {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._methodName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._serializedMethodResponse {
+    } }()
+    try { if let v = self._serializedMethodResponse {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12377,12 +9862,16 @@ extension CMsgClientUIMode: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._uimode {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._uimode {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._chatMode {
+    } }()
+    try { if let v = self._chatMode {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12413,9 +9902,13 @@ extension CMsgClientVanityURLChangedNotification: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._vanityURL {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._vanityURL {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12449,15 +9942,19 @@ extension CMsgClientAuthorizeLocalDeviceRequest: SwiftProtobuf.Message, SwiftPro
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._deviceDescription {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._deviceDescription {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._ownerAccountID {
+    } }()
+    try { if let v = self._ownerAccountID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._localDeviceToken {
+    } }()
+    try { if let v = self._localDeviceToken {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12493,15 +9990,19 @@ extension CMsgClientAuthorizeLocalDevice: SwiftProtobuf.Message, SwiftProtobuf._
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._ownerAccountID {
+    } }()
+    try { if let v = self._ownerAccountID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._authedDeviceToken {
+    } }()
+    try { if let v = self._authedDeviceToken {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12537,15 +10038,19 @@ extension CMsgClientAuthorizeLocalDeviceNotification: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._ownerAccountID {
+    } }()
+    try { if let v = self._ownerAccountID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._localDeviceToken {
+    } }()
+    try { if let v = self._localDeviceToken {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12579,12 +10084,16 @@ extension CMsgClientDeauthorizeDeviceRequest: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._deauthorizationAccountID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._deauthorizationAccountID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._deauthorizationDeviceToken {
+    } }()
+    try { if let v = self._deauthorizationDeviceToken {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12617,12 +10126,16 @@ extension CMsgClientDeauthorizeDevice: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._deauthorizationAccountID {
+    } }()
+    try { if let v = self._deauthorizationAccountID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12693,12 +10206,16 @@ extension CMsgClientUseLocalDeviceAuthorizations.DeviceToken: SwiftProtobuf.Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._ownerAccountID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._ownerAccountID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._tokenID {
+    } }()
+    try { if let v = self._tokenID {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12750,9 +10267,13 @@ extension CMsgClientGetAuthorizedDevicesResponse: SwiftProtobuf.Message, SwiftPr
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.authorizedDevice.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.authorizedDevice, fieldNumber: 2)
     }
@@ -12796,24 +10317,28 @@ extension CMsgClientGetAuthorizedDevicesResponse.AuthorizedDevice: SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._authDeviceToken {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._authDeviceToken {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._deviceName {
+    } }()
+    try { if let v = self._deviceName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._lastAccessTime {
+    } }()
+    try { if let v = self._lastAccessTime {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._borrowerID {
+    } }()
+    try { if let v = self._borrowerID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._isPending {
+    } }()
+    try { if let v = self._isPending {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    }
-    if let v = self._appPlayed {
+    } }()
+    try { if let v = self._appPlayed {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12850,12 +10375,16 @@ extension CMsgClientSharedLibraryLockStatus: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     if !self.lockedLibrary.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.lockedLibrary, fieldNumber: 1)
     }
-    if let v = self._ownLibraryLockedBy {
+    try { if let v = self._ownLibraryLockedBy {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12888,12 +10417,16 @@ extension CMsgClientSharedLibraryLockStatus.LockedLibrary: SwiftProtobuf.Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._ownerID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._ownerID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._lockedBy {
+    } }()
+    try { if let v = self._lockedBy {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12926,9 +10459,13 @@ extension CMsgClientSharedLibraryStopPlaying: SwiftProtobuf.Message, SwiftProtob
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._secondsLeft {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._secondsLeft {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     if !self.stopApps.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stopApps, fieldNumber: 2)
     }
@@ -12964,12 +10501,16 @@ extension CMsgClientSharedLibraryStopPlaying.StopApp: SwiftProtobuf.Message, Swi
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._ownerID {
+    } }()
+    try { if let v = self._ownerID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -12994,6 +10535,7 @@ extension CMsgClientServiceCall: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     8: .same(proto: "callparameter"),
     9: .standard(proto: "ping_only"),
     10: .standard(proto: "max_outstanding_calls"),
+    11: .standard(proto: "app_id"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -13012,42 +10554,50 @@ extension CMsgClientServiceCall: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
       case 8: try { try decoder.decodeSingularBytesField(value: &self._callparameter) }()
       case 9: try { try decoder.decodeSingularBoolField(value: &self._pingOnly) }()
       case 10: try { try decoder.decodeSingularUInt32Field(value: &self._maxOutstandingCalls) }()
+      case 11: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._sysidRouting {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sysidRouting {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
-    }
-    if let v = self._callHandle {
+    } }()
+    try { if let v = self._callHandle {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._moduleCrc {
+    } }()
+    try { if let v = self._moduleCrc {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._moduleHash {
+    } }()
+    try { if let v = self._moduleHash {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-    }
-    if let v = self._functionID {
+    } }()
+    try { if let v = self._functionID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._cubOutputMax {
+    } }()
+    try { if let v = self._cubOutputMax {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._flags {
+    } }()
+    try { if let v = self._flags {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._callparameter {
+    } }()
+    try { if let v = self._callparameter {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 8)
-    }
-    if let v = self._pingOnly {
+    } }()
+    try { if let v = self._pingOnly {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
-    }
-    if let v = self._maxOutstandingCalls {
+    } }()
+    try { if let v = self._maxOutstandingCalls {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 10)
-    }
+    } }()
+    try { if let v = self._appID {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 11)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13062,6 +10612,7 @@ extension CMsgClientServiceCall: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     if lhs._callparameter != rhs._callparameter {return false}
     if lhs._pingOnly != rhs._pingOnly {return false}
     if lhs._maxOutstandingCalls != rhs._maxOutstandingCalls {return false}
+    if lhs._appID != rhs._appID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -13090,15 +10641,19 @@ extension CMsgClientServiceModule: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._moduleCrc {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._moduleCrc {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._moduleHash {
+    } }()
+    try { if let v = self._moduleHash {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
-    if let v = self._moduleContent {
+    } }()
+    try { if let v = self._moduleContent {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13233,69 +10788,73 @@ extension CMsgClientServiceCallResponse: SwiftProtobuf.Message, SwiftProtobuf._M
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._sysidRouting {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._sysidRouting {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._callHandle {
+      } }()
+      try { if let v = _storage._callHandle {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._moduleCrc {
+      } }()
+      try { if let v = _storage._moduleCrc {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._moduleHash {
+      } }()
+      try { if let v = _storage._moduleHash {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._ecallresult {
+      } }()
+      try { if let v = _storage._ecallresult {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._resultContent {
+      } }()
+      try { if let v = _storage._resultContent {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._osVersionInfo {
+      } }()
+      try { if let v = _storage._osVersionInfo {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._systemInfo {
+      } }()
+      try { if let v = _storage._systemInfo {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._loadAddress {
+      } }()
+      try { if let v = _storage._loadAddress {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._exceptionRecord {
+      } }()
+      try { if let v = _storage._exceptionRecord {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._portableOsVersionInfo {
+      } }()
+      try { if let v = _storage._portableOsVersionInfo {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._portableSystemInfo {
+      } }()
+      try { if let v = _storage._portableSystemInfo {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._wasConverted {
+      } }()
+      try { if let v = _storage._wasConverted {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._internalResult {
+      } }()
+      try { if let v = _storage._internalResult {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._currentCount {
+      } }()
+      try { if let v = _storage._currentCount {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._lastCallHandle {
+      } }()
+      try { if let v = _storage._lastCallHandle {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._lastCallModuleCrc {
+      } }()
+      try { if let v = _storage._lastCallModuleCrc {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 17)
-      }
-      if let v = _storage._lastCallSysidRouting {
+      } }()
+      try { if let v = _storage._lastCallSysidRouting {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 18)
-      }
-      if let v = _storage._lastEcallresult {
+      } }()
+      try { if let v = _storage._lastEcallresult {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 19)
-      }
-      if let v = _storage._lastCallissueDelta {
+      } }()
+      try { if let v = _storage._lastCallissueDelta {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._lastCallcompleteDelta {
+      } }()
+      try { if let v = _storage._lastCallcompleteDelta {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 21)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -13375,12 +10934,16 @@ extension CMsgAMUnlockStreamingResponse: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._encryptionKey {
+    } }()
+    try { if let v = self._encryptionKey {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13430,9 +10993,13 @@ extension CMsgAMUnlockHEVCResponse: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13464,12 +11031,16 @@ extension CMsgClientPlayingSessionState: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._playingBlocked {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._playingBlocked {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
-    if let v = self._playingApp {
+    } }()
+    try { if let v = self._playingApp {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13500,9 +11071,13 @@ extension CMsgClientKickPlayingSession: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._onlyStopGame {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._onlyStopGame {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13538,18 +11113,22 @@ extension CMsgClientVoiceCallPreAuthorize: SwiftProtobuf.Message, SwiftProtobuf.
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._callerSteamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._callerSteamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._receiverSteamid {
+    } }()
+    try { if let v = self._receiverSteamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._callerID {
+    } }()
+    try { if let v = self._callerID {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._hangup {
+    } }()
+    try { if let v = self._hangup {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13588,18 +11167,22 @@ extension CMsgClientVoiceCallPreAuthorizeResponse: SwiftProtobuf.Message, SwiftP
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._callerSteamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._callerSteamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._receiverSteamid {
+    } }()
+    try { if let v = self._receiverSteamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._eresult {
+    } }()
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._callerID {
+    } }()
+    try { if let v = self._callerID {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 4)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -13634,12 +11217,16 @@ extension CMsgBadgeCraftedNotification: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._badgeLevel {
+    } }()
+    try { if let v = self._badgeLevel {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

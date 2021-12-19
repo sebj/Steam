@@ -25,9 +25,20 @@ struct CMsgClientHeartBeat {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  var sendReply: Bool {
+    get {return _sendReply ?? false}
+    set {_sendReply = newValue}
+  }
+  /// Returns true if `sendReply` has been explicitly set.
+  var hasSendReply: Bool {return self._sendReply != nil}
+  /// Clears the value of `sendReply`. Subsequent reads from it will return its default value.
+  mutating func clearSendReply() {self._sendReply = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
+
+  fileprivate var _sendReply: Bool? = nil
 }
 
 struct CMsgClientServerTimestampRequest {
@@ -1191,18 +1202,35 @@ struct CMsgClientChallengeResponse {
 
 extension CMsgClientHeartBeat: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CMsgClientHeartBeat"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "send_reply"),
+  ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let _ = try decoder.nextFieldNumber() {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBoolField(value: &self._sendReply) }()
+      default: break
+      }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sendReply {
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: CMsgClientHeartBeat, rhs: CMsgClientHeartBeat) -> Bool {
+    if lhs._sendReply != rhs._sendReply {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1227,9 +1255,13 @@ extension CMsgClientServerTimestampRequest: SwiftProtobuf.Message, SwiftProtobuf
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._clientRequestTimestamp {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._clientRequestTimestamp {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1261,12 +1293,16 @@ extension CMsgClientServerTimestampResponse: SwiftProtobuf.Message, SwiftProtobu
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._clientRequestTimestamp {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._clientRequestTimestamp {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._serverTimestampMs {
+    } }()
+    try { if let v = self._serverTimestampMs {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1305,21 +1341,25 @@ extension CMsgClientSecret: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._version {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._version {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._appid {
+    } }()
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._deviceid {
+    } }()
+    try { if let v = self._deviceid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._nonce {
+    } }()
+    try { if let v = self._nonce {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._hmac {
+    } }()
+    try { if let v = self._hmac {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 5)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1584,165 +1624,169 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._protocolVersion {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._protocolVersion {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._deprecatedObfustucatedPrivateIp {
+      } }()
+      try { if let v = _storage._deprecatedObfustucatedPrivateIp {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._cellID {
+      } }()
+      try { if let v = _storage._cellID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._lastSessionID {
+      } }()
+      try { if let v = _storage._lastSessionID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._clientPackageVersion {
+      } }()
+      try { if let v = _storage._clientPackageVersion {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._clientLanguage {
+      } }()
+      try { if let v = _storage._clientLanguage {
         try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._clientOsType {
+      } }()
+      try { if let v = _storage._clientOsType {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._shouldRememberPassword {
+      } }()
+      try { if let v = _storage._shouldRememberPassword {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._wineVersion {
+      } }()
+      try { if let v = _storage._wineVersion {
         try visitor.visitSingularStringField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._deprecated10 {
+      } }()
+      try { if let v = _storage._deprecated10 {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._obfuscatedPrivateIp {
+      } }()
+      try { if let v = _storage._obfuscatedPrivateIp {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._deprecatedPublicIp {
+      } }()
+      try { if let v = _storage._deprecatedPublicIp {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._qosLevel {
+      } }()
+      try { if let v = _storage._qosLevel {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._clientSuppliedSteamID {
+      } }()
+      try { if let v = _storage._clientSuppliedSteamID {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 22)
-      }
-      if let v = _storage._publicIp {
+      } }()
+      try { if let v = _storage._publicIp {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
-      }
-      if let v = _storage._machineID {
+      } }()
+      try { if let v = _storage._machineID {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 30)
-      }
-      if let v = _storage._launcherType {
+      } }()
+      try { if let v = _storage._launcherType {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 31)
-      }
-      if let v = _storage._uiMode {
+      } }()
+      try { if let v = _storage._uiMode {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 32)
-      }
-      if let v = _storage._chatMode {
+      } }()
+      try { if let v = _storage._chatMode {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 33)
-      }
-      if let v = _storage._steam2AuthTicket {
+      } }()
+      try { if let v = _storage._steam2AuthTicket {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 41)
-      }
-      if let v = _storage._emailAddress {
+      } }()
+      try { if let v = _storage._emailAddress {
         try visitor.visitSingularStringField(value: v, fieldNumber: 42)
-      }
-      if let v = _storage._rtime32AccountCreation {
+      } }()
+      try { if let v = _storage._rtime32AccountCreation {
         try visitor.visitSingularFixed32Field(value: v, fieldNumber: 43)
-      }
-      if let v = _storage._accountName {
+      } }()
+      try { if let v = _storage._accountName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 50)
-      }
-      if let v = _storage._password {
+      } }()
+      try { if let v = _storage._password {
         try visitor.visitSingularStringField(value: v, fieldNumber: 51)
-      }
-      if let v = _storage._gameServerToken {
+      } }()
+      try { if let v = _storage._gameServerToken {
         try visitor.visitSingularStringField(value: v, fieldNumber: 52)
-      }
-      if let v = _storage._loginKey {
+      } }()
+      try { if let v = _storage._loginKey {
         try visitor.visitSingularStringField(value: v, fieldNumber: 60)
-      }
-      if let v = _storage._wasConvertedDeprecatedMsg {
+      } }()
+      try { if let v = _storage._wasConvertedDeprecatedMsg {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 70)
-      }
-      if let v = _storage._anonUserTargetAccountName {
+      } }()
+      try { if let v = _storage._anonUserTargetAccountName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 80)
-      }
-      if let v = _storage._resolvedUserSteamID {
+      } }()
+      try { if let v = _storage._resolvedUserSteamID {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 81)
-      }
-      if let v = _storage._eresultSentryfile {
+      } }()
+      try { if let v = _storage._eresultSentryfile {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 82)
-      }
-      if let v = _storage._shaSentryfile {
+      } }()
+      try { if let v = _storage._shaSentryfile {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 83)
-      }
-      if let v = _storage._authCode {
+      } }()
+      try { if let v = _storage._authCode {
         try visitor.visitSingularStringField(value: v, fieldNumber: 84)
-      }
-      if let v = _storage._otpType {
+      } }()
+      try { if let v = _storage._otpType {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 85)
-      }
-      if let v = _storage._otpValue {
+      } }()
+      try { if let v = _storage._otpValue {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 86)
-      }
-      if let v = _storage._otpIdentifier {
+      } }()
+      try { if let v = _storage._otpIdentifier {
         try visitor.visitSingularStringField(value: v, fieldNumber: 87)
-      }
-      if let v = _storage._steam2TicketRequest {
+      } }()
+      try { if let v = _storage._steam2TicketRequest {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 88)
-      }
-      if let v = _storage._sonyPsnTicket {
+      } }()
+      try { if let v = _storage._sonyPsnTicket {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 90)
-      }
-      if let v = _storage._sonyPsnServiceID {
+      } }()
+      try { if let v = _storage._sonyPsnServiceID {
         try visitor.visitSingularStringField(value: v, fieldNumber: 91)
-      }
-      if let v = _storage._createNewPsnLinkedAccountIfNeeded {
+      } }()
+      try { if let v = _storage._createNewPsnLinkedAccountIfNeeded {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 92)
-      }
-      if let v = _storage._sonyPsnName {
+      } }()
+      try { if let v = _storage._sonyPsnName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 93)
-      }
-      if let v = _storage._gameServerAppID {
+      } }()
+      try { if let v = _storage._gameServerAppID {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 94)
-      }
-      if let v = _storage._steamguardDontRememberComputer {
+      } }()
+      try { if let v = _storage._steamguardDontRememberComputer {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 95)
-      }
-      if let v = _storage._machineName {
+      } }()
+      try { if let v = _storage._machineName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 96)
-      }
-      if let v = _storage._machineNameUserchosen {
+      } }()
+      try { if let v = _storage._machineNameUserchosen {
         try visitor.visitSingularStringField(value: v, fieldNumber: 97)
-      }
-      if let v = _storage._countryOverride {
+      } }()
+      try { if let v = _storage._countryOverride {
         try visitor.visitSingularStringField(value: v, fieldNumber: 98)
-      }
-      if let v = _storage._isSteamBox {
+      } }()
+      try { if let v = _storage._isSteamBox {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 99)
-      }
-      if let v = _storage._clientInstanceID {
+      } }()
+      try { if let v = _storage._clientInstanceID {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 100)
-      }
-      if let v = _storage._twoFactorCode {
+      } }()
+      try { if let v = _storage._twoFactorCode {
         try visitor.visitSingularStringField(value: v, fieldNumber: 101)
-      }
-      if let v = _storage._supportsRateLimitResponse {
+      } }()
+      try { if let v = _storage._supportsRateLimitResponse {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 102)
-      }
-      if let v = _storage._webLogonNonce {
+      } }()
+      try { if let v = _storage._webLogonNonce {
         try visitor.visitSingularStringField(value: v, fieldNumber: 103)
-      }
-      if let v = _storage._priorityReason {
+      } }()
+      try { if let v = _storage._priorityReason {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 104)
-      }
-      if let v = _storage._embeddedClientSecret {
+      } }()
+      try { if let v = _storage._embeddedClientSecret {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 105)
-      }
-      if let v = _storage._disablePartnerAutogrants {
+      } }()
+      try { if let v = _storage._disablePartnerAutogrants {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 106)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1952,81 +1996,85 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._eresult {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._eresult {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._outOfGameHeartbeatSeconds {
+      } }()
+      try { if let v = _storage._outOfGameHeartbeatSeconds {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._inGameHeartbeatSeconds {
+      } }()
+      try { if let v = _storage._inGameHeartbeatSeconds {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._deprecatedPublicIp {
+      } }()
+      try { if let v = _storage._deprecatedPublicIp {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._rtime32ServerTime {
+      } }()
+      try { if let v = _storage._rtime32ServerTime {
         try visitor.visitSingularFixed32Field(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._accountFlags {
+      } }()
+      try { if let v = _storage._accountFlags {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._cellID {
+      } }()
+      try { if let v = _storage._cellID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._emailDomain {
+      } }()
+      try { if let v = _storage._emailDomain {
         try visitor.visitSingularStringField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._steam2Ticket {
+      } }()
+      try { if let v = _storage._steam2Ticket {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._eresultExtended {
+      } }()
+      try { if let v = _storage._eresultExtended {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._webapiAuthenticateUserNonce {
+      } }()
+      try { if let v = _storage._webapiAuthenticateUserNonce {
         try visitor.visitSingularStringField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._cellIDPingThreshold {
+      } }()
+      try { if let v = _storage._cellIDPingThreshold {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._deprecatedUsePics {
+      } }()
+      try { if let v = _storage._deprecatedUsePics {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._vanityURL {
+      } }()
+      try { if let v = _storage._vanityURL {
         try visitor.visitSingularStringField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._publicIp {
+      } }()
+      try { if let v = _storage._publicIp {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._clientSuppliedSteamid {
+      } }()
+      try { if let v = _storage._clientSuppliedSteamid {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._ipCountryCode {
+      } }()
+      try { if let v = _storage._ipCountryCode {
         try visitor.visitSingularStringField(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._parentalSettings {
+      } }()
+      try { if let v = _storage._parentalSettings {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 22)
-      }
-      if let v = _storage._parentalSettingSignature {
+      } }()
+      try { if let v = _storage._parentalSettingSignature {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 23)
-      }
-      if let v = _storage._countLoginfailuresToMigrate {
+      } }()
+      try { if let v = _storage._countLoginfailuresToMigrate {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 24)
-      }
-      if let v = _storage._countDisconnectsToMigrate {
+      } }()
+      try { if let v = _storage._countDisconnectsToMigrate {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 25)
-      }
-      if let v = _storage._ogsDataReportTimeWindow {
+      } }()
+      try { if let v = _storage._ogsDataReportTimeWindow {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 26)
-      }
-      if let v = _storage._clientInstanceID {
+      } }()
+      try { if let v = _storage._clientInstanceID {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 27)
-      }
-      if let v = _storage._forceClientUpdateCheck {
+      } }()
+      try { if let v = _storage._forceClientUpdateCheck {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 28)
-      }
-      if let v = _storage._agreementSessionURL {
+      } }()
+      try { if let v = _storage._agreementSessionURL {
         try visitor.visitSingularStringField(value: v, fieldNumber: 29)
-      }
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2089,9 +2137,13 @@ extension CMsgClientRequestWebAPIAuthenticateUserNonce: SwiftProtobuf.Message, S
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._tokenType {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._tokenType {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2125,15 +2177,19 @@ extension CMsgClientRequestWebAPIAuthenticateUserNonceResponse: SwiftProtobuf.Me
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._tokenType {
+    } }()
+    try { if let v = self._tokenType {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._webapiAuthenticateUserNonce {
+    } }()
+    try { if let v = self._webapiAuthenticateUserNonce {
       try visitor.visitSingularStringField(value: v, fieldNumber: 11)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2184,9 +2240,13 @@ extension CMsgClientLoggedOff: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._eresult {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._eresult {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2218,12 +2278,16 @@ extension CMsgClientNewLoginKey: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._uniqueID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._uniqueID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._loginKey {
+    } }()
+    try { if let v = self._loginKey {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2254,9 +2318,13 @@ extension CMsgClientNewLoginKeyAccepted: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._uniqueID {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._uniqueID {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2308,42 +2376,46 @@ extension CMsgClientAccountInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._personaName {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._personaName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
-    }
-    if let v = self._ipCountry {
+    } }()
+    try { if let v = self._ipCountry {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._countAuthedComputers {
+    } }()
+    try { if let v = self._countAuthedComputers {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._accountFlags {
+    } }()
+    try { if let v = self._accountFlags {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._facebookID {
+    } }()
+    try { if let v = self._facebookID {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 8)
-    }
-    if let v = self._facebookName {
+    } }()
+    try { if let v = self._facebookName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 9)
-    }
-    if let v = self._steamguardNotifyNewmachines {
+    } }()
+    try { if let v = self._steamguardNotifyNewmachines {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
-    }
-    if let v = self._steamguardMachineNameUserChosen {
+    } }()
+    try { if let v = self._steamguardMachineNameUserChosen {
       try visitor.visitSingularStringField(value: v, fieldNumber: 15)
-    }
-    if let v = self._isPhoneVerified {
+    } }()
+    try { if let v = self._isPhoneVerified {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
-    }
-    if let v = self._twoFactorState {
+    } }()
+    try { if let v = self._twoFactorState {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 17)
-    }
-    if let v = self._isPhoneIdentifying {
+    } }()
+    try { if let v = self._isPhoneIdentifying {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 18)
-    }
-    if let v = self._isPhoneNeedingReverify {
+    } }()
+    try { if let v = self._isPhoneNeedingReverify {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 19)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2384,9 +2456,13 @@ extension CMsgClientChallengeRequest: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._steamid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2416,9 +2492,13 @@ extension CMsgClientChallengeResponse: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._challenge {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._challenge {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 

@@ -484,6 +484,15 @@ struct CMsgProtoBufHeader {
   /// Clears the value of `launcherType`. Subsequent reads from it will return its default value.
   mutating func clearLauncherType() {_uniqueStorage()._launcherType = nil}
 
+  var realm: UInt32 {
+    get {return _storage._realm ?? 0}
+    set {_uniqueStorage()._realm = newValue}
+  }
+  /// Returns true if `realm` has been explicitly set.
+  var hasRealm: Bool {return _storage._realm != nil}
+  /// Clears the value of `realm`. Subsequent reads from it will return its default value.
+  mutating func clearRealm() {_uniqueStorage()._realm = nil}
+
   var ipAddr: OneOf_IpAddr? {
     get {return _storage._ipAddr}
     set {_uniqueStorage()._ipAddr = newValue}
@@ -782,6 +791,15 @@ struct CCDDBAppDetailCommon {
   /// Clears the value of `hasAdultContent_p`. Subsequent reads from it will return its default value.
   mutating func clearHasAdultContent_p() {self._hasAdultContent_p = nil}
 
+  var isVisibleInSteamChina: Bool {
+    get {return _isVisibleInSteamChina ?? false}
+    set {_isVisibleInSteamChina = newValue}
+  }
+  /// Returns true if `isVisibleInSteamChina` has been explicitly set.
+  var hasIsVisibleInSteamChina: Bool {return self._isVisibleInSteamChina != nil}
+  /// Clears the value of `isVisibleInSteamChina`. Subsequent reads from it will return its default value.
+  mutating func clearIsVisibleInSteamChina() {self._isVisibleInSteamChina = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -798,6 +816,7 @@ struct CCDDBAppDetailCommon {
   fileprivate var _friendlyName: String? = nil
   fileprivate var _propagation: String? = nil
   fileprivate var _hasAdultContent_p: Bool? = nil
+  fileprivate var _isVisibleInSteamChina: Bool? = nil
 }
 
 struct CMsgAppRights {
@@ -806,159 +825,163 @@ struct CMsgAppRights {
   // methods supported on all messages.
 
   var editInfo: Bool {
-    get {return _editInfo ?? false}
-    set {_editInfo = newValue}
+    get {return _storage._editInfo ?? false}
+    set {_uniqueStorage()._editInfo = newValue}
   }
   /// Returns true if `editInfo` has been explicitly set.
-  var hasEditInfo: Bool {return self._editInfo != nil}
+  var hasEditInfo: Bool {return _storage._editInfo != nil}
   /// Clears the value of `editInfo`. Subsequent reads from it will return its default value.
-  mutating func clearEditInfo() {self._editInfo = nil}
+  mutating func clearEditInfo() {_uniqueStorage()._editInfo = nil}
 
   var publish: Bool {
-    get {return _publish ?? false}
-    set {_publish = newValue}
+    get {return _storage._publish ?? false}
+    set {_uniqueStorage()._publish = newValue}
   }
   /// Returns true if `publish` has been explicitly set.
-  var hasPublish: Bool {return self._publish != nil}
+  var hasPublish: Bool {return _storage._publish != nil}
   /// Clears the value of `publish`. Subsequent reads from it will return its default value.
-  mutating func clearPublish() {self._publish = nil}
+  mutating func clearPublish() {_uniqueStorage()._publish = nil}
 
   var viewErrorData: Bool {
-    get {return _viewErrorData ?? false}
-    set {_viewErrorData = newValue}
+    get {return _storage._viewErrorData ?? false}
+    set {_uniqueStorage()._viewErrorData = newValue}
   }
   /// Returns true if `viewErrorData` has been explicitly set.
-  var hasViewErrorData: Bool {return self._viewErrorData != nil}
+  var hasViewErrorData: Bool {return _storage._viewErrorData != nil}
   /// Clears the value of `viewErrorData`. Subsequent reads from it will return its default value.
-  mutating func clearViewErrorData() {self._viewErrorData = nil}
+  mutating func clearViewErrorData() {_uniqueStorage()._viewErrorData = nil}
 
   var download: Bool {
-    get {return _download ?? false}
-    set {_download = newValue}
+    get {return _storage._download ?? false}
+    set {_uniqueStorage()._download = newValue}
   }
   /// Returns true if `download` has been explicitly set.
-  var hasDownload: Bool {return self._download != nil}
+  var hasDownload: Bool {return _storage._download != nil}
   /// Clears the value of `download`. Subsequent reads from it will return its default value.
-  mutating func clearDownload() {self._download = nil}
+  mutating func clearDownload() {_uniqueStorage()._download = nil}
 
   var uploadCdkeys: Bool {
-    get {return _uploadCdkeys ?? false}
-    set {_uploadCdkeys = newValue}
+    get {return _storage._uploadCdkeys ?? false}
+    set {_uniqueStorage()._uploadCdkeys = newValue}
   }
   /// Returns true if `uploadCdkeys` has been explicitly set.
-  var hasUploadCdkeys: Bool {return self._uploadCdkeys != nil}
+  var hasUploadCdkeys: Bool {return _storage._uploadCdkeys != nil}
   /// Clears the value of `uploadCdkeys`. Subsequent reads from it will return its default value.
-  mutating func clearUploadCdkeys() {self._uploadCdkeys = nil}
+  mutating func clearUploadCdkeys() {_uniqueStorage()._uploadCdkeys = nil}
 
   var generateCdkeys: Bool {
-    get {return _generateCdkeys ?? false}
-    set {_generateCdkeys = newValue}
+    get {return _storage._generateCdkeys ?? false}
+    set {_uniqueStorage()._generateCdkeys = newValue}
   }
   /// Returns true if `generateCdkeys` has been explicitly set.
-  var hasGenerateCdkeys: Bool {return self._generateCdkeys != nil}
+  var hasGenerateCdkeys: Bool {return _storage._generateCdkeys != nil}
   /// Clears the value of `generateCdkeys`. Subsequent reads from it will return its default value.
-  mutating func clearGenerateCdkeys() {self._generateCdkeys = nil}
+  mutating func clearGenerateCdkeys() {_uniqueStorage()._generateCdkeys = nil}
 
   var viewFinancials: Bool {
-    get {return _viewFinancials ?? false}
-    set {_viewFinancials = newValue}
+    get {return _storage._viewFinancials ?? false}
+    set {_uniqueStorage()._viewFinancials = newValue}
   }
   /// Returns true if `viewFinancials` has been explicitly set.
-  var hasViewFinancials: Bool {return self._viewFinancials != nil}
+  var hasViewFinancials: Bool {return _storage._viewFinancials != nil}
   /// Clears the value of `viewFinancials`. Subsequent reads from it will return its default value.
-  mutating func clearViewFinancials() {self._viewFinancials = nil}
+  mutating func clearViewFinancials() {_uniqueStorage()._viewFinancials = nil}
 
   var manageCeg: Bool {
-    get {return _manageCeg ?? false}
-    set {_manageCeg = newValue}
+    get {return _storage._manageCeg ?? false}
+    set {_uniqueStorage()._manageCeg = newValue}
   }
   /// Returns true if `manageCeg` has been explicitly set.
-  var hasManageCeg: Bool {return self._manageCeg != nil}
+  var hasManageCeg: Bool {return _storage._manageCeg != nil}
   /// Clears the value of `manageCeg`. Subsequent reads from it will return its default value.
-  mutating func clearManageCeg() {self._manageCeg = nil}
+  mutating func clearManageCeg() {_uniqueStorage()._manageCeg = nil}
 
   var manageSigning: Bool {
-    get {return _manageSigning ?? false}
-    set {_manageSigning = newValue}
+    get {return _storage._manageSigning ?? false}
+    set {_uniqueStorage()._manageSigning = newValue}
   }
   /// Returns true if `manageSigning` has been explicitly set.
-  var hasManageSigning: Bool {return self._manageSigning != nil}
+  var hasManageSigning: Bool {return _storage._manageSigning != nil}
   /// Clears the value of `manageSigning`. Subsequent reads from it will return its default value.
-  mutating func clearManageSigning() {self._manageSigning = nil}
+  mutating func clearManageSigning() {_uniqueStorage()._manageSigning = nil}
 
   var manageCdkeys: Bool {
-    get {return _manageCdkeys ?? false}
-    set {_manageCdkeys = newValue}
+    get {return _storage._manageCdkeys ?? false}
+    set {_uniqueStorage()._manageCdkeys = newValue}
   }
   /// Returns true if `manageCdkeys` has been explicitly set.
-  var hasManageCdkeys: Bool {return self._manageCdkeys != nil}
+  var hasManageCdkeys: Bool {return _storage._manageCdkeys != nil}
   /// Clears the value of `manageCdkeys`. Subsequent reads from it will return its default value.
-  mutating func clearManageCdkeys() {self._manageCdkeys = nil}
+  mutating func clearManageCdkeys() {_uniqueStorage()._manageCdkeys = nil}
 
   var editMarketing: Bool {
-    get {return _editMarketing ?? false}
-    set {_editMarketing = newValue}
+    get {return _storage._editMarketing ?? false}
+    set {_uniqueStorage()._editMarketing = newValue}
   }
   /// Returns true if `editMarketing` has been explicitly set.
-  var hasEditMarketing: Bool {return self._editMarketing != nil}
+  var hasEditMarketing: Bool {return _storage._editMarketing != nil}
   /// Clears the value of `editMarketing`. Subsequent reads from it will return its default value.
-  mutating func clearEditMarketing() {self._editMarketing = nil}
+  mutating func clearEditMarketing() {_uniqueStorage()._editMarketing = nil}
 
   var economySupport: Bool {
-    get {return _economySupport ?? false}
-    set {_economySupport = newValue}
+    get {return _storage._economySupport ?? false}
+    set {_uniqueStorage()._economySupport = newValue}
   }
   /// Returns true if `economySupport` has been explicitly set.
-  var hasEconomySupport: Bool {return self._economySupport != nil}
+  var hasEconomySupport: Bool {return _storage._economySupport != nil}
   /// Clears the value of `economySupport`. Subsequent reads from it will return its default value.
-  mutating func clearEconomySupport() {self._economySupport = nil}
+  mutating func clearEconomySupport() {_uniqueStorage()._economySupport = nil}
 
   var economySupportSupervisor: Bool {
-    get {return _economySupportSupervisor ?? false}
-    set {_economySupportSupervisor = newValue}
+    get {return _storage._economySupportSupervisor ?? false}
+    set {_uniqueStorage()._economySupportSupervisor = newValue}
   }
   /// Returns true if `economySupportSupervisor` has been explicitly set.
-  var hasEconomySupportSupervisor: Bool {return self._economySupportSupervisor != nil}
+  var hasEconomySupportSupervisor: Bool {return _storage._economySupportSupervisor != nil}
   /// Clears the value of `economySupportSupervisor`. Subsequent reads from it will return its default value.
-  mutating func clearEconomySupportSupervisor() {self._economySupportSupervisor = nil}
+  mutating func clearEconomySupportSupervisor() {_uniqueStorage()._economySupportSupervisor = nil}
 
   var managePricing: Bool {
-    get {return _managePricing ?? false}
-    set {_managePricing = newValue}
+    get {return _storage._managePricing ?? false}
+    set {_uniqueStorage()._managePricing = newValue}
   }
   /// Returns true if `managePricing` has been explicitly set.
-  var hasManagePricing: Bool {return self._managePricing != nil}
+  var hasManagePricing: Bool {return _storage._managePricing != nil}
   /// Clears the value of `managePricing`. Subsequent reads from it will return its default value.
-  mutating func clearManagePricing() {self._managePricing = nil}
+  mutating func clearManagePricing() {_uniqueStorage()._managePricing = nil}
 
   var broadcastLive: Bool {
-    get {return _broadcastLive ?? false}
-    set {_broadcastLive = newValue}
+    get {return _storage._broadcastLive ?? false}
+    set {_uniqueStorage()._broadcastLive = newValue}
   }
   /// Returns true if `broadcastLive` has been explicitly set.
-  var hasBroadcastLive: Bool {return self._broadcastLive != nil}
+  var hasBroadcastLive: Bool {return _storage._broadcastLive != nil}
   /// Clears the value of `broadcastLive`. Subsequent reads from it will return its default value.
-  mutating func clearBroadcastLive() {self._broadcastLive = nil}
+  mutating func clearBroadcastLive() {_uniqueStorage()._broadcastLive = nil}
+
+  var viewMarketingTraffic: Bool {
+    get {return _storage._viewMarketingTraffic ?? false}
+    set {_uniqueStorage()._viewMarketingTraffic = newValue}
+  }
+  /// Returns true if `viewMarketingTraffic` has been explicitly set.
+  var hasViewMarketingTraffic: Bool {return _storage._viewMarketingTraffic != nil}
+  /// Clears the value of `viewMarketingTraffic`. Subsequent reads from it will return its default value.
+  mutating func clearViewMarketingTraffic() {_uniqueStorage()._viewMarketingTraffic = nil}
+
+  var editStoreDisplayContent: Bool {
+    get {return _storage._editStoreDisplayContent ?? false}
+    set {_uniqueStorage()._editStoreDisplayContent = newValue}
+  }
+  /// Returns true if `editStoreDisplayContent` has been explicitly set.
+  var hasEditStoreDisplayContent: Bool {return _storage._editStoreDisplayContent != nil}
+  /// Clears the value of `editStoreDisplayContent`. Subsequent reads from it will return its default value.
+  mutating func clearEditStoreDisplayContent() {_uniqueStorage()._editStoreDisplayContent = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
-  fileprivate var _editInfo: Bool? = nil
-  fileprivate var _publish: Bool? = nil
-  fileprivate var _viewErrorData: Bool? = nil
-  fileprivate var _download: Bool? = nil
-  fileprivate var _uploadCdkeys: Bool? = nil
-  fileprivate var _generateCdkeys: Bool? = nil
-  fileprivate var _viewFinancials: Bool? = nil
-  fileprivate var _manageCeg: Bool? = nil
-  fileprivate var _manageSigning: Bool? = nil
-  fileprivate var _manageCdkeys: Bool? = nil
-  fileprivate var _editMarketing: Bool? = nil
-  fileprivate var _economySupport: Bool? = nil
-  fileprivate var _economySupportSupervisor: Bool? = nil
-  fileprivate var _managePricing: Bool? = nil
-  fileprivate var _broadcastLive: Bool? = nil
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 struct CCuratorPreferences {
@@ -1396,6 +1419,24 @@ struct CCommunity_ClanAnnouncementInfo {
   /// Clears the value of `eventGid`. Subsequent reads from it will return its default value.
   mutating func clearEventGid() {self._eventGid = nil}
 
+  var voteupcount: Int32 {
+    get {return _voteupcount ?? 0}
+    set {_voteupcount = newValue}
+  }
+  /// Returns true if `voteupcount` has been explicitly set.
+  var hasVoteupcount: Bool {return self._voteupcount != nil}
+  /// Clears the value of `voteupcount`. Subsequent reads from it will return its default value.
+  mutating func clearVoteupcount() {self._voteupcount = nil}
+
+  var votedowncount: Int32 {
+    get {return _votedowncount ?? 0}
+    set {_votedowncount = newValue}
+  }
+  /// Returns true if `votedowncount` has been explicitly set.
+  var hasVotedowncount: Bool {return self._votedowncount != nil}
+  /// Clears the value of `votedowncount`. Subsequent reads from it will return its default value.
+  mutating func clearVotedowncount() {self._votedowncount = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1412,6 +1453,8 @@ struct CCommunity_ClanAnnouncementInfo {
   fileprivate var _hidden: Bool? = nil
   fileprivate var _forumTopicID: UInt64? = nil
   fileprivate var _eventGid: UInt64? = nil
+  fileprivate var _voteupcount: Int32? = nil
+  fileprivate var _votedowncount: Int32? = nil
 }
 
 struct CClanEventData {
@@ -1635,11 +1678,263 @@ struct CClanEventData {
   /// Clears the value of `rtime32LastModified`. Subsequent reads from it will return its default value.
   mutating func clearRtime32LastModified() {_uniqueStorage()._rtime32LastModified = nil}
 
+  var newsPostGid: UInt64 {
+    get {return _storage._newsPostGid ?? 0}
+    set {_uniqueStorage()._newsPostGid = newValue}
+  }
+  /// Returns true if `newsPostGid` has been explicitly set.
+  var hasNewsPostGid: Bool {return _storage._newsPostGid != nil}
+  /// Clears the value of `newsPostGid`. Subsequent reads from it will return its default value.
+  mutating func clearNewsPostGid() {_uniqueStorage()._newsPostGid = nil}
+
+  var rtimeModReviewed: UInt32 {
+    get {return _storage._rtimeModReviewed ?? 0}
+    set {_uniqueStorage()._rtimeModReviewed = newValue}
+  }
+  /// Returns true if `rtimeModReviewed` has been explicitly set.
+  var hasRtimeModReviewed: Bool {return _storage._rtimeModReviewed != nil}
+  /// Clears the value of `rtimeModReviewed`. Subsequent reads from it will return its default value.
+  mutating func clearRtimeModReviewed() {_uniqueStorage()._rtimeModReviewed = nil}
+
+  var featuredAppTagid: UInt32 {
+    get {return _storage._featuredAppTagid ?? 0}
+    set {_uniqueStorage()._featuredAppTagid = newValue}
+  }
+  /// Returns true if `featuredAppTagid` has been explicitly set.
+  var hasFeaturedAppTagid: Bool {return _storage._featuredAppTagid != nil}
+  /// Clears the value of `featuredAppTagid`. Subsequent reads from it will return its default value.
+  mutating func clearFeaturedAppTagid() {_uniqueStorage()._featuredAppTagid = nil}
+
+  var referencedAppids: [UInt32] {
+    get {return _storage._referencedAppids}
+    set {_uniqueStorage()._referencedAppids = newValue}
+  }
+
+  var buildID: UInt32 {
+    get {return _storage._buildID ?? 0}
+    set {_uniqueStorage()._buildID = newValue}
+  }
+  /// Returns true if `buildID` has been explicitly set.
+  var hasBuildID: Bool {return _storage._buildID != nil}
+  /// Clears the value of `buildID`. Subsequent reads from it will return its default value.
+  mutating func clearBuildID() {_uniqueStorage()._buildID = nil}
+
+  var buildBranch: String {
+    get {return _storage._buildBranch ?? String()}
+    set {_uniqueStorage()._buildBranch = newValue}
+  }
+  /// Returns true if `buildBranch` has been explicitly set.
+  var hasBuildBranch: Bool {return _storage._buildBranch != nil}
+  /// Clears the value of `buildBranch`. Subsequent reads from it will return its default value.
+  mutating func clearBuildBranch() {_uniqueStorage()._buildBranch = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+struct CBilling_Address {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var firstName: String {
+    get {return _firstName ?? String()}
+    set {_firstName = newValue}
+  }
+  /// Returns true if `firstName` has been explicitly set.
+  var hasFirstName: Bool {return self._firstName != nil}
+  /// Clears the value of `firstName`. Subsequent reads from it will return its default value.
+  mutating func clearFirstName() {self._firstName = nil}
+
+  var lastName: String {
+    get {return _lastName ?? String()}
+    set {_lastName = newValue}
+  }
+  /// Returns true if `lastName` has been explicitly set.
+  var hasLastName: Bool {return self._lastName != nil}
+  /// Clears the value of `lastName`. Subsequent reads from it will return its default value.
+  mutating func clearLastName() {self._lastName = nil}
+
+  var address1: String {
+    get {return _address1 ?? String()}
+    set {_address1 = newValue}
+  }
+  /// Returns true if `address1` has been explicitly set.
+  var hasAddress1: Bool {return self._address1 != nil}
+  /// Clears the value of `address1`. Subsequent reads from it will return its default value.
+  mutating func clearAddress1() {self._address1 = nil}
+
+  var address2: String {
+    get {return _address2 ?? String()}
+    set {_address2 = newValue}
+  }
+  /// Returns true if `address2` has been explicitly set.
+  var hasAddress2: Bool {return self._address2 != nil}
+  /// Clears the value of `address2`. Subsequent reads from it will return its default value.
+  mutating func clearAddress2() {self._address2 = nil}
+
+  var city: String {
+    get {return _city ?? String()}
+    set {_city = newValue}
+  }
+  /// Returns true if `city` has been explicitly set.
+  var hasCity: Bool {return self._city != nil}
+  /// Clears the value of `city`. Subsequent reads from it will return its default value.
+  mutating func clearCity() {self._city = nil}
+
+  var usState: String {
+    get {return _usState ?? String()}
+    set {_usState = newValue}
+  }
+  /// Returns true if `usState` has been explicitly set.
+  var hasUsState: Bool {return self._usState != nil}
+  /// Clears the value of `usState`. Subsequent reads from it will return its default value.
+  mutating func clearUsState() {self._usState = nil}
+
+  var countryCode: String {
+    get {return _countryCode ?? String()}
+    set {_countryCode = newValue}
+  }
+  /// Returns true if `countryCode` has been explicitly set.
+  var hasCountryCode: Bool {return self._countryCode != nil}
+  /// Clears the value of `countryCode`. Subsequent reads from it will return its default value.
+  mutating func clearCountryCode() {self._countryCode = nil}
+
+  var postcode: String {
+    get {return _postcode ?? String()}
+    set {_postcode = newValue}
+  }
+  /// Returns true if `postcode` has been explicitly set.
+  var hasPostcode: Bool {return self._postcode != nil}
+  /// Clears the value of `postcode`. Subsequent reads from it will return its default value.
+  mutating func clearPostcode() {self._postcode = nil}
+
+  var zipPlus4: Int32 {
+    get {return _zipPlus4 ?? 0}
+    set {_zipPlus4 = newValue}
+  }
+  /// Returns true if `zipPlus4` has been explicitly set.
+  var hasZipPlus4: Bool {return self._zipPlus4 != nil}
+  /// Clears the value of `zipPlus4`. Subsequent reads from it will return its default value.
+  mutating func clearZipPlus4() {self._zipPlus4 = nil}
+
+  var phone: String {
+    get {return _phone ?? String()}
+    set {_phone = newValue}
+  }
+  /// Returns true if `phone` has been explicitly set.
+  var hasPhone: Bool {return self._phone != nil}
+  /// Clears the value of `phone`. Subsequent reads from it will return its default value.
+  mutating func clearPhone() {self._phone = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _firstName: String? = nil
+  fileprivate var _lastName: String? = nil
+  fileprivate var _address1: String? = nil
+  fileprivate var _address2: String? = nil
+  fileprivate var _city: String? = nil
+  fileprivate var _usState: String? = nil
+  fileprivate var _countryCode: String? = nil
+  fileprivate var _postcode: String? = nil
+  fileprivate var _zipPlus4: Int32? = nil
+  fileprivate var _phone: String? = nil
+}
+
+struct CPackageReservationStatus {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var packageid: UInt32 {
+    get {return _packageid ?? 0}
+    set {_packageid = newValue}
+  }
+  /// Returns true if `packageid` has been explicitly set.
+  var hasPackageid: Bool {return self._packageid != nil}
+  /// Clears the value of `packageid`. Subsequent reads from it will return its default value.
+  mutating func clearPackageid() {self._packageid = nil}
+
+  var reservationState: Int32 {
+    get {return _reservationState ?? 0}
+    set {_reservationState = newValue}
+  }
+  /// Returns true if `reservationState` has been explicitly set.
+  var hasReservationState: Bool {return self._reservationState != nil}
+  /// Clears the value of `reservationState`. Subsequent reads from it will return its default value.
+  mutating func clearReservationState() {self._reservationState = nil}
+
+  var queuePosition: Int32 {
+    get {return _queuePosition ?? 0}
+    set {_queuePosition = newValue}
+  }
+  /// Returns true if `queuePosition` has been explicitly set.
+  var hasQueuePosition: Bool {return self._queuePosition != nil}
+  /// Clears the value of `queuePosition`. Subsequent reads from it will return its default value.
+  mutating func clearQueuePosition() {self._queuePosition = nil}
+
+  var totalQueueSize: Int32 {
+    get {return _totalQueueSize ?? 0}
+    set {_totalQueueSize = newValue}
+  }
+  /// Returns true if `totalQueueSize` has been explicitly set.
+  var hasTotalQueueSize: Bool {return self._totalQueueSize != nil}
+  /// Clears the value of `totalQueueSize`. Subsequent reads from it will return its default value.
+  mutating func clearTotalQueueSize() {self._totalQueueSize = nil}
+
+  var reservationCountryCode: String {
+    get {return _reservationCountryCode ?? String()}
+    set {_reservationCountryCode = newValue}
+  }
+  /// Returns true if `reservationCountryCode` has been explicitly set.
+  var hasReservationCountryCode: Bool {return self._reservationCountryCode != nil}
+  /// Clears the value of `reservationCountryCode`. Subsequent reads from it will return its default value.
+  mutating func clearReservationCountryCode() {self._reservationCountryCode = nil}
+
+  var expired: Bool {
+    get {return _expired ?? false}
+    set {_expired = newValue}
+  }
+  /// Returns true if `expired` has been explicitly set.
+  var hasExpired: Bool {return self._expired != nil}
+  /// Clears the value of `expired`. Subsequent reads from it will return its default value.
+  mutating func clearExpired() {self._expired = nil}
+
+  var timeExpires: UInt32 {
+    get {return _timeExpires ?? 0}
+    set {_timeExpires = newValue}
+  }
+  /// Returns true if `timeExpires` has been explicitly set.
+  var hasTimeExpires: Bool {return self._timeExpires != nil}
+  /// Clears the value of `timeExpires`. Subsequent reads from it will return its default value.
+  mutating func clearTimeExpires() {self._timeExpires = nil}
+
+  var timeReserved: UInt32 {
+    get {return _timeReserved ?? 0}
+    set {_timeReserved = newValue}
+  }
+  /// Returns true if `timeReserved` has been explicitly set.
+  var hasTimeReserved: Bool {return self._timeReserved != nil}
+  /// Clears the value of `timeReserved`. Subsequent reads from it will return its default value.
+  mutating func clearTimeReserved() {self._timeReserved = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _packageid: UInt32? = nil
+  fileprivate var _reservationState: Int32? = nil
+  fileprivate var _queuePosition: Int32? = nil
+  fileprivate var _totalQueueSize: Int32? = nil
+  fileprivate var _reservationCountryCode: String? = nil
+  fileprivate var _expired: Bool? = nil
+  fileprivate var _timeExpires: UInt32? = nil
+  fileprivate var _timeReserved: UInt32? = nil
 }
 
 // MARK: - Extension support defined in steammessages_base.proto.
@@ -1666,6 +1961,21 @@ extension SwiftProtobuf.Google_Protobuf_FieldOptions {
   /// Subsequent reads from it will return its default value.
   mutating func clearPhpOutputAlwaysNumber() {
     clearExtensionValue(ext: Extensions_php_output_always_number)
+  }
+
+  var allowFieldNamedSteamID: Bool {
+    get {return getExtensionValue(ext: Extensions_allow_field_named_steam_id) ?? false}
+    set {setExtensionValue(ext: Extensions_allow_field_named_steam_id, value: newValue)}
+  }
+  /// Returns true if extension `Extensions_allow_field_named_steam_id`
+  /// has been explicitly set.
+  var hasAllowFieldNamedSteamID: Bool {
+    return hasExtensionValue(ext: Extensions_allow_field_named_steam_id)
+  }
+  /// Clears the value of extension `Extensions_allow_field_named_steam_id`.
+  /// Subsequent reads from it will return its default value.
+  mutating func clearAllowFieldNamedSteamID() {
+    clearExtensionValue(ext: Extensions_allow_field_named_steam_id)
   }
 }
 
@@ -1731,7 +2041,8 @@ let SteammessagesBase_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   Extensions_msgpool_soft_limit,
   Extensions_msgpool_hard_limit,
   Extensions_force_php_generation,
-  Extensions_php_output_always_number
+  Extensions_php_output_always_number,
+  Extensions_allow_field_named_steam_id
 ]
 
 // Extension Objects - The only reason these might be needed is when manually
@@ -1756,6 +2067,11 @@ let Extensions_force_php_generation = SwiftProtobuf.MessageExtension<SwiftProtob
 let Extensions_php_output_always_number = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 50020,
   fieldName: "php_output_always_number"
+)
+
+let Extensions_allow_field_named_steam_id = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+  _protobuf_fieldNumber: 50024,
+  fieldName: "allow_field_named_steam_id"
 )
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1823,16 +2139,20 @@ extension CMsgIPAddress: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try {
-        if self.ip != nil {try decoder.handleConflictingOneOf()}
         var v: UInt32?
         try decoder.decodeSingularFixed32Field(value: &v)
-        if let v = v {self.ip = .v4(v)}
+        if let v = v {
+          if self.ip != nil {try decoder.handleConflictingOneOf()}
+          self.ip = .v4(v)
+        }
       }()
       case 2: try {
-        if self.ip != nil {try decoder.handleConflictingOneOf()}
         var v: Data?
         try decoder.decodeSingularBytesField(value: &v)
-        if let v = v {self.ip = .v6(v)}
+        if let v = v {
+          if self.ip != nil {try decoder.handleConflictingOneOf()}
+          self.ip = .v6(v)
+        }
       }()
       default: break
       }
@@ -1841,8 +2161,9 @@ extension CMsgIPAddress: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
-    // allocates stack space for every case branch when no optimizations are
-    // enabled. https://github.com/apple/swift-protobuf/issues/1034
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
     switch self.ip {
     case .v4?: try {
       guard case .v4(let v)? = self.ip else { preconditionFailure() }
@@ -1885,12 +2206,16 @@ extension CMsgIPAddressBucket: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._originalIpAddress {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._originalIpAddress {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-    }
-    if let v = self._bucket {
+    } }()
+    try { if let v = self._bucket {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1928,6 +2253,7 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     28: .standard(proto: "cm_sysid"),
     30: .standard(proto: "wg_token"),
     31: .standard(proto: "launcher_type"),
+    32: .same(proto: "realm"),
     15: .same(proto: "ip"),
     29: .standard(proto: "ip_v6"),
   ]
@@ -1956,6 +2282,7 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _cmSysid: UInt32? = nil
     var _wgToken: String? = nil
     var _launcherType: UInt32? = nil
+    var _realm: UInt32? = nil
     var _ipAddr: CMsgProtoBufHeader.OneOf_IpAddr?
 
     static let defaultInstance = _StorageClass()
@@ -1986,6 +2313,7 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _cmSysid = source._cmSysid
       _wgToken = source._wgToken
       _launcherType = source._launcherType
+      _realm = source._realm
       _ipAddr = source._ipAddr
     }
   }
@@ -2014,10 +2342,12 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 13: try { try decoder.decodeSingularInt32Field(value: &_storage._eresult) }()
         case 14: try { try decoder.decodeSingularStringField(value: &_storage._errorMessage) }()
         case 15: try {
-          if _storage._ipAddr != nil {try decoder.handleConflictingOneOf()}
           var v: UInt32?
           try decoder.decodeSingularUInt32Field(value: &v)
-          if let v = v {_storage._ipAddr = .ip(v)}
+          if let v = v {
+            if _storage._ipAddr != nil {try decoder.handleConflictingOneOf()}
+            _storage._ipAddr = .ip(v)
+          }
         }()
         case 16: try { try decoder.decodeSingularUInt32Field(value: &_storage._authAccountFlags) }()
         case 17: try { try decoder.decodeSingularInt32Field(value: &_storage._transportError) }()
@@ -2033,13 +2363,16 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         case 27: try { try decoder.decodeRepeatedUInt32Field(value: &_storage._forwardToSysid) }()
         case 28: try { try decoder.decodeSingularUInt32Field(value: &_storage._cmSysid) }()
         case 29: try {
-          if _storage._ipAddr != nil {try decoder.handleConflictingOneOf()}
           var v: Data?
           try decoder.decodeSingularBytesField(value: &v)
-          if let v = v {_storage._ipAddr = .ipV6(v)}
+          if let v = v {
+            if _storage._ipAddr != nil {try decoder.handleConflictingOneOf()}
+            _storage._ipAddr = .ipV6(v)
+          }
         }()
         case 30: try { try decoder.decodeSingularStringField(value: &_storage._wgToken) }()
         case 31: try { try decoder.decodeSingularUInt32Field(value: &_storage._launcherType) }()
+        case 32: try { try decoder.decodeSingularUInt32Field(value: &_storage._realm) }()
         default: break
         }
       }
@@ -2048,81 +2381,88 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._steamid {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._steamid {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._clientSessionid {
+      } }()
+      try { if let v = _storage._clientSessionid {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._routingAppid {
+      } }()
+      try { if let v = _storage._routingAppid {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._jobidSource {
+      } }()
+      try { if let v = _storage._jobidSource {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._jobidTarget {
+      } }()
+      try { if let v = _storage._jobidTarget {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._targetJobName {
+      } }()
+      try { if let v = _storage._targetJobName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._eresult {
+      } }()
+      try { if let v = _storage._eresult {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._errorMessage {
+      } }()
+      try { if let v = _storage._errorMessage {
         try visitor.visitSingularStringField(value: v, fieldNumber: 14)
-      }
-      if case .ip(let v)? = _storage._ipAddr {
+      } }()
+      try { if case .ip(let v)? = _storage._ipAddr {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._authAccountFlags {
+      } }()
+      try { if let v = _storage._authAccountFlags {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._transportError {
+      } }()
+      try { if let v = _storage._transportError {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 17)
-      }
-      if let v = _storage._messageid {
+      } }()
+      try { if let v = _storage._messageid {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 18)
-      }
-      if let v = _storage._publisherGroupID {
+      } }()
+      try { if let v = _storage._publisherGroupID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 19)
-      }
-      if let v = _storage._sysid {
+      } }()
+      try { if let v = _storage._sysid {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._traceTag {
+      } }()
+      try { if let v = _storage._traceTag {
         try visitor.visitSingularUInt64Field(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._tokenSource {
+      } }()
+      try { if let v = _storage._tokenSource {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 22)
-      }
-      if let v = _storage._adminSpoofingUser {
+      } }()
+      try { if let v = _storage._adminSpoofingUser {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 23)
-      }
-      if let v = _storage._seqNum {
+      } }()
+      try { if let v = _storage._seqNum {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 24)
-      }
-      if let v = _storage._webapiKeyID {
+      } }()
+      try { if let v = _storage._webapiKeyID {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 25)
-      }
-      if let v = _storage._isFromExternalSource {
+      } }()
+      try { if let v = _storage._isFromExternalSource {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 26)
-      }
+      } }()
       if !_storage._forwardToSysid.isEmpty {
         try visitor.visitRepeatedUInt32Field(value: _storage._forwardToSysid, fieldNumber: 27)
       }
-      if let v = _storage._cmSysid {
+      try { if let v = _storage._cmSysid {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 28)
-      }
-      if case .ipV6(let v)? = _storage._ipAddr {
+      } }()
+      try { if case .ipV6(let v)? = _storage._ipAddr {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 29)
-      }
-      if let v = _storage._wgToken {
+      } }()
+      try { if let v = _storage._wgToken {
         try visitor.visitSingularStringField(value: v, fieldNumber: 30)
-      }
-      if let v = _storage._launcherType {
+      } }()
+      try { if let v = _storage._launcherType {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 31)
-      }
+      } }()
+      try { if let v = _storage._realm {
+        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 32)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2155,6 +2495,7 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._cmSysid != rhs_storage._cmSysid {return false}
         if _storage._wgToken != rhs_storage._wgToken {return false}
         if _storage._launcherType != rhs_storage._launcherType {return false}
+        if _storage._realm != rhs_storage._realm {return false}
         if _storage._ipAddr != rhs_storage._ipAddr {return false}
         return true
       }
@@ -2186,12 +2527,16 @@ extension CMsgMulti: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementation
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._sizeUnzipped {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._sizeUnzipped {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._messageBody {
+    } }()
+    try { if let v = self._messageBody {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2222,9 +2567,13 @@ extension CMsgProtobufWrapped: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._messageBody {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._messageBody {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 1)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2266,27 +2615,31 @@ extension CMsgAuthTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._estate {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._estate {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._eresult {
+    } }()
+    try { if let v = self._eresult {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._steamid {
+    } }()
+    try { if let v = self._steamid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._gameid {
+    } }()
+    try { if let v = self._gameid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._hSteamPipe {
+    } }()
+    try { if let v = self._hSteamPipe {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._ticketCrc {
+    } }()
+    try { if let v = self._ticketCrc {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._ticket {
+    } }()
+    try { if let v = self._ticket {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 7)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2318,6 +2671,7 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     10: .standard(proto: "friendly_name"),
     11: .same(proto: "propagation"),
     12: .standard(proto: "has_adult_content"),
+    13: .standard(proto: "is_visible_in_steam_china"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2338,48 +2692,56 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 10: try { try decoder.decodeSingularStringField(value: &self._friendlyName) }()
       case 11: try { try decoder.decodeSingularStringField(value: &self._propagation) }()
       case 12: try { try decoder.decodeSingularBoolField(value: &self._hasAdultContent_p) }()
+      case 13: try { try decoder.decodeSingularBoolField(value: &self._isVisibleInSteamChina) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._appid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._name {
+    } }()
+    try { if let v = self._name {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
-    if let v = self._icon {
+    } }()
+    try { if let v = self._icon {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    }
-    if let v = self._logo {
+    } }()
+    try { if let v = self._logo {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    }
-    if let v = self._logoSmall {
+    } }()
+    try { if let v = self._logoSmall {
       try visitor.visitSingularStringField(value: v, fieldNumber: 5)
-    }
-    if let v = self._tool {
+    } }()
+    try { if let v = self._tool {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
-    }
-    if let v = self._demo {
+    } }()
+    try { if let v = self._demo {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
-    }
-    if let v = self._media {
+    } }()
+    try { if let v = self._media {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
-    }
-    if let v = self._communityVisibleStats {
+    } }()
+    try { if let v = self._communityVisibleStats {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
-    }
-    if let v = self._friendlyName {
+    } }()
+    try { if let v = self._friendlyName {
       try visitor.visitSingularStringField(value: v, fieldNumber: 10)
-    }
-    if let v = self._propagation {
+    } }()
+    try { if let v = self._propagation {
       try visitor.visitSingularStringField(value: v, fieldNumber: 11)
-    }
-    if let v = self._hasAdultContent_p {
+    } }()
+    try { if let v = self._hasAdultContent_p {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 12)
-    }
+    } }()
+    try { if let v = self._isVisibleInSteamChina {
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2396,6 +2758,7 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs._friendlyName != rhs._friendlyName {return false}
     if lhs._propagation != rhs._propagation {return false}
     if lhs._hasAdultContent_p != rhs._hasAdultContent_p {return false}
+    if lhs._isVisibleInSteamChina != rhs._isVisibleInSteamChina {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2419,99 +2782,179 @@ extension CMsgAppRights: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
     13: .standard(proto: "economy_support_supervisor"),
     14: .standard(proto: "manage_pricing"),
     15: .standard(proto: "broadcast_live"),
+    16: .standard(proto: "view_marketing_traffic"),
+    17: .standard(proto: "edit_store_display_content"),
   ]
 
+  fileprivate class _StorageClass {
+    var _editInfo: Bool? = nil
+    var _publish: Bool? = nil
+    var _viewErrorData: Bool? = nil
+    var _download: Bool? = nil
+    var _uploadCdkeys: Bool? = nil
+    var _generateCdkeys: Bool? = nil
+    var _viewFinancials: Bool? = nil
+    var _manageCeg: Bool? = nil
+    var _manageSigning: Bool? = nil
+    var _manageCdkeys: Bool? = nil
+    var _editMarketing: Bool? = nil
+    var _economySupport: Bool? = nil
+    var _economySupportSupervisor: Bool? = nil
+    var _managePricing: Bool? = nil
+    var _broadcastLive: Bool? = nil
+    var _viewMarketingTraffic: Bool? = nil
+    var _editStoreDisplayContent: Bool? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _editInfo = source._editInfo
+      _publish = source._publish
+      _viewErrorData = source._viewErrorData
+      _download = source._download
+      _uploadCdkeys = source._uploadCdkeys
+      _generateCdkeys = source._generateCdkeys
+      _viewFinancials = source._viewFinancials
+      _manageCeg = source._manageCeg
+      _manageSigning = source._manageSigning
+      _manageCdkeys = source._manageCdkeys
+      _editMarketing = source._editMarketing
+      _economySupport = source._economySupport
+      _economySupportSupervisor = source._economySupportSupervisor
+      _managePricing = source._managePricing
+      _broadcastLive = source._broadcastLive
+      _viewMarketingTraffic = source._viewMarketingTraffic
+      _editStoreDisplayContent = source._editStoreDisplayContent
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      // The use of inline closures is to circumvent an issue where the compiler
-      // allocates stack space for every case branch when no optimizations are
-      // enabled. https://github.com/apple/swift-protobuf/issues/1034
-      switch fieldNumber {
-      case 1: try { try decoder.decodeSingularBoolField(value: &self._editInfo) }()
-      case 2: try { try decoder.decodeSingularBoolField(value: &self._publish) }()
-      case 3: try { try decoder.decodeSingularBoolField(value: &self._viewErrorData) }()
-      case 4: try { try decoder.decodeSingularBoolField(value: &self._download) }()
-      case 5: try { try decoder.decodeSingularBoolField(value: &self._uploadCdkeys) }()
-      case 6: try { try decoder.decodeSingularBoolField(value: &self._generateCdkeys) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self._viewFinancials) }()
-      case 8: try { try decoder.decodeSingularBoolField(value: &self._manageCeg) }()
-      case 9: try { try decoder.decodeSingularBoolField(value: &self._manageSigning) }()
-      case 10: try { try decoder.decodeSingularBoolField(value: &self._manageCdkeys) }()
-      case 11: try { try decoder.decodeSingularBoolField(value: &self._editMarketing) }()
-      case 12: try { try decoder.decodeSingularBoolField(value: &self._economySupport) }()
-      case 13: try { try decoder.decodeSingularBoolField(value: &self._economySupportSupervisor) }()
-      case 14: try { try decoder.decodeSingularBoolField(value: &self._managePricing) }()
-      case 15: try { try decoder.decodeSingularBoolField(value: &self._broadcastLive) }()
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularBoolField(value: &_storage._editInfo) }()
+        case 2: try { try decoder.decodeSingularBoolField(value: &_storage._publish) }()
+        case 3: try { try decoder.decodeSingularBoolField(value: &_storage._viewErrorData) }()
+        case 4: try { try decoder.decodeSingularBoolField(value: &_storage._download) }()
+        case 5: try { try decoder.decodeSingularBoolField(value: &_storage._uploadCdkeys) }()
+        case 6: try { try decoder.decodeSingularBoolField(value: &_storage._generateCdkeys) }()
+        case 7: try { try decoder.decodeSingularBoolField(value: &_storage._viewFinancials) }()
+        case 8: try { try decoder.decodeSingularBoolField(value: &_storage._manageCeg) }()
+        case 9: try { try decoder.decodeSingularBoolField(value: &_storage._manageSigning) }()
+        case 10: try { try decoder.decodeSingularBoolField(value: &_storage._manageCdkeys) }()
+        case 11: try { try decoder.decodeSingularBoolField(value: &_storage._editMarketing) }()
+        case 12: try { try decoder.decodeSingularBoolField(value: &_storage._economySupport) }()
+        case 13: try { try decoder.decodeSingularBoolField(value: &_storage._economySupportSupervisor) }()
+        case 14: try { try decoder.decodeSingularBoolField(value: &_storage._managePricing) }()
+        case 15: try { try decoder.decodeSingularBoolField(value: &_storage._broadcastLive) }()
+        case 16: try { try decoder.decodeSingularBoolField(value: &_storage._viewMarketingTraffic) }()
+        case 17: try { try decoder.decodeSingularBoolField(value: &_storage._editStoreDisplayContent) }()
+        default: break
+        }
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._editInfo {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
-    }
-    if let v = self._publish {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
-    if let v = self._viewErrorData {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
-    }
-    if let v = self._download {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
-    }
-    if let v = self._uploadCdkeys {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    }
-    if let v = self._generateCdkeys {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
-    }
-    if let v = self._viewFinancials {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
-    }
-    if let v = self._manageCeg {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
-    }
-    if let v = self._manageSigning {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
-    }
-    if let v = self._manageCdkeys {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 10)
-    }
-    if let v = self._editMarketing {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 11)
-    }
-    if let v = self._economySupport {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 12)
-    }
-    if let v = self._economySupportSupervisor {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
-    }
-    if let v = self._managePricing {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
-    }
-    if let v = self._broadcastLive {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._editInfo {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 1)
+      } }()
+      try { if let v = _storage._publish {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
+      } }()
+      try { if let v = _storage._viewErrorData {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
+      } }()
+      try { if let v = _storage._download {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
+      } }()
+      try { if let v = _storage._uploadCdkeys {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
+      } }()
+      try { if let v = _storage._generateCdkeys {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
+      } }()
+      try { if let v = _storage._viewFinancials {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
+      } }()
+      try { if let v = _storage._manageCeg {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
+      } }()
+      try { if let v = _storage._manageSigning {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
+      } }()
+      try { if let v = _storage._manageCdkeys {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 10)
+      } }()
+      try { if let v = _storage._editMarketing {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 11)
+      } }()
+      try { if let v = _storage._economySupport {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 12)
+      } }()
+      try { if let v = _storage._economySupportSupervisor {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
+      } }()
+      try { if let v = _storage._managePricing {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
+      } }()
+      try { if let v = _storage._broadcastLive {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
+      } }()
+      try { if let v = _storage._viewMarketingTraffic {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
+      } }()
+      try { if let v = _storage._editStoreDisplayContent {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 17)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: CMsgAppRights, rhs: CMsgAppRights) -> Bool {
-    if lhs._editInfo != rhs._editInfo {return false}
-    if lhs._publish != rhs._publish {return false}
-    if lhs._viewErrorData != rhs._viewErrorData {return false}
-    if lhs._download != rhs._download {return false}
-    if lhs._uploadCdkeys != rhs._uploadCdkeys {return false}
-    if lhs._generateCdkeys != rhs._generateCdkeys {return false}
-    if lhs._viewFinancials != rhs._viewFinancials {return false}
-    if lhs._manageCeg != rhs._manageCeg {return false}
-    if lhs._manageSigning != rhs._manageSigning {return false}
-    if lhs._manageCdkeys != rhs._manageCdkeys {return false}
-    if lhs._editMarketing != rhs._editMarketing {return false}
-    if lhs._economySupport != rhs._economySupport {return false}
-    if lhs._economySupportSupervisor != rhs._economySupportSupervisor {return false}
-    if lhs._managePricing != rhs._managePricing {return false}
-    if lhs._broadcastLive != rhs._broadcastLive {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._editInfo != rhs_storage._editInfo {return false}
+        if _storage._publish != rhs_storage._publish {return false}
+        if _storage._viewErrorData != rhs_storage._viewErrorData {return false}
+        if _storage._download != rhs_storage._download {return false}
+        if _storage._uploadCdkeys != rhs_storage._uploadCdkeys {return false}
+        if _storage._generateCdkeys != rhs_storage._generateCdkeys {return false}
+        if _storage._viewFinancials != rhs_storage._viewFinancials {return false}
+        if _storage._manageCeg != rhs_storage._manageCeg {return false}
+        if _storage._manageSigning != rhs_storage._manageSigning {return false}
+        if _storage._manageCdkeys != rhs_storage._manageCdkeys {return false}
+        if _storage._editMarketing != rhs_storage._editMarketing {return false}
+        if _storage._economySupport != rhs_storage._economySupport {return false}
+        if _storage._economySupportSupervisor != rhs_storage._economySupportSupervisor {return false}
+        if _storage._managePricing != rhs_storage._managePricing {return false}
+        if _storage._broadcastLive != rhs_storage._broadcastLive {return false}
+        if _storage._viewMarketingTraffic != rhs_storage._viewMarketingTraffic {return false}
+        if _storage._editStoreDisplayContent != rhs_storage._editStoreDisplayContent {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2562,48 +3005,52 @@ extension CCuratorPreferences: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._supportedLanguages {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._supportedLanguages {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._platformWindows {
+    } }()
+    try { if let v = self._platformWindows {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
-    }
-    if let v = self._platformMac {
+    } }()
+    try { if let v = self._platformMac {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
-    }
-    if let v = self._platformLinux {
+    } }()
+    try { if let v = self._platformLinux {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
-    }
-    if let v = self._vrContent {
+    } }()
+    try { if let v = self._vrContent {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    }
-    if let v = self._adultContentViolence {
+    } }()
+    try { if let v = self._adultContentViolence {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
-    }
-    if let v = self._adultContentSex {
+    } }()
+    try { if let v = self._adultContentSex {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
-    }
-    if let v = self._timestampUpdated {
+    } }()
+    try { if let v = self._timestampUpdated {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
-    }
+    } }()
     if !self.tagidsCurated.isEmpty {
       try visitor.visitRepeatedUInt32Field(value: self.tagidsCurated, fieldNumber: 9)
     }
     if !self.tagidsFiltered.isEmpty {
       try visitor.visitRepeatedUInt32Field(value: self.tagidsFiltered, fieldNumber: 10)
     }
-    if let v = self._websiteTitle {
+    try { if let v = self._websiteTitle {
       try visitor.visitSingularStringField(value: v, fieldNumber: 11)
-    }
-    if let v = self._websiteURL {
+    } }()
+    try { if let v = self._websiteURL {
       try visitor.visitSingularStringField(value: v, fieldNumber: 12)
-    }
-    if let v = self._discussionURL {
+    } }()
+    try { if let v = self._discussionURL {
       try visitor.visitSingularStringField(value: v, fieldNumber: 13)
-    }
-    if let v = self._showBroadcast {
+    } }()
+    try { if let v = self._showBroadcast {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2648,12 +3095,16 @@ extension CLocalizationToken: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._language {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._language {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._localizedString {
+    } }()
+    try { if let v = self._localizedString {
       try visitor.visitSingularStringField(value: v, fieldNumber: 2)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2702,36 +3153,40 @@ extension CClanEventUserNewsTuple: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._clanid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._clanid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._eventGid {
+    } }()
+    try { if let v = self._eventGid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._announcementGid {
+    } }()
+    try { if let v = self._announcementGid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._rtimeStart {
+    } }()
+    try { if let v = self._rtimeStart {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 4)
-    }
-    if let v = self._rtimeEnd {
+    } }()
+    try { if let v = self._rtimeEnd {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._priorityScore {
+    } }()
+    try { if let v = self._priorityScore {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._type {
+    } }()
+    try { if let v = self._type {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
-    }
-    if let v = self._clampRangeSlot {
+    } }()
+    try { if let v = self._clampRangeSlot {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
-    }
-    if let v = self._appid {
+    } }()
+    try { if let v = self._appid {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 9)
-    }
-    if let v = self._rtime32LastModified {
+    } }()
+    try { if let v = self._rtime32LastModified {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 10)
-    }
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2776,15 +3231,19 @@ extension CClanMatchEventByRange: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._rtimeBefore {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._rtimeBefore {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._rtimeAfter {
+    } }()
+    try { if let v = self._rtimeAfter {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._qualified {
+    } }()
+    try { if let v = self._qualified {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
-    }
+    } }()
     if !self.events.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.events, fieldNumber: 4)
     }
@@ -2817,6 +3276,8 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
     11: .same(proto: "hidden"),
     12: .standard(proto: "forum_topic_id"),
     13: .standard(proto: "event_gid"),
+    14: .same(proto: "voteupcount"),
+    15: .same(proto: "votedowncount"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2838,51 +3299,63 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
       case 11: try { try decoder.decodeSingularBoolField(value: &self._hidden) }()
       case 12: try { try decoder.decodeSingularFixed64Field(value: &self._forumTopicID) }()
       case 13: try { try decoder.decodeSingularFixed64Field(value: &self._eventGid) }()
+      case 14: try { try decoder.decodeSingularInt32Field(value: &self._voteupcount) }()
+      case 15: try { try decoder.decodeSingularInt32Field(value: &self._votedowncount) }()
       default: break
       }
     }
   }
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if let v = self._gid {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._gid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
-    }
-    if let v = self._clanid {
+    } }()
+    try { if let v = self._clanid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 2)
-    }
-    if let v = self._posterid {
+    } }()
+    try { if let v = self._posterid {
       try visitor.visitSingularUInt64Field(value: v, fieldNumber: 3)
-    }
-    if let v = self._headline {
+    } }()
+    try { if let v = self._headline {
       try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    }
-    if let v = self._posttime {
+    } }()
+    try { if let v = self._posttime {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-    }
-    if let v = self._updatetime {
+    } }()
+    try { if let v = self._updatetime {
       try visitor.visitSingularUInt32Field(value: v, fieldNumber: 6)
-    }
-    if let v = self._body {
+    } }()
+    try { if let v = self._body {
       try visitor.visitSingularStringField(value: v, fieldNumber: 7)
-    }
-    if let v = self._commentcount {
+    } }()
+    try { if let v = self._commentcount {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 8)
-    }
+    } }()
     if !self.tags.isEmpty {
       try visitor.visitRepeatedStringField(value: self.tags, fieldNumber: 9)
     }
-    if let v = self._language {
+    try { if let v = self._language {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 10)
-    }
-    if let v = self._hidden {
+    } }()
+    try { if let v = self._hidden {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 11)
-    }
-    if let v = self._forumTopicID {
+    } }()
+    try { if let v = self._forumTopicID {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 12)
-    }
-    if let v = self._eventGid {
+    } }()
+    try { if let v = self._eventGid {
       try visitor.visitSingularFixed64Field(value: v, fieldNumber: 13)
-    }
+    } }()
+    try { if let v = self._voteupcount {
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 14)
+    } }()
+    try { if let v = self._votedowncount {
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 15)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2900,6 +3373,8 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs._hidden != rhs._hidden {return false}
     if lhs._forumTopicID != rhs._forumTopicID {return false}
     if lhs._eventGid != rhs._eventGid {return false}
+    if lhs._voteupcount != rhs._voteupcount {return false}
+    if lhs._votedowncount != rhs._votedowncount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2932,6 +3407,12 @@ extension CClanEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     22: .standard(proto: "ignore_count"),
     23: .standard(proto: "forum_topic_id"),
     24: .standard(proto: "rtime32_last_modified"),
+    25: .standard(proto: "news_post_gid"),
+    26: .standard(proto: "rtime_mod_reviewed"),
+    27: .standard(proto: "featured_app_tagid"),
+    28: .standard(proto: "referenced_appids"),
+    29: .standard(proto: "build_id"),
+    30: .standard(proto: "build_branch"),
   ]
 
   fileprivate class _StorageClass {
@@ -2959,6 +3440,12 @@ extension CClanEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     var _ignoreCount: UInt32? = nil
     var _forumTopicID: UInt64? = nil
     var _rtime32LastModified: UInt32? = nil
+    var _newsPostGid: UInt64? = nil
+    var _rtimeModReviewed: UInt32? = nil
+    var _featuredAppTagid: UInt32? = nil
+    var _referencedAppids: [UInt32] = []
+    var _buildID: UInt32? = nil
+    var _buildBranch: String? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -2989,6 +3476,12 @@ extension CClanEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
       _ignoreCount = source._ignoreCount
       _forumTopicID = source._forumTopicID
       _rtime32LastModified = source._rtime32LastModified
+      _newsPostGid = source._newsPostGid
+      _rtimeModReviewed = source._rtimeModReviewed
+      _featuredAppTagid = source._featuredAppTagid
+      _referencedAppids = source._referencedAppids
+      _buildID = source._buildID
+      _buildBranch = source._buildBranch
     }
   }
 
@@ -3031,6 +3524,12 @@ extension CClanEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
         case 22: try { try decoder.decodeSingularUInt32Field(value: &_storage._ignoreCount) }()
         case 23: try { try decoder.decodeSingularFixed64Field(value: &_storage._forumTopicID) }()
         case 24: try { try decoder.decodeSingularUInt32Field(value: &_storage._rtime32LastModified) }()
+        case 25: try { try decoder.decodeSingularFixed64Field(value: &_storage._newsPostGid) }()
+        case 26: try { try decoder.decodeSingularUInt32Field(value: &_storage._rtimeModReviewed) }()
+        case 27: try { try decoder.decodeSingularUInt32Field(value: &_storage._featuredAppTagid) }()
+        case 28: try { try decoder.decodeRepeatedUInt32Field(value: &_storage._referencedAppids) }()
+        case 29: try { try decoder.decodeSingularUInt32Field(value: &_storage._buildID) }()
+        case 30: try { try decoder.decodeSingularStringField(value: &_storage._buildBranch) }()
         default: break
         }
       }
@@ -3039,78 +3538,100 @@ extension CClanEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
 
   func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._gid {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      try { if let v = _storage._gid {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._clanSteamid {
+      } }()
+      try { if let v = _storage._clanSteamid {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._eventName {
+      } }()
+      try { if let v = _storage._eventName {
         try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._eventType {
+      } }()
+      try { if let v = _storage._eventType {
         try visitor.visitSingularEnumField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._appid {
+      } }()
+      try { if let v = _storage._appid {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._serverAddress {
+      } }()
+      try { if let v = _storage._serverAddress {
         try visitor.visitSingularStringField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._serverPassword {
+      } }()
+      try { if let v = _storage._serverPassword {
         try visitor.visitSingularStringField(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._rtime32StartTime {
+      } }()
+      try { if let v = _storage._rtime32StartTime {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._rtime32EndTime {
+      } }()
+      try { if let v = _storage._rtime32EndTime {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._commentCount {
+      } }()
+      try { if let v = _storage._commentCount {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._creatorSteamid {
+      } }()
+      try { if let v = _storage._creatorSteamid {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._lastUpdateSteamid {
+      } }()
+      try { if let v = _storage._lastUpdateSteamid {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._eventNotes {
+      } }()
+      try { if let v = _storage._eventNotes {
         try visitor.visitSingularStringField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._jsondata {
+      } }()
+      try { if let v = _storage._jsondata {
         try visitor.visitSingularStringField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._announcementBody {
+      } }()
+      try { if let v = _storage._announcementBody {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._published {
+      } }()
+      try { if let v = _storage._published {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._hidden {
+      } }()
+      try { if let v = _storage._hidden {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 17)
-      }
-      if let v = _storage._rtime32VisibilityStart {
+      } }()
+      try { if let v = _storage._rtime32VisibilityStart {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 18)
-      }
-      if let v = _storage._rtime32VisibilityEnd {
+      } }()
+      try { if let v = _storage._rtime32VisibilityEnd {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 19)
-      }
-      if let v = _storage._broadcasterAccountid {
+      } }()
+      try { if let v = _storage._broadcasterAccountid {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._followerCount {
+      } }()
+      try { if let v = _storage._followerCount {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._ignoreCount {
+      } }()
+      try { if let v = _storage._ignoreCount {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 22)
-      }
-      if let v = _storage._forumTopicID {
+      } }()
+      try { if let v = _storage._forumTopicID {
         try visitor.visitSingularFixed64Field(value: v, fieldNumber: 23)
-      }
-      if let v = _storage._rtime32LastModified {
+      } }()
+      try { if let v = _storage._rtime32LastModified {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 24)
+      } }()
+      try { if let v = _storage._newsPostGid {
+        try visitor.visitSingularFixed64Field(value: v, fieldNumber: 25)
+      } }()
+      try { if let v = _storage._rtimeModReviewed {
+        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 26)
+      } }()
+      try { if let v = _storage._featuredAppTagid {
+        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 27)
+      } }()
+      if !_storage._referencedAppids.isEmpty {
+        try visitor.visitRepeatedUInt32Field(value: _storage._referencedAppids, fieldNumber: 28)
       }
+      try { if let v = _storage._buildID {
+        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 29)
+      } }()
+      try { if let v = _storage._buildBranch {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 30)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -3144,10 +3665,184 @@ extension CClanEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
         if _storage._ignoreCount != rhs_storage._ignoreCount {return false}
         if _storage._forumTopicID != rhs_storage._forumTopicID {return false}
         if _storage._rtime32LastModified != rhs_storage._rtime32LastModified {return false}
+        if _storage._newsPostGid != rhs_storage._newsPostGid {return false}
+        if _storage._rtimeModReviewed != rhs_storage._rtimeModReviewed {return false}
+        if _storage._featuredAppTagid != rhs_storage._featuredAppTagid {return false}
+        if _storage._referencedAppids != rhs_storage._referencedAppids {return false}
+        if _storage._buildID != rhs_storage._buildID {return false}
+        if _storage._buildBranch != rhs_storage._buildBranch {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension CBilling_Address: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CBilling_Address"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "first_name"),
+    2: .standard(proto: "last_name"),
+    3: .same(proto: "address1"),
+    4: .same(proto: "address2"),
+    5: .same(proto: "city"),
+    6: .standard(proto: "us_state"),
+    7: .standard(proto: "country_code"),
+    8: .same(proto: "postcode"),
+    9: .standard(proto: "zip_plus4"),
+    10: .same(proto: "phone"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self._firstName) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self._lastName) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self._address1) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self._address2) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self._city) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self._usState) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self._countryCode) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self._postcode) }()
+      case 9: try { try decoder.decodeSingularInt32Field(value: &self._zipPlus4) }()
+      case 10: try { try decoder.decodeSingularStringField(value: &self._phone) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._firstName {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._lastName {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._address1 {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 3)
+    } }()
+    try { if let v = self._address2 {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 4)
+    } }()
+    try { if let v = self._city {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
+    } }()
+    try { if let v = self._usState {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 6)
+    } }()
+    try { if let v = self._countryCode {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 7)
+    } }()
+    try { if let v = self._postcode {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 8)
+    } }()
+    try { if let v = self._zipPlus4 {
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 9)
+    } }()
+    try { if let v = self._phone {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 10)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CBilling_Address, rhs: CBilling_Address) -> Bool {
+    if lhs._firstName != rhs._firstName {return false}
+    if lhs._lastName != rhs._lastName {return false}
+    if lhs._address1 != rhs._address1 {return false}
+    if lhs._address2 != rhs._address2 {return false}
+    if lhs._city != rhs._city {return false}
+    if lhs._usState != rhs._usState {return false}
+    if lhs._countryCode != rhs._countryCode {return false}
+    if lhs._postcode != rhs._postcode {return false}
+    if lhs._zipPlus4 != rhs._zipPlus4 {return false}
+    if lhs._phone != rhs._phone {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension CPackageReservationStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CPackageReservationStatus"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "packageid"),
+    2: .standard(proto: "reservation_state"),
+    3: .standard(proto: "queue_position"),
+    4: .standard(proto: "total_queue_size"),
+    5: .standard(proto: "reservation_country_code"),
+    6: .same(proto: "expired"),
+    7: .standard(proto: "time_expires"),
+    8: .standard(proto: "time_reserved"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._packageid) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self._reservationState) }()
+      case 3: try { try decoder.decodeSingularInt32Field(value: &self._queuePosition) }()
+      case 4: try { try decoder.decodeSingularInt32Field(value: &self._totalQueueSize) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self._reservationCountryCode) }()
+      case 6: try { try decoder.decodeSingularBoolField(value: &self._expired) }()
+      case 7: try { try decoder.decodeSingularUInt32Field(value: &self._timeExpires) }()
+      case 8: try { try decoder.decodeSingularUInt32Field(value: &self._timeReserved) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._packageid {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._reservationState {
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._queuePosition {
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
+    } }()
+    try { if let v = self._totalQueueSize {
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 4)
+    } }()
+    try { if let v = self._reservationCountryCode {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
+    } }()
+    try { if let v = self._expired {
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
+    } }()
+    try { if let v = self._timeExpires {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 7)
+    } }()
+    try { if let v = self._timeReserved {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 8)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CPackageReservationStatus, rhs: CPackageReservationStatus) -> Bool {
+    if lhs._packageid != rhs._packageid {return false}
+    if lhs._reservationState != rhs._reservationState {return false}
+    if lhs._queuePosition != rhs._queuePosition {return false}
+    if lhs._totalQueueSize != rhs._totalQueueSize {return false}
+    if lhs._reservationCountryCode != rhs._reservationCountryCode {return false}
+    if lhs._expired != rhs._expired {return false}
+    if lhs._timeExpires != rhs._timeExpires {return false}
+    if lhs._timeReserved != rhs._timeReserved {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
