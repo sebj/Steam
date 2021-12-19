@@ -19,7 +19,7 @@ let package = Package(
         .package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift.git",
-            .upToNextMinor(from: "1.3.8")),
+            .upToNextMinor(from: "1.4.2")),
         .package(
             name: "Gzip",
             url: "https://github.com/1024jp/GzipSwift.git",
