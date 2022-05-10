@@ -2,6 +2,8 @@
 
 ![Swift Compatibility: 5.3](https://img.shields.io/badge/Swift%20Compatibility-5.3-blue)
 ![Platform Compatibility: ](https://img.shields.io/badge/Platform%20Compatibility-iOS%20%7C%20macOS%20%7C%20Linux%20%7C%20watchOS%20%7C%20tvOS-blue)
+[![MIT License](https://img.shields.io/github/license/sebj/steam?color=lightgray)](LICENSE)
+[![Build & Test](https://github.com/sebj/steam/workflows/Build%20and%20Test/badge.svg)](https://github.com/sebj/steam/actions/workflows/build-and-test.yaml)
 
 A Swift package to directly interact with [Steam](https://store.steampowered.com).
 
