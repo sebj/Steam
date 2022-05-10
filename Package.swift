@@ -45,5 +45,6 @@ let package = Package(
             name: "SteamTests",
             dependencies: ["Steam"]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
