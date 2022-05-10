@@ -19,11 +19,11 @@ let package = Package(
         .package(
             name: "CryptoSwift",
             url: "https://github.com/krzyzanowskim/CryptoSwift.git",
-            .upToNextMinor(from: "1.4.2")),
+            .upToNextMinor(from: "1.5.1")),
         .package(
             name: "Gzip",
             url: "https://github.com/1024jp/GzipSwift.git",
-            .upToNextMinor(from: "5.1.1")),
+            .upToNextMinor(from: "5.2.0")),
         .package(
             name: "SwCrypt",
             url: "https://github.com/soyersoyer/SwCrypt.git",
