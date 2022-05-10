@@ -1,0 +1,26 @@
+name: Build and Test
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+
+  workflow_dispatch:
+
+jobs:
+  Build-and-Test:
+    runs-on: macos-12
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: swift build
+
+      - name: Test
+        run: swift test
