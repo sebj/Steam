@@ -4,11 +4,17 @@ on:
     branches: [main]
     paths-ignore:
       - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - 'Protobuf/**'
       
   pull_request:
     branches: [main]
     paths-ignore:
       - '**.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - 'Protobuf/**'
 
   workflow_dispatch:
 
