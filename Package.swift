@@ -8,12 +8,13 @@ let package = Package(
         .iOS(.v14),
         .macOS(.v11),
         .tvOS(.v14),
-        .watchOS(.v7),
+        .watchOS(.v7)
     ],
     products: [
         .library(
             name: "Steam",
-            targets: ["Steam"]),
+            targets: ["Steam"]
+        )
     ],
     dependencies: [
         .package(
@@ -31,15 +32,18 @@ let package = Package(
         .package(
             name: "SwiftProtobuf",
             url: "https://github.com/apple/swift-protobuf.git",
-            .upToNextMinor(from: "1.19.0")),
+            .upToNextMinor(from: "1.19.0")
+        )
     ],
     targets: [
         .target(
             name: "Steam",
             dependencies: ["CryptoSwift", "Gzip", "SwCrypt", "SwiftProtobuf"],
-            exclude: ["Protobuf"]),
+            exclude: ["Protobuf"]
+        ),
         .testTarget(
             name: "SteamTests",
-            dependencies: ["Steam"]),
+            dependencies: ["Steam"]
+        )
     ]
 )

@@ -1,0 +1,35 @@
+excluded:
+  - "**/.build/"
+  - "**/Generated Protobuf/"
+opt_in_rules:
+  - comment_spacing
+  - computed_accessors_order
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - discouraged_assert
+  - empty_count
+  - empty_string
+  - first_where
+  - flatmap_over_map_reduce
+  - implicit_return
+  - last_where
+  - prefer_self_in_static_references
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - private_subject
+  - sorted_first_last
+  - reduce_into
+  - return_value_from_void_function
+  - test_case_accessibility
+  - unavailable_condition
+  - unused_declaration
+  - unused_import
+force_try: warning
+disabled_rules:
+  - identifier_name
+  - leading_whitespace
+  - line_length
+  - multiple_closures_with_trailing_closure
+  - no_space_in_method_call # False positives with Swift 5.3 multiple closures
+  - opening_brace
+  - trailing_whitespace

@@ -1,4 +1,3 @@
-
 import Combine
 import XCTest
 @testable import Steam
@@ -27,7 +26,7 @@ final class SteamServiceTests: XCTestCase {
     func testConnectionNotCreated_whenConnectIsCalled_givenConnectionExists() {
         let expectation = self.expectation(description: #function)
 
-        let connectionFactory: ConnectionFactory = { host, port, _ in
+        let connectionFactory: ConnectionFactory = { _, _, _ in
             expectation.fulfill()
             return StubConnection()
         }
@@ -41,7 +40,7 @@ final class SteamServiceTests: XCTestCase {
     
     func testSendThrowsDisconnectedError_whenDisconnected() {
         let expectation = self.expectation(description: #function)
-        let connectionFactory: ConnectionFactory = { host, port, _ in StubConnection() }
+        let connectionFactory: ConnectionFactory = { _, _, _ in StubConnection() }
         let service = SteamService(connectionFactory: connectionFactory)
         
         let message = ProtobufMessage(header: .init(messageType: .kEmsgClientLogon), payload: Data())
@@ -65,7 +64,7 @@ final class SteamServiceTests: XCTestCase {
     
     func testSendThrowsFailedToEncode_whenGivenDataFailsToEncode() {
         let expectation = self.expectation(description: #function)
-        let connectionFactory: ConnectionFactory = { host, port, _ in StubConnection() }
+        let connectionFactory: ConnectionFactory = { _, _, _ in StubConnection() }
         let service = SteamService(connectionFactory: connectionFactory)
         
         enum TestError: Swift.Error {
@@ -156,7 +155,6 @@ extension SteamServiceTests {
                 XCTFail("Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)")
             }
             .store(in: &cancellables)
-
         
         waitForExpectations(timeout: 0)
     }
@@ -179,7 +177,6 @@ extension SteamServiceTests {
             }
             .store(in: &cancellables)
 
-        
         waitForExpectations(timeout: 0)
     }
     
@@ -200,7 +197,6 @@ extension SteamServiceTests {
                 XCTFail("Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)")
             }
             .store(in: &cancellables)
-
         
         waitForExpectations(timeout: 0)
     }
@@ -223,14 +219,13 @@ extension SteamServiceTests {
             }
             .store(in: &cancellables)
 
-        
         waitForExpectations(timeout: 0)
     }
 }
 
 private extension SteamServiceTests {
     func makeConnectionFactory(_ connection: ConnectionProtocol = StubConnection()!) -> ConnectionFactory {
-        { host, port, _ in connection }
+        { _, _, _ in connection }
     }
 }
 
@@ -241,7 +236,7 @@ private final class StubConnection: ConnectionProtocol {
     
     var sentData = [Data]()
     
-    let dataSubject = PassthroughSubject<Data, Error>()
+    private let dataSubject = PassthroughSubject<Data, Error>()
     
     convenience init?() {
         self.init(host: "", port: -1, queue: .main)
