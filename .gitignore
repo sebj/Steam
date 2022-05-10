@@ -1,6 +1,6 @@
+.DS_Store
+
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
 xcuserdata/
@@ -25,11 +25,6 @@ DerivedData/
 ## Obj-C/Swift specific
 *.hmap
 
-## App packaging
-*.ipa
-*.dSYM.zip
-*.dSYM
-
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
@@ -46,9 +41,3 @@ Package.resolved
 .swiftpm
 
 .build/
-# Code Injection
-#
-# After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
-
-iOSInjectionProject/
