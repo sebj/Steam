@@ -4637,6 +4637,13 @@ extension ESteamReviewScore: CaseIterable {
 
 #endif  // swift(>=4.2)
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension EMsg: @unchecked Sendable {}
+extension EClientPersonaStateFlag: @unchecked Sendable {}
+extension EMsgClanAccountFlags: @unchecked Sendable {}
+extension ESteamReviewScore: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension EMsg: SwiftProtobuf._ProtoNameProviding {

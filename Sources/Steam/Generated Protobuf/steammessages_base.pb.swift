@@ -1937,6 +1937,29 @@ struct CPackageReservationStatus {
   fileprivate var _timeReserved: UInt32? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension EProtoClanEventType: @unchecked Sendable {}
+extension PartnerEventNotificationType: @unchecked Sendable {}
+extension CMsgIPAddress: @unchecked Sendable {}
+extension CMsgIPAddress.OneOf_Ip: @unchecked Sendable {}
+extension CMsgIPAddressBucket: @unchecked Sendable {}
+extension CMsgProtoBufHeader: @unchecked Sendable {}
+extension CMsgProtoBufHeader.OneOf_IpAddr: @unchecked Sendable {}
+extension CMsgMulti: @unchecked Sendable {}
+extension CMsgProtobufWrapped: @unchecked Sendable {}
+extension CMsgAuthTicket: @unchecked Sendable {}
+extension CCDDBAppDetailCommon: @unchecked Sendable {}
+extension CMsgAppRights: @unchecked Sendable {}
+extension CCuratorPreferences: @unchecked Sendable {}
+extension CLocalizationToken: @unchecked Sendable {}
+extension CClanEventUserNewsTuple: @unchecked Sendable {}
+extension CClanMatchEventByRange: @unchecked Sendable {}
+extension CCommunity_ClanAnnouncementInfo: @unchecked Sendable {}
+extension CClanEventData: @unchecked Sendable {}
+extension CBilling_Address: @unchecked Sendable {}
+extension CPackageReservationStatus: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Extension support defined in steammessages_base.proto.
 
 // MARK: - Extension Properties

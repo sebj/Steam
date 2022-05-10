@@ -1198,6 +1198,24 @@ struct CMsgClientChallengeResponse {
   fileprivate var _challenge: UInt64? = nil
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension CMsgClientHeartBeat: @unchecked Sendable {}
+extension CMsgClientServerTimestampRequest: @unchecked Sendable {}
+extension CMsgClientServerTimestampResponse: @unchecked Sendable {}
+extension CMsgClientSecret: @unchecked Sendable {}
+extension CMsgClientLogon: @unchecked Sendable {}
+extension CMsgClientLogonResponse: @unchecked Sendable {}
+extension CMsgClientRequestWebAPIAuthenticateUserNonce: @unchecked Sendable {}
+extension CMsgClientRequestWebAPIAuthenticateUserNonceResponse: @unchecked Sendable {}
+extension CMsgClientLogOff: @unchecked Sendable {}
+extension CMsgClientLoggedOff: @unchecked Sendable {}
+extension CMsgClientNewLoginKey: @unchecked Sendable {}
+extension CMsgClientNewLoginKeyAccepted: @unchecked Sendable {}
+extension CMsgClientAccountInfo: @unchecked Sendable {}
+extension CMsgClientChallengeRequest: @unchecked Sendable {}
+extension CMsgClientChallengeResponse: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension CMsgClientHeartBeat: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

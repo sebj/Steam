@@ -1707,6 +1707,48 @@ struct CMsgClientEmoticonList {
   init() {}
 }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+extension CMsgClientFriendMsg: @unchecked Sendable {}
+extension CMsgClientFriendMsgIncoming: @unchecked Sendable {}
+extension CMsgClientAddFriend: @unchecked Sendable {}
+extension CMsgClientAddFriendResponse: @unchecked Sendable {}
+extension CMsgClientRemoveFriend: @unchecked Sendable {}
+extension CMsgClientHideFriend: @unchecked Sendable {}
+extension CMsgClientFriendsList: @unchecked Sendable {}
+extension CMsgClientFriendsList.Friend: @unchecked Sendable {}
+extension CMsgClientFriendsGroupsList: @unchecked Sendable {}
+extension CMsgClientFriendsGroupsList.FriendGroup: @unchecked Sendable {}
+extension CMsgClientFriendsGroupsList.FriendGroupsMembership: @unchecked Sendable {}
+extension CMsgClientPlayerNicknameList: @unchecked Sendable {}
+extension CMsgClientPlayerNicknameList.PlayerNickname: @unchecked Sendable {}
+extension CMsgClientSetPlayerNickname: @unchecked Sendable {}
+extension CMsgClientSetPlayerNicknameResponse: @unchecked Sendable {}
+extension CMsgClientRequestFriendData: @unchecked Sendable {}
+extension CMsgClientChangeStatus: @unchecked Sendable {}
+extension CMsgPersonaChangeResponse: @unchecked Sendable {}
+extension CMsgClientPersonaState: @unchecked Sendable {}
+extension CMsgClientPersonaState.Friend: @unchecked Sendable {}
+extension CMsgClientPersonaState.Friend.ClanData: @unchecked Sendable {}
+extension CMsgClientPersonaState.Friend.KV: @unchecked Sendable {}
+extension CMsgClientFriendProfileInfo: @unchecked Sendable {}
+extension CMsgClientFriendProfileInfoResponse: @unchecked Sendable {}
+extension CMsgClientCreateFriendsGroup: @unchecked Sendable {}
+extension CMsgClientCreateFriendsGroupResponse: @unchecked Sendable {}
+extension CMsgClientDeleteFriendsGroup: @unchecked Sendable {}
+extension CMsgClientDeleteFriendsGroupResponse: @unchecked Sendable {}
+extension CMsgClientManageFriendsGroup: @unchecked Sendable {}
+extension CMsgClientManageFriendsGroupResponse: @unchecked Sendable {}
+extension CMsgClientAddFriendToGroup: @unchecked Sendable {}
+extension CMsgClientAddFriendToGroupResponse: @unchecked Sendable {}
+extension CMsgClientRemoveFriendFromGroup: @unchecked Sendable {}
+extension CMsgClientRemoveFriendFromGroupResponse: @unchecked Sendable {}
+extension CMsgClientGetEmoticonList: @unchecked Sendable {}
+extension CMsgClientEmoticonList: @unchecked Sendable {}
+extension CMsgClientEmoticonList.Emoticon: @unchecked Sendable {}
+extension CMsgClientEmoticonList.Sticker: @unchecked Sendable {}
+extension CMsgClientEmoticonList.Effect: @unchecked Sendable {}
+#endif  // swift(>=5.5) && canImport(_Concurrency)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension CMsgClientFriendMsg: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
