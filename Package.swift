@@ -32,7 +32,7 @@ let package = Package(
         .package(
             name: "SwiftProtobuf",
             url: "https://github.com/apple/swift-protobuf.git",
-            .upToNextMinor(from: "1.19.0")
+            .upToNextMinor(from: "1.20.2")
         )
     ],
     targets: [
