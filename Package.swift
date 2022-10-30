@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Steam",
+    name: "swift-steam",
     platforms: [
         .iOS(.v14),
         .macOS(.v11),
