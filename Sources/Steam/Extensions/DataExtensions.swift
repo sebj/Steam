@@ -1,19 +1,15 @@
-//
-//  FixedWidthInteger+LittleEndian.swift
-//
-//  Copyright © 2020-2021 Sebastian Jachec. All rights reserved.
-//
-
 // https://forums.swift.org/t/convert-uint8-to-int/30117/12
 extension FixedWidthInteger {
-    init<ByteCollection>(littleEndianBytes bytes: ByteCollection) where ByteCollection: Collection, ByteCollection.Element == UInt8
-    {
+    init<ByteCollection>(
+        littleEndianBytes bytes: ByteCollection
+    ) where ByteCollection: Collection, ByteCollection.Element == UInt8 {
         var iterator = bytes.makeIterator()
         self.init(littleEndianBytes: &iterator)
     }
     
-    init<Iterator>(littleEndianBytes iterator: inout Iterator) where Iterator: IteratorProtocol, Iterator.Element == UInt8
-    {
+    init<Iterator>(
+        littleEndianBytes iterator: inout Iterator
+    ) where Iterator: IteratorProtocol, Iterator.Element == UInt8 {
         self = stride(from: 0, to: Self.bitWidth, by: 8).reduce(into: 0) {
             guard let nextElement = iterator.next() else {
                 return

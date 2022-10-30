@@ -1,9 +1,3 @@
-//
-//  SteamService.swift
-//
-//  Copyright © 2020-2021 Sebastian Jachec. All rights reserved.
-//
-
 import Combine
 import Foundation
 import Gzip
@@ -17,6 +11,7 @@ public final class SteamService {
     /// A publisher that emits the friends list for the logged-in user.
     public let friends: AnyPublisher<[SteamFriend], Never>
 
+    // swiftlint:disable private_subject
     let connectionStatusSubject = PassthroughSubject<ConnectionStatus, Never>()
     private let friendsSubject = PassthroughSubject<[SteamFriend], Never>()
 
@@ -51,8 +46,8 @@ public final class SteamService {
 
     /// Establish a new connection to a given Steam server, if a connection is not already open.
     /// - Parameter server: The Steam server to connect to.
-    /// - Returns: A publisher that emits `Void` when the connection has been established and is ready for requests to be sent,
-    /// or a `ConnectionError` if the connection fails.
+    /// - Returns: A publisher that emits `Void` when the connection has been established and is ready for requests
+    /// to be sent, or a `ConnectionError` if the connection fails.
     public func connect(to server: SteamServer) -> AnyPublisher<Void, ConnectionError> {
         guard connection == nil else {
             return Fail(error: ConnectionError.alreadyConnected).eraseToAnyPublisher()
@@ -76,7 +71,8 @@ public final class SteamService {
                 receiveCompletion: { _ in },
                 receiveValue: { [weak self] data in
                     self?.receivedData(packet: data)
-                })
+                }
+            )
             .store(in: &cancellables)
 
         connection.connect()
@@ -116,14 +112,14 @@ public final class SteamService {
 
 // MARK: - Parse
 
-extension SteamService {
+private extension SteamService {
     
-    private func receivedData(packet: Data) {
+    func receivedData(packet: Data) {
         let messages = parseMessages(packet: packet)
         messages.forEach(parseMessage)
     }
 
-    private func parseMessages(packet: Data) -> [Data] {
+    func parseMessages(packet: Data) -> [Data] {
         var reader = MessageReader(packet: packet)
 
         let encryption: MessageReader.Encryption
@@ -146,7 +142,7 @@ extension SteamService {
         return messages
     }
 
-    private func parseMessage(_ data: Data) {
+    func parseMessage(_ data: Data) {
         var reader = DataReader(data: data)
 
         let rawMessageType: UInt32 = reader.read()
@@ -180,7 +176,13 @@ extension SteamService {
             return
         }
 
-        switch messageType {
+        handleParsedMessage(type: messageType, message: message)
+
+        messagesSubject.send(message)
+    }
+    
+    func handleParsedMessage(type: EMsg, message: MessageProtocol) {
+        switch type {
         case .kEmsgChannelEncryptRequest:
             handleEncryptionRequest(message: message)
 
@@ -204,16 +206,14 @@ extension SteamService {
         default:
             break
         }
-
-        messagesSubject.send(message)
     }
 }
 
 // MARK: - Handle Message Types
 
-extension SteamService {
+private extension SteamService {
 
-    private func handleMulti(message: MessageProtocol) {
+    func handleMulti(message: MessageProtocol) {
         guard let multiMessage = try? CMsgMulti(serializedData: message.payload) else {
             return
         }
@@ -245,7 +245,7 @@ extension SteamService {
         }
     }
 
-    private func handleLogOnResponse(message: MessageProtocol) {
+    func handleLogOnResponse(message: MessageProtocol) {
         guard let response = try? CMsgClientLogonResponse(serializedData: message.payload) else {
             return
         }
@@ -268,13 +268,13 @@ extension SteamService {
         }
     }
 
-    private func handleLoginKey(message: MessageProtocol) {
+    func handleLoginKey(message: MessageProtocol) {
         guard let response = try? CMsgClientNewLoginKey(serializedData: message.payload) else {
             return
         }
 
         var rawPayload = CMsgClientNewLoginKeyAccepted()
-        rawPayload.uniqueID =  response.uniqueID
+        rawPayload.uniqueID = response.uniqueID
 
         guard let payload = try? rawPayload.serializedData() else {
             return
@@ -282,14 +282,15 @@ extension SteamService {
 
         let message = ProtobufMessage(
             header: .init(messageType: .kEmsgClientNewLoginKeyAccepted),
-            payload: payload)
+            payload: payload
+        )
 
         send(message)
             .sink()
             .store(in: &cancellables)
     }
 
-    private func handleFriendsList(message: MessageProtocol) {
+    func handleFriendsList(message: MessageProtocol) {
         guard let response = try? CMsgClientFriendsList(serializedData: message.payload) else {
             return
         }
@@ -312,14 +313,14 @@ extension SteamService {
 
 // MARK: - Heartbeat
 
-extension SteamService {
+private extension SteamService {
 
-    private enum Heartbeat {
+    enum Heartbeat {
         case inactive
         case active(AnyCancellable)
     }
 
-    private func startHeartbeat(interval: TimeInterval) {
+    func startHeartbeat(interval: TimeInterval) {
         let cancellable = Timer.publish(every: interval, on: .main, in: .common)
             .flatMap { [weak self] _ -> AnyPublisher<Void, Never> in
                 (try? self?.sendHeartbeat()) ?? Empty(completeImmediately: false).eraseToAnyPublisher()
@@ -329,12 +330,13 @@ extension SteamService {
         heartbeat = .active(cancellable)
     }
 
-    private func sendHeartbeat() throws -> AnyPublisher<Void, Never> {
+    func sendHeartbeat() throws -> AnyPublisher<Void, Never> {
         let payload = try CMsgClientHeartBeat().serializedData()
 
         let message = ProtobufMessage(
             header: .init(messageType: .kEmsgClientHeartBeat),
-            payload: payload)
+            payload: payload
+        )
 
         return send(message)
             .replaceError(with: ())
@@ -344,43 +346,12 @@ extension SteamService {
 
 // MARK: -
 
-public enum SteamUIMode: UInt32 {
-    case desktop
-    case bigPicture
-    case mobile
-    case web
-}
-
 extension SteamService {
-
-    /// Set the logged in user's UI mode.
-    /// This is typically shown as a small icon next to their name in the Steam friends list (phone, controller, etc.)
-    public func setUIMode(_ uiMode: SteamUIMode)  -> AnyPublisher<Void, SendError> {
-        guard case .encrypted = encryption else {
-            return Fail(error: SendError.unencryptedConnection).eraseToAnyPublisher()
-        }
-
-        var request = CMsgClientUIMode()
-        request.uimode = uiMode.rawValue
-
-        let payload: Data
-        do {
-            payload = try request.serializedData()
-        } catch {
-            return Fail(error: SendError.failedToEncode(error)).eraseToAnyPublisher()
-        }
-
-        let message = ProtobufMessage(
-            header: .init(messageType: .kEmsgClientCurrentUimode),
-            payload: payload)
-
-        return send(message)
-    }
 
     func fetchUserInfo(
         userIdentifiers: [SteamIdentifier],
-        info: UserInfo = [.playerName, .presence, .sourceID, .gameExtraInfo]) -> AnyPublisher<Void, SendError>
-    {
+        info: UserInfo = [.playerName, .presence, .sourceID, .gameExtraInfo]
+    ) -> AnyPublisher<Void, SendError> {
         guard case .encrypted = encryption else {
             return Fail(error: SendError.unencryptedConnection).eraseToAnyPublisher()
         }
@@ -398,7 +369,8 @@ extension SteamService {
 
         let message = ProtobufMessage(
             header: .init(messageType: .kEmsgClientRequestFriendData),
-            payload: payload)
+            payload: payload
+        )
 
         return send(message)
     }

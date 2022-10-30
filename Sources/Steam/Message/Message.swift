@@ -1,9 +1,3 @@
-//
-//  Message.swift
-//
-//  Copyright © 2020-2021 Sebastian Jachec. All rights reserved.
-//
-
 import Foundation
 
 struct Message: MessageProtocol, DataConvertible {
@@ -76,7 +70,8 @@ extension Message {
                 extendedContent = .init(
                     headerCanary: headerCanary,
                     steamIdentifier: steamIdentifier,
-                    sessionIdentifier: sessionIdentifier)
+                    sessionIdentifier: sessionIdentifier
+                )
                 rawContent = nil
 
                 size = Int(headerSize)
@@ -98,8 +93,8 @@ extension Message {
             messageType: MessageType,
             targetJobIdentifier: UInt64 = ~UInt64(0),
             sourceJobIdentifier: UInt64 = ~UInt64(0),
-            content: Data? = nil)
-        {
+            content: Data? = nil
+        ) {
             self.messageType = messageType
             self.targetJobIdentifier = targetJobIdentifier
             self.sourceJobIdentifier = sourceJobIdentifier

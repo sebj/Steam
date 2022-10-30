@@ -1,9 +1,4 @@
-//
-//  SteamServer+Defaults.swift
-//
-//  Copyright © 2021 Sebastian Jachec. All rights reserved.
-//
-
+// swiftlint:disable number_separator
 extension SteamServer {
     public static let defaultServers: Set<SteamServer> = [
         .init(host: "162.254.196.83", port: 27024),

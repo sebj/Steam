@@ -1,7 +1,7 @@
-
-import XCTest
 @testable import Steam
+import XCTest
 
+// swiftlint:disable number_separator
 final class SteamIdentifierTests: XCTestCase {
     
     private let rawValue: UInt64 = 76561198040793451
@@ -20,7 +20,8 @@ final class SteamIdentifierTests: XCTestCase {
             accountIdentifier: 80527723,
             instance: 1,
             universe: .public,
-            accountType: .individual)
+            accountType: .individual
+        )
         
         XCTAssertEqual(identifier.rawValue, rawValue)
     }

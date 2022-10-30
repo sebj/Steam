@@ -1,6 +1,6 @@
 import Combine
-import XCTest
 @testable import Steam
+import XCTest
 
 final class SteamServiceTests: XCTestCase {
     
@@ -84,12 +84,16 @@ final class SteamServiceTests: XCTestCase {
                 expectation.fulfill()
                 
                 guard case .failure(SteamService.SendError.failedToEncode(TestError.failedToEncode)) = completion else {
-                    XCTFail("Completed with \(completion), expected .failure(SteamService.SendError.failedToEncode(TestError.failedToEncode))")
+                    let expectedCompletion = ".failure(SteamService.SendError.failedToEncode(TestError.failedToEncode))"
+                    XCTFail(
+                        "Completed with \(completion), expected \(expectedCompletion)"
+                    )
                     return
                 }
             } receiveValue: {
                 expectation.fulfill()
-                XCTFail("Received value but expected completion with .failure(SteamService.SendError.failedToEncode(TestError.failedToEncode))")
+                let expectedCompletion = ".failure(SteamService.SendError.failedToEncode(TestError.failedToEncode))"
+                XCTFail("Received value but expected completion with \(expectedCompletion)")
             }
             .store(in: &cancellables)
         
@@ -147,12 +151,16 @@ extension SteamServiceTests {
                 expectation.fulfill()
                 
                 guard case .failure(SteamService.SendError.unencryptedConnection) = completion else {
-                    XCTFail("Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)")
+                    XCTFail(
+                        "Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)"
+                    )
                     return
                 }
             } receiveValue: { _ in
                 expectation.fulfill()
-                XCTFail("Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)")
+                XCTFail(
+                    "Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)"
+                )
             }
             .store(in: &cancellables)
         
@@ -168,12 +176,16 @@ extension SteamServiceTests {
                 expectation.fulfill()
                 
                 guard case .failure(SteamService.SendError.unencryptedConnection) = completion else {
-                    XCTFail("Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)")
+                    XCTFail(
+                        "Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)"
+                    )
                     return
                 }
             } receiveValue: { _ in
                 expectation.fulfill()
-                XCTFail("Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)")
+                XCTFail(
+                    "Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)"
+                )
             }
             .store(in: &cancellables)
 
@@ -189,12 +201,16 @@ extension SteamServiceTests {
                 expectation.fulfill()
                 
                 guard case .failure(SteamService.SendError.unencryptedConnection) = completion else {
-                    XCTFail("Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)")
+                    XCTFail(
+                        "Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)"
+                    )
                     return
                 }
             } receiveValue: { _ in
                 expectation.fulfill()
-                XCTFail("Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)")
+                XCTFail(
+                    "Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)"
+                )
             }
             .store(in: &cancellables)
         
@@ -210,12 +226,16 @@ extension SteamServiceTests {
                 expectation.fulfill()
                 
                 guard case .failure(SteamService.SendError.unencryptedConnection) = completion else {
-                    XCTFail("Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)")
+                    XCTFail(
+                        "Completed with \(completion), expected .failure(SteamService.SendError.unencryptedConnection)"
+                    )
                     return
                 }
             } receiveValue: { _ in
                 expectation.fulfill()
-                XCTFail("Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)")
+                XCTFail(
+                    "Received value but expected completion with .failure(SteamService.SendError.unencryptedConnection)"
+                )
             }
             .store(in: &cancellables)
 

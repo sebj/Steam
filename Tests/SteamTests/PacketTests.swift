@@ -1,11 +1,5 @@
-//
-//  PacketTests.swift
-//  
-//  Copyright © 2021 Sebastian Jachec. All rights reserved.
-//
-
-import XCTest
 @testable import Steam
+import XCTest
 
 final class PacketTests: XCTestCase {
     
@@ -37,8 +31,8 @@ final class PacketTests: XCTestCase {
     
     private func makeData(
         content: Data = .init(repeating: 0, count: 8),
-        magic: String = "VT01") -> Data
-    {
+        magic: String = "VT01"
+    ) -> Data {
         Data(
             [
                 UInt32(content.count).bytes.reversed(),

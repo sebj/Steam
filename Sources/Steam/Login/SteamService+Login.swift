@@ -9,7 +9,8 @@ import Foundation
 
 extension SteamService {
     public enum Credentials {
-        /// - remember: If `true`,  login key will be generated upon successful login, which can be used instead of a password
+        /// - remember: If `true`,  login key will be generated upon successful login,
+        /// which can be used instead of a password
         /// for subsequent logins.
         case password(String, remember: Bool = false)
         case loginKey(String)
@@ -45,15 +46,16 @@ extension SteamService {
 
     /// Login to an existing Steam user account.
     ///
-    /// If the user's Steam account has 2FA enabled and a password has been supplied in `credentials`, a new OTP code will be delivered
-    /// to the user's email address or be presented from the Steam mobile app, and this `login` call will fail
-    /// with `accountLoginDeniedNeedTwoFactor`. Repeat the call, providing `SteamGuard.emailCode`
-    /// or `SteamGuard.mobileCode` as appropriate with the user's code to complete the login process.
+    /// If the user's Steam account has 2FA enabled and a password has been supplied in `credentials`, a new OTP code
+    /// will be delivered to the user's email address or be presented from the Steam mobile app,
+    /// and this `login` call will fail with `accountLoginDeniedNeedTwoFactor`. Repeat the call,
+    /// providing `SteamGuard.emailCode` or `SteamGuard.mobileCode` as appropriate with the user's code
+    /// to complete the login process.
     public func login(
         username: String,
         credentials: Credentials,
-        steamGuard: SteamGuard) -> AnyPublisher<SteamLoginResponse, LoginError>
-    {
+        steamGuard: SteamGuard
+    ) -> AnyPublisher<SteamLoginResponse, LoginError> {
         guard connection != nil else {
             return Fail(error: LoginError.disconnected).eraseToAnyPublisher()
         }
@@ -85,7 +87,7 @@ extension SteamService {
             logon.shouldRememberPassword = rememberPassword
         }
 
-        logon.protocolVersion = 65580
+        logon.protocolVersion = 65_580
         logon.eresultSentryfile = Int32(SteamResult.fileNotFound.rawValue)
         logon.supportsRateLimitResponse = true
         logon.chatMode = ChatMode.default.rawValue
@@ -99,9 +101,19 @@ extension SteamService {
 
         let message = ProtobufMessage(
             header: .init(messageType: .kEmsgClientLogon, content: headerContent),
-            payload: payload)
+            payload: payload
+        )
+        let responsePublisher = loginResponsePublisher(credentials: credentials)
 
-        let response = messages.first(where: { $0.type == .kEmsgClientLogOnResponse })
+        return send(message)
+            .mapError(LoginError.initiation)
+            .flatMap { responsePublisher }
+            .eraseToAnyPublisher()
+    }
+    
+    private func loginResponsePublisher(credentials: Credentials) -> AnyPublisher<SteamLoginResponse, LoginError> {
+        messages
+            .first(where: { $0.type == .kEmsgClientLogOnResponse })
             .setFailureType(to: LoginError.self)
             .flatMap { message -> AnyPublisher<SteamLoginResponse, LoginError> in
                 guard
@@ -128,11 +140,13 @@ extension SteamService {
                         loginKey: nil,
                         steamIdentifier: identifier,
                         accountFlags: accountFlags,
-                        vanityProfileURLSuffix: vanityURLSuffix)
+                        vanityProfileURLSuffix: vanityURLSuffix
+                    )
                     return Just(response).setFailureType(to: LoginError.self).eraseToAnyPublisher()
 
                 case .password(_, true):
-                    return self.messages.first(where: { $0.type == .kEmsgClientNewLoginKey })
+                    return self.messages
+                        .first(where: { $0.type == .kEmsgClientNewLoginKey })
                         .tryMap { message in
                             let loginKey: String?
                             if let loginKeyResponse = try? CMsgClientNewLoginKey(serializedData: message.payload) {
@@ -145,7 +159,8 @@ extension SteamService {
                                 loginKey: loginKey,
                                 steamIdentifier: identifier,
                                 accountFlags: accountFlags,
-                                vanityProfileURLSuffix: vanityURLSuffix)
+                                vanityProfileURLSuffix: vanityURLSuffix
+                            )
                         }
                         .mapError {
                             $0 as? LoginError ?? LoginError.other($0)
@@ -153,11 +168,6 @@ extension SteamService {
                         .eraseToAnyPublisher()
                 }
             }
-            .eraseToAnyPublisher()
-
-        return send(message)
-            .mapError(LoginError.initiation)
-            .flatMap { response }
             .eraseToAnyPublisher()
     }
 

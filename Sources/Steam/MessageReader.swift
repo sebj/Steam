@@ -1,9 +1,3 @@
-//
-//  MessageReader.swift
-//
-//  Copyright © 2021 Sebastian Jachec. All rights reserved.
-//
-
 import Foundation
 
 struct MessageReader {
@@ -38,7 +32,8 @@ struct MessageReader {
                 messageBytes = try symmetricDecrypt(
                     packet.content,
                     key: encryptionData.plainData,
-                    hmacSecret: encryptionData.hmac)
+                    hmacSecret: encryptionData.hmac
+                )
             } catch {
                 throw ReadError.decryptionFailed(error)
             }

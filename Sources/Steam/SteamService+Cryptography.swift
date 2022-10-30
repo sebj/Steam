@@ -1,9 +1,3 @@
-//
-//  SteamService+Cryptography.swift
-//
-//  Copyright © 2021 Sebastian Jachec. All rights reserved.
-//
-
 import CryptoSwift
 import Foundation
 import SwCrypt
@@ -33,7 +27,13 @@ extension SteamService {
 
     func encryptSessionKey(plainKeyData: Data, hmac: Data) throws -> Data {
         let publicKeyData = try SwKeyConvert.PublicKey.pemToPKCS1DER(Self.publicKey)
-        let encryptedData = try CC.RSA.encrypt(plainKeyData + hmac, derKey: publicKeyData, tag: Data(), padding: .oaep, digest: .sha1)
+        let encryptedData = try CC.RSA.encrypt(
+            plainKeyData + hmac,
+            derKey: publicKeyData,
+            tag: Data(),
+            padding: .oaep,
+            digest: .sha1
+        )
 
         return encryptedData
     }

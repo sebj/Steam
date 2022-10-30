@@ -1,9 +1,3 @@
-//
-//  Connection.swift
-//  
-//  Copyright © 2020-2021 Sebastian Jachec. All rights reserved.
-//
-
 import Combine
 import Foundation
 import Network
@@ -81,7 +75,7 @@ final class NetworkConnection: ConnectionProtocol {
         connection?.receive(
             minimumIncompleteLength: 1,
             maximumLength: maximumLength)
-        { [weak self] (data, _, isComplete, error) in
+        { [weak self] data, _, isComplete, error in
             if let data = data {
                 self?.dataSubject.send(data)
             }

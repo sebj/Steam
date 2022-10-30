@@ -1,9 +1,3 @@
-//
-//  SteamService+EncryptionMessages.swift
-//
-//  Copyright © 2021 Sebastian Jachec. All rights reserved.
-//
-
 import Foundation
 
 extension SteamService {
@@ -24,7 +18,10 @@ extension SteamService {
         }
 
         let hmac = encryptionRequest.challenge
-        guard let encryptedSessionKeyData = try? encryptSessionKey(plainKeyData: sessionKeyData.plainData, hmac: hmac) else {
+        guard let encryptedSessionKeyData = try? encryptSessionKey(
+            plainKeyData: sessionKeyData.plainData,
+            hmac: hmac
+        ) else {
             connection?.disconnect()
             return
         }
@@ -41,7 +38,8 @@ extension SteamService {
 
         let message = Message(
             header: .init(messageType: .kEmsgChannelEncryptResponse),
-            payload: data)
+            payload: data
+        )
 
         encryption = .inProgress(sessionKeyData)
 
@@ -50,7 +48,8 @@ extension SteamService {
                 if case .failure = completion {
                     self?.connection?.disconnect()
                 }
-            } receiveValue: { _ in }
+            } receiveValue: { _ in
+            }
             .store(in: &cancellables)
     }
 

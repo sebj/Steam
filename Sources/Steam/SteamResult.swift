@@ -117,7 +117,8 @@ public enum SteamResult: UInt32 {
     case externalAccountUnlinked = 57
     /// PSN ticket was invalid.
     case psnTicketInvalid = 58
-    /// External account (PSN, Facebook...) is already linked to some other account, must explicitly request to replace/delete the link first.
+    /// External account (PSN, Facebook...) is already linked to some other account, must explicitly request
+    /// to replace/delete the link first.
     case externalAccountAlreadyLinked = 59
     /// The sync cannot resume due to a conflict between the local and remote files.
     case remoteFileConflict = 60
@@ -145,7 +146,8 @@ public enum SteamResult: UInt32 {
     case expiredLoginAuthCode = 71
     /// The login failed due to an IP restriction.
     case ipLoginRestrictionFailed = 72
-    /// The current users account is currently locked for use. This is likely due to a hijacking and pending ownership verification.
+    /// The current users account is currently locked for use. This is likely due to a hijacking
+    /// and pending ownership verification.
     case accountLocked = 73
     case accountLogonDeniedEmailVerificationRequired = 74
     case noMatchingURL = 75
@@ -203,7 +205,8 @@ public enum SteamResult: UInt32 {
     case needCaptcha = 101
     /// A game server login token owned by this token's owner has been banned.
     case gameServerLoginTokenDenied = 102
-    /// Game server owner is denied for some other reason such as account locked, community ban, VAC ban, missing phone, etc.
+    /// Game server owner is denied for some other reason such as account locked, community ban, VAC ban,
+    /// missing phone, etc.
     case gameServerOwnerDenied = 103
     /// The type of thing we were requested to act on is invalid.
     case invalidItemType = 104

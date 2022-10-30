@@ -1,5 +1,5 @@
-import XCTest
 @testable import Steam
+import XCTest
 
 final class DataExtensionsTests: XCTestCase {
     

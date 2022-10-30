@@ -41,7 +41,8 @@ extension SteamService {
 
         let message = ProtobufMessage(
             header: .init(messageType: .kEmsgClientRemoveFriend),
-            payload: payload)
+            payload: payload
+        )
 
         return send(message)
     }
@@ -63,7 +64,8 @@ extension SteamService {
 
         let message = ProtobufMessage(
             header: .init(messageType: .kEmsgClientRemoveFriend),
-            payload: payload)
+            payload: payload
+        )
 
         return send(message)
     }

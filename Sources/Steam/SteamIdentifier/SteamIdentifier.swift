@@ -1,9 +1,3 @@
-//
-//  SteamIdentifier.swift
-//
-//  Copyright © 2020-2021 Sebastian Jachec. All rights reserved.
-//
-
 /// A unique 64-bit identifier for a Steam user account.
 /// See https://developer.valvesoftware.com/wiki/SteamID
 public struct SteamIdentifier: Hashable, Equatable {
@@ -16,8 +10,8 @@ public struct SteamIdentifier: Hashable, Equatable {
         accountIdentifier: UInt32 = 0,
         instance: UInt32 = 1,
         universe: SteamUniverse = .public,
-        accountType: SteamAccountType = .individual)
-    {
+        accountType: SteamAccountType = .individual
+    ) {
         self.accountIdentifier = accountIdentifier
         self.instance = instance
         self.universe = universe
