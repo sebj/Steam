@@ -106,8 +106,8 @@ enum EMsg {
 	k_EMsgAIGetAppListResponse = 426;
 	k_EMsgAISGetCouponDefinition = 429;
 	k_EMsgAISGetCouponDefinitionResponse = 430;
-	k_EMsgAISUpdateSlaveContentDescription = 431;
-	k_EMsgAISUpdateSlaveContentDescriptionResponse = 432;
+	k_EMsgAISUpdateSubordinateContentDescription = 431;
+	k_EMsgAISUpdateSubordinateContentDescriptionResponse = 432;
 	k_EMsgAISTestEnableGC = 433;
 	k_EMsgBaseAM = 500;
 	k_EMsgAMUpdateUserBanRequest = 504;
@@ -257,7 +257,6 @@ enum EMsg {
 	k_EMsgGSApprove = 758;
 	k_EMsgGSDeny = 759;
 	k_EMsgGSKick = 760;
-	k_EMsgClientCreateAcctResponse = 761;
 	k_EMsgClientPurchaseResponse = 763;
 	k_EMsgClientPing = 764;
 	k_EMsgClientNOP = 765;
@@ -416,8 +415,6 @@ enum EMsg {
 	k_EMsgBSCommitGCTxn = 1425;
 	k_EMsgBSQueryTransactionStatus = 1426;
 	k_EMsgBSQueryTransactionStatusResponse = 1427;
-	k_EMsgBSQueryPaymentInstUsage = 1431;
-	k_EMsgBSQueryPaymentInstResponse = 1432;
 	k_EMsgBSQueryTxnExtendedInfo = 1433;
 	k_EMsgBSQueryTxnExtendedInfoResponse = 1434;
 	k_EMsgBSUpdateConversionRates = 1435;
@@ -556,6 +553,8 @@ enum EMsg {
 	k_EMsgGCHAppCheersReceived = 2242;
 	k_EMsgGCHAppCheersGetAllowedTypes = 2243;
 	k_EMsgGCHAppCheersGetAllowedTypesResponse = 2244;
+	k_EMsgGCHRoutingRulesFromGCHtoGM = 2245;
+	k_EMsgGCHRoutingRulesToGCHfromGM = 2246;
 	k_EMsgBaseP2P = 2500;
 	k_EMsgP2PIntroducerMessage = 2502;
 	k_EMsgBaseSM = 2900;
@@ -642,10 +641,6 @@ enum EMsg {
 	k_EMsgAMGetChatBanListResponse = 4066;
 	k_EMsgAMUnBanFromChat = 4067;
 	k_EMsgAMSetClanDetails = 4068;
-	k_EMsgAMGetAccountLinks = 4069;
-	k_EMsgAMGetAccountLinksResponse = 4070;
-	k_EMsgAMSetAccountLinks = 4071;
-	k_EMsgAMSetAccountLinksResponse = 4072;
 	k_EMsgUGSGetUserGameStats = 4073;
 	k_EMsgUGSGetUserGameStatsResponse = 4074;
 	k_EMsgAMCheckClanMembership = 4075;
@@ -706,8 +701,6 @@ enum EMsg {
 	k_EMsgAMSendQueuedEmails = 4152;
 	k_EMsgAMSetLicenseFlags = 4153;
 	k_EMsgCommunityDeleteUserNews = 4155;
-	k_EMsgAMAllowUserFilesRequest = 4156;
-	k_EMsgAMAllowUserFilesResponse = 4157;
 	k_EMsgAMGetAccountStatus = 4158;
 	k_EMsgAMGetAccountStatusResponse = 4159;
 	k_EMsgAMEditBanReason = 4160;
@@ -734,7 +727,6 @@ enum EMsg {
 	k_EMsgAMSupportIsAccountEnabled = 4209;
 	k_EMsgAMSupportIsAccountEnabledResponse = 4210;
 	k_EMsgUGSGetUserStats = 4211;
-	k_EMsgAMSupportKickSession = 4212;
 	k_EMsgAMGSSearch = 4213;
 	k_EMsgMarketingMessageUpdate = 4216;
 	k_EMsgChatServerRouteFriendMsg = 4219;
@@ -763,7 +755,6 @@ enum EMsg {
 	k_EMsgAMCreateFinancialAdjustment = 4265;
 	k_EMsgAMPlayerNicknameList = 4266;
 	k_EMsgAMPlayerNicknameListResponse = 4267;
-	k_EMsgAMSetDRMTestConfig = 4268;
 	k_EMsgAMGetUserCurrentGameInfo = 4269;
 	k_EMsgAMGetUserCurrentGameInfoResponse = 4270;
 	k_EMsgAMGetGSPlayerList = 4271;
@@ -892,6 +883,9 @@ enum EMsg {
 	k_EMsgAMRequestPersonaUpdateForChatServer = 4420;
 	k_EMsgAMPerfectWorldPayment = 4421;
 	k_EMsgAMPerfectWorldPaymentResponse = 4422;
+	k_EMsgAMECommPayPayment = 4423;
+	k_EMsgAMECommPayPaymentResponse = 4424;
+	k_EMsgAMSetRemoteClientID = 4425;
 	k_EMsgBasePSRange = 5000;
 	k_EMsgPSCreateShoppingCart = 5001;
 	k_EMsgPSCreateShoppingCartResponse = 5002;
@@ -1021,8 +1015,8 @@ enum EMsg {
 	k_EMsgClientOGSEndSession = 5492;
 	k_EMsgClientOGSEndSessionResponse = 5493;
 	k_EMsgClientOGSWriteRow = 5494;
-	k_EMsgClientDRMTest = 5495;
-	k_EMsgClientDRMTestResult = 5496;
+	k_EMsgClientStartPeerContentServer = 5497;
+	k_EMsgClientStartPeerContentServerResponse = 5498;
 	k_EMsgClientServerUnavailable = 5500;
 	k_EMsgClientServersAvailable = 5501;
 	k_EMsgClientRegisterAuthTicketWithCM = 5502;
@@ -1141,8 +1135,8 @@ enum EMsg {
 	k_EMsgClientNetworkingMobileCertRequest = 5626;
 	k_EMsgClientNetworkingMobileCertRequestResponse = 5627;
 	k_EMsgBaseMDS = 5800;
-	k_EMsgAMToMDSGetDepotDecryptionKey = 5812;
-	k_EMsgMDSToAMGetDepotDecryptionKeyResponse = 5813;
+	k_EMsgMDSGetDepotDecryptionKey = 5812;
+	k_EMsgMDSGetDepotDecryptionKeyResponse = 5813;
 	k_EMsgMDSContentServerConfigRequest = 5827;
 	k_EMsgMDSContentServerConfig = 5828;
 	k_EMsgMDSGetDepotManifest = 5829;
@@ -1247,8 +1241,6 @@ enum EMsg {
 	k_EMsgClientUCMUpdatePublishedFileResponse = 7326;
 	k_EMsgUCMUpdatePublishedFile = 7327;
 	k_EMsgUCMUpdatePublishedFileResponse = 7328;
-	k_EMsgUCMDeletePublishedFile = 7329;
-	k_EMsgUCMDeletePublishedFileResponse = 7330;
 	k_EMsgUCMUpdatePublishedFileStat = 7331;
 	k_EMsgUCMReloadPublishedFile = 7337;
 	k_EMsgUCMReloadUserFileListCaches = 7338;
@@ -1473,9 +1465,15 @@ enum EMsg {
 	k_EMsgClientVoiceCallPreAuthorizeResponse = 9801;
 	k_EMsgClientServerTimestampRequest = 9802;
 	k_EMsgClientServerTimestampResponse = 9803;
+	k_EMsgServiceMethodCallFromClientNonAuthed = 9804;
+	k_EMsgClientHello = 9805;
+	k_EMsgClientEnableOrDisableDownloads = 9806;
+	k_EMsgClientEnableOrDisableDownloadsResponse = 9807;
 	k_EMsgClientLANP2PBase = 9900;
 	k_EMsgClientLANP2PRequestChunk = 9900;
 	k_EMsgClientLANP2PRequestChunkResponse = 9901;
+	k_EMsgClientPeerChunkRequest = 9902;
+	k_EMsgClientPeerChunkResponse = 9903;
 	k_EMsgClientLANP2PMax = 9999;
 	k_EMsgBaseWatchdogServer = 10000;
 	k_EMsgNotifyWatchdog = 10000;

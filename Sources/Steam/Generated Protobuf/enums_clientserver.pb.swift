@@ -125,8 +125,8 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgAigetAppListResponse // = 426
   case kEmsgAisgetCouponDefinition // = 429
   case kEmsgAisgetCouponDefinitionResponse // = 430
-  case kEmsgAisupdateSlaveContentDescription // = 431
-  case kEmsgAisupdateSlaveContentDescriptionResponse // = 432
+  case kEmsgAisupdateSubordinateContentDescription // = 431
+  case kEmsgAisupdateSubordinateContentDescriptionResponse // = 432
   case kEmsgAistestEnableGc // = 433
   case kEmsgBaseAm // = 500
   case kEmsgAmupdateUserBanRequest // = 504
@@ -276,7 +276,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgGsapprove // = 758
   case kEmsgGsdeny // = 759
   case kEmsgGskick // = 760
-  case kEmsgClientCreateAcctResponse // = 761
   case kEmsgClientPurchaseResponse // = 763
   case kEmsgClientPing // = 764
   case kEmsgClientNop // = 765
@@ -435,8 +434,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgBscommitGctxn // = 1425
   case kEmsgBsqueryTransactionStatus // = 1426
   case kEmsgBsqueryTransactionStatusResponse // = 1427
-  case kEmsgBsqueryPaymentInstUsage // = 1431
-  case kEmsgBsqueryPaymentInstResponse // = 1432
   case kEmsgBsqueryTxnExtendedInfo // = 1433
   case kEmsgBsqueryTxnExtendedInfoResponse // = 1434
   case kEmsgBsupdateConversionRates // = 1435
@@ -575,6 +572,8 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgGchappCheersReceived // = 2242
   case kEmsgGchappCheersGetAllowedTypes // = 2243
   case kEmsgGchappCheersGetAllowedTypesResponse // = 2244
+  case kEmsgGchroutingRulesFromGchtoGm // = 2245
+  case kEmsgGchroutingRulesToGchfromGm // = 2246
   case kEmsgBaseP2P // = 2500
   case kEmsgP2PintroducerMessage // = 2502
   case kEmsgBaseSm // = 2900
@@ -661,10 +660,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgAmgetChatBanListResponse // = 4066
   case kEmsgAmunBanFromChat // = 4067
   case kEmsgAmsetClanDetails // = 4068
-  case kEmsgAmgetAccountLinks // = 4069
-  case kEmsgAmgetAccountLinksResponse // = 4070
-  case kEmsgAmsetAccountLinks // = 4071
-  case kEmsgAmsetAccountLinksResponse // = 4072
   case kEmsgUgsgetUserGameStats // = 4073
   case kEmsgUgsgetUserGameStatsResponse // = 4074
   case kEmsgAmcheckClanMembership // = 4075
@@ -725,8 +720,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgAmsendQueuedEmails // = 4152
   case kEmsgAmsetLicenseFlags // = 4153
   case kEmsgCommunityDeleteUserNews // = 4155
-  case kEmsgAmallowUserFilesRequest // = 4156
-  case kEmsgAmallowUserFilesResponse // = 4157
   case kEmsgAmgetAccountStatus // = 4158
   case kEmsgAmgetAccountStatusResponse // = 4159
   case kEmsgAmeditBanReason // = 4160
@@ -753,7 +746,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgAmsupportIsAccountEnabled // = 4209
   case kEmsgAmsupportIsAccountEnabledResponse // = 4210
   case kEmsgUgsgetUserStats // = 4211
-  case kEmsgAmsupportKickSession // = 4212
   case kEmsgAmgssearch // = 4213
   case kEmsgMarketingMessageUpdate // = 4216
   case kEmsgChatServerRouteFriendMsg // = 4219
@@ -782,7 +774,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgAmcreateFinancialAdjustment // = 4265
   case kEmsgAmplayerNicknameList // = 4266
   case kEmsgAmplayerNicknameListResponse // = 4267
-  case kEmsgAmsetDrmtestConfig // = 4268
   case kEmsgAmgetUserCurrentGameInfo // = 4269
   case kEmsgAmgetUserCurrentGameInfoResponse // = 4270
   case kEmsgAmgetGsplayerList // = 4271
@@ -911,6 +902,9 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgAmrequestPersonaUpdateForChatServer // = 4420
   case kEmsgAmperfectWorldPayment // = 4421
   case kEmsgAmperfectWorldPaymentResponse // = 4422
+  case kEmsgAmecommPayPayment // = 4423
+  case kEmsgAmecommPayPaymentResponse // = 4424
+  case kEmsgAmsetRemoteClientID // = 4425
   case kEmsgBasePsrange // = 5000
   case kEmsgPscreateShoppingCart // = 5001
   case kEmsgPscreateShoppingCartResponse // = 5002
@@ -1040,8 +1034,8 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgClientOgsendSession // = 5492
   case kEmsgClientOgsendSessionResponse // = 5493
   case kEmsgClientOgswriteRow // = 5494
-  case kEmsgClientDrmtest // = 5495
-  case kEmsgClientDrmtestResult // = 5496
+  case kEmsgClientStartPeerContentServer // = 5497
+  case kEmsgClientStartPeerContentServerResponse // = 5498
   case kEmsgClientServerUnavailable // = 5500
   case kEmsgClientServersAvailable // = 5501
   case kEmsgClientRegisterAuthTicketWithCm // = 5502
@@ -1160,8 +1154,8 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgClientNetworkingMobileCertRequest // = 5626
   case kEmsgClientNetworkingMobileCertRequestResponse // = 5627
   case kEmsgBaseMds // = 5800
-  case kEmsgAmtoMdsgetDepotDecryptionKey // = 5812
-  case kEmsgMdstoAmgetDepotDecryptionKeyResponse // = 5813
+  case kEmsgMdsgetDepotDecryptionKey // = 5812
+  case kEmsgMdsgetDepotDecryptionKeyResponse // = 5813
   case kEmsgMdscontentServerConfigRequest // = 5827
   case kEmsgMdscontentServerConfig // = 5828
   case kEmsgMdsgetDepotManifest // = 5829
@@ -1266,8 +1260,6 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgClientUcmupdatePublishedFileResponse // = 7326
   case kEmsgUcmupdatePublishedFile // = 7327
   case kEmsgUcmupdatePublishedFileResponse // = 7328
-  case kEmsgUcmdeletePublishedFile // = 7329
-  case kEmsgUcmdeletePublishedFileResponse // = 7330
   case kEmsgUcmupdatePublishedFileStat // = 7331
   case kEmsgUcmreloadPublishedFile // = 7337
   case kEmsgUcmreloadUserFileListCaches // = 7338
@@ -1492,9 +1484,15 @@ enum EMsg: SwiftProtobuf.Enum {
   case kEmsgClientVoiceCallPreAuthorizeResponse // = 9801
   case kEmsgClientServerTimestampRequest // = 9802
   case kEmsgClientServerTimestampResponse // = 9803
+  case kEmsgServiceMethodCallFromClientNonAuthed // = 9804
+  case kEmsgClientHello // = 9805
+  case kEmsgClientEnableOrDisableDownloads // = 9806
+  case kEmsgClientEnableOrDisableDownloadsResponse // = 9807
   case kEmsgClientLanp2Pbase // = 9900
   static let kEmsgClientLanp2PrequestChunk = kEmsgClientLanp2Pbase
   case kEmsgClientLanp2PrequestChunkResponse // = 9901
+  case kEmsgClientPeerChunkRequest // = 9902
+  case kEmsgClientPeerChunkResponse // = 9903
   case kEmsgClientLanp2Pmax // = 9999
   case kEmsgBaseWatchdogServer // = 10000
   static let kEmsgNotifyWatchdog = kEmsgBaseWatchdogServer
@@ -1618,8 +1616,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case 426: self = .kEmsgAigetAppListResponse
     case 429: self = .kEmsgAisgetCouponDefinition
     case 430: self = .kEmsgAisgetCouponDefinitionResponse
-    case 431: self = .kEmsgAisupdateSlaveContentDescription
-    case 432: self = .kEmsgAisupdateSlaveContentDescriptionResponse
+    case 431: self = .kEmsgAisupdateSubordinateContentDescription
+    case 432: self = .kEmsgAisupdateSubordinateContentDescriptionResponse
     case 433: self = .kEmsgAistestEnableGc
     case 500: self = .kEmsgBaseAm
     case 504: self = .kEmsgAmupdateUserBanRequest
@@ -1768,7 +1766,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 758: self = .kEmsgGsapprove
     case 759: self = .kEmsgGsdeny
     case 760: self = .kEmsgGskick
-    case 761: self = .kEmsgClientCreateAcctResponse
     case 763: self = .kEmsgClientPurchaseResponse
     case 764: self = .kEmsgClientPing
     case 765: self = .kEmsgClientNop
@@ -1923,8 +1920,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 1425: self = .kEmsgBscommitGctxn
     case 1426: self = .kEmsgBsqueryTransactionStatus
     case 1427: self = .kEmsgBsqueryTransactionStatusResponse
-    case 1431: self = .kEmsgBsqueryPaymentInstUsage
-    case 1432: self = .kEmsgBsqueryPaymentInstResponse
     case 1433: self = .kEmsgBsqueryTxnExtendedInfo
     case 1434: self = .kEmsgBsqueryTxnExtendedInfoResponse
     case 1435: self = .kEmsgBsupdateConversionRates
@@ -2063,6 +2058,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case 2242: self = .kEmsgGchappCheersReceived
     case 2243: self = .kEmsgGchappCheersGetAllowedTypes
     case 2244: self = .kEmsgGchappCheersGetAllowedTypesResponse
+    case 2245: self = .kEmsgGchroutingRulesFromGchtoGm
+    case 2246: self = .kEmsgGchroutingRulesToGchfromGm
     case 2500: self = .kEmsgBaseP2P
     case 2502: self = .kEmsgP2PintroducerMessage
     case 2900: self = .kEmsgBaseSm
@@ -2148,10 +2145,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 4066: self = .kEmsgAmgetChatBanListResponse
     case 4067: self = .kEmsgAmunBanFromChat
     case 4068: self = .kEmsgAmsetClanDetails
-    case 4069: self = .kEmsgAmgetAccountLinks
-    case 4070: self = .kEmsgAmgetAccountLinksResponse
-    case 4071: self = .kEmsgAmsetAccountLinks
-    case 4072: self = .kEmsgAmsetAccountLinksResponse
     case 4073: self = .kEmsgUgsgetUserGameStats
     case 4074: self = .kEmsgUgsgetUserGameStatsResponse
     case 4075: self = .kEmsgAmcheckClanMembership
@@ -2212,8 +2205,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 4152: self = .kEmsgAmsendQueuedEmails
     case 4153: self = .kEmsgAmsetLicenseFlags
     case 4155: self = .kEmsgCommunityDeleteUserNews
-    case 4156: self = .kEmsgAmallowUserFilesRequest
-    case 4157: self = .kEmsgAmallowUserFilesResponse
     case 4158: self = .kEmsgAmgetAccountStatus
     case 4159: self = .kEmsgAmgetAccountStatusResponse
     case 4160: self = .kEmsgAmeditBanReason
@@ -2240,7 +2231,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 4209: self = .kEmsgAmsupportIsAccountEnabled
     case 4210: self = .kEmsgAmsupportIsAccountEnabledResponse
     case 4211: self = .kEmsgUgsgetUserStats
-    case 4212: self = .kEmsgAmsupportKickSession
     case 4213: self = .kEmsgAmgssearch
     case 4216: self = .kEmsgMarketingMessageUpdate
     case 4219: self = .kEmsgChatServerRouteFriendMsg
@@ -2269,7 +2259,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 4265: self = .kEmsgAmcreateFinancialAdjustment
     case 4266: self = .kEmsgAmplayerNicknameList
     case 4267: self = .kEmsgAmplayerNicknameListResponse
-    case 4268: self = .kEmsgAmsetDrmtestConfig
     case 4269: self = .kEmsgAmgetUserCurrentGameInfo
     case 4270: self = .kEmsgAmgetUserCurrentGameInfoResponse
     case 4271: self = .kEmsgAmgetGsplayerList
@@ -2398,6 +2387,9 @@ enum EMsg: SwiftProtobuf.Enum {
     case 4420: self = .kEmsgAmrequestPersonaUpdateForChatServer
     case 4421: self = .kEmsgAmperfectWorldPayment
     case 4422: self = .kEmsgAmperfectWorldPaymentResponse
+    case 4423: self = .kEmsgAmecommPayPayment
+    case 4424: self = .kEmsgAmecommPayPaymentResponse
+    case 4425: self = .kEmsgAmsetRemoteClientID
     case 5000: self = .kEmsgBasePsrange
     case 5001: self = .kEmsgPscreateShoppingCart
     case 5002: self = .kEmsgPscreateShoppingCartResponse
@@ -2527,8 +2519,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case 5492: self = .kEmsgClientOgsendSession
     case 5493: self = .kEmsgClientOgsendSessionResponse
     case 5494: self = .kEmsgClientOgswriteRow
-    case 5495: self = .kEmsgClientDrmtest
-    case 5496: self = .kEmsgClientDrmtestResult
+    case 5497: self = .kEmsgClientStartPeerContentServer
+    case 5498: self = .kEmsgClientStartPeerContentServerResponse
     case 5500: self = .kEmsgClientServerUnavailable
     case 5501: self = .kEmsgClientServersAvailable
     case 5502: self = .kEmsgClientRegisterAuthTicketWithCm
@@ -2647,8 +2639,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case 5626: self = .kEmsgClientNetworkingMobileCertRequest
     case 5627: self = .kEmsgClientNetworkingMobileCertRequestResponse
     case 5800: self = .kEmsgBaseMds
-    case 5812: self = .kEmsgAmtoMdsgetDepotDecryptionKey
-    case 5813: self = .kEmsgMdstoAmgetDepotDecryptionKeyResponse
+    case 5812: self = .kEmsgMdsgetDepotDecryptionKey
+    case 5813: self = .kEmsgMdsgetDepotDecryptionKeyResponse
     case 5827: self = .kEmsgMdscontentServerConfigRequest
     case 5828: self = .kEmsgMdscontentServerConfig
     case 5829: self = .kEmsgMdsgetDepotManifest
@@ -2753,8 +2745,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case 7326: self = .kEmsgClientUcmupdatePublishedFileResponse
     case 7327: self = .kEmsgUcmupdatePublishedFile
     case 7328: self = .kEmsgUcmupdatePublishedFileResponse
-    case 7329: self = .kEmsgUcmdeletePublishedFile
-    case 7330: self = .kEmsgUcmdeletePublishedFileResponse
     case 7331: self = .kEmsgUcmupdatePublishedFileStat
     case 7337: self = .kEmsgUcmreloadPublishedFile
     case 7338: self = .kEmsgUcmreloadUserFileListCaches
@@ -2963,8 +2953,14 @@ enum EMsg: SwiftProtobuf.Enum {
     case 9801: self = .kEmsgClientVoiceCallPreAuthorizeResponse
     case 9802: self = .kEmsgClientServerTimestampRequest
     case 9803: self = .kEmsgClientServerTimestampResponse
+    case 9804: self = .kEmsgServiceMethodCallFromClientNonAuthed
+    case 9805: self = .kEmsgClientHello
+    case 9806: self = .kEmsgClientEnableOrDisableDownloads
+    case 9807: self = .kEmsgClientEnableOrDisableDownloadsResponse
     case 9900: self = .kEmsgClientLanp2Pbase
     case 9901: self = .kEmsgClientLanp2PrequestChunkResponse
+    case 9902: self = .kEmsgClientPeerChunkRequest
+    case 9903: self = .kEmsgClientPeerChunkResponse
     case 9999: self = .kEmsgClientLanp2Pmax
     case 10000: self = .kEmsgBaseWatchdogServer
     case 10100: self = .kEmsgClientSiteLicenseBase
@@ -3083,8 +3079,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgAigetAppListResponse: return 426
     case .kEmsgAisgetCouponDefinition: return 429
     case .kEmsgAisgetCouponDefinitionResponse: return 430
-    case .kEmsgAisupdateSlaveContentDescription: return 431
-    case .kEmsgAisupdateSlaveContentDescriptionResponse: return 432
+    case .kEmsgAisupdateSubordinateContentDescription: return 431
+    case .kEmsgAisupdateSubordinateContentDescriptionResponse: return 432
     case .kEmsgAistestEnableGc: return 433
     case .kEmsgBaseAm: return 500
     case .kEmsgAmupdateUserBanRequest: return 504
@@ -3233,7 +3229,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgGsapprove: return 758
     case .kEmsgGsdeny: return 759
     case .kEmsgGskick: return 760
-    case .kEmsgClientCreateAcctResponse: return 761
     case .kEmsgClientPurchaseResponse: return 763
     case .kEmsgClientPing: return 764
     case .kEmsgClientNop: return 765
@@ -3388,8 +3383,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgBscommitGctxn: return 1425
     case .kEmsgBsqueryTransactionStatus: return 1426
     case .kEmsgBsqueryTransactionStatusResponse: return 1427
-    case .kEmsgBsqueryPaymentInstUsage: return 1431
-    case .kEmsgBsqueryPaymentInstResponse: return 1432
     case .kEmsgBsqueryTxnExtendedInfo: return 1433
     case .kEmsgBsqueryTxnExtendedInfoResponse: return 1434
     case .kEmsgBsupdateConversionRates: return 1435
@@ -3483,12 +3476,12 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgDppartnerMicroTxns: return 1628
     case .kEmsgDppartnerMicroTxnsResponse: return 1629
     case .kEmsgClientDpcontentStatsReport: return 1630
-    default: break
-    }
-    switch self {
     case .kEmsgDpvruniquePlayersStat: return 1631
     case .kEmsgBaseCm: return 1700
     case .kEmsgCmsetAllowState: return 1701
+    default: break
+    }
+    switch self {
     case .kEmsgCmspewAllowState: return 1702
     case .kEmsgCmsessionRejected: return 1703
     case .kEmsgCmsetSecrets: return 1704
@@ -3531,6 +3524,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgGchappCheersReceived: return 2242
     case .kEmsgGchappCheersGetAllowedTypes: return 2243
     case .kEmsgGchappCheersGetAllowedTypesResponse: return 2244
+    case .kEmsgGchroutingRulesFromGchtoGm: return 2245
+    case .kEmsgGchroutingRulesToGchfromGm: return 2246
     case .kEmsgBaseP2P: return 2500
     case .kEmsgP2PintroducerMessage: return 2502
     case .kEmsgBaseSm: return 2900
@@ -3616,10 +3611,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgAmgetChatBanListResponse: return 4066
     case .kEmsgAmunBanFromChat: return 4067
     case .kEmsgAmsetClanDetails: return 4068
-    case .kEmsgAmgetAccountLinks: return 4069
-    case .kEmsgAmgetAccountLinksResponse: return 4070
-    case .kEmsgAmsetAccountLinks: return 4071
-    case .kEmsgAmsetAccountLinksResponse: return 4072
     case .kEmsgUgsgetUserGameStats: return 4073
     case .kEmsgUgsgetUserGameStatsResponse: return 4074
     case .kEmsgAmcheckClanMembership: return 4075
@@ -3680,8 +3671,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgAmsendQueuedEmails: return 4152
     case .kEmsgAmsetLicenseFlags: return 4153
     case .kEmsgCommunityDeleteUserNews: return 4155
-    case .kEmsgAmallowUserFilesRequest: return 4156
-    case .kEmsgAmallowUserFilesResponse: return 4157
     case .kEmsgAmgetAccountStatus: return 4158
     case .kEmsgAmgetAccountStatusResponse: return 4159
     case .kEmsgAmeditBanReason: return 4160
@@ -3708,7 +3697,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgAmsupportIsAccountEnabled: return 4209
     case .kEmsgAmsupportIsAccountEnabledResponse: return 4210
     case .kEmsgUgsgetUserStats: return 4211
-    case .kEmsgAmsupportKickSession: return 4212
     case .kEmsgAmgssearch: return 4213
     case .kEmsgMarketingMessageUpdate: return 4216
     case .kEmsgChatServerRouteFriendMsg: return 4219
@@ -3737,7 +3725,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgAmcreateFinancialAdjustment: return 4265
     case .kEmsgAmplayerNicknameList: return 4266
     case .kEmsgAmplayerNicknameListResponse: return 4267
-    case .kEmsgAmsetDrmtestConfig: return 4268
     case .kEmsgAmgetUserCurrentGameInfo: return 4269
     case .kEmsgAmgetUserCurrentGameInfoResponse: return 4270
     case .kEmsgAmgetGsplayerList: return 4271
@@ -3866,6 +3853,9 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgAmrequestPersonaUpdateForChatServer: return 4420
     case .kEmsgAmperfectWorldPayment: return 4421
     case .kEmsgAmperfectWorldPaymentResponse: return 4422
+    case .kEmsgAmecommPayPayment: return 4423
+    case .kEmsgAmecommPayPaymentResponse: return 4424
+    case .kEmsgAmsetRemoteClientID: return 4425
     case .kEmsgBasePsrange: return 5000
     case .kEmsgPscreateShoppingCart: return 5001
     case .kEmsgPscreateShoppingCartResponse: return 5002
@@ -3986,20 +3976,20 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgClientVerifyPassword: return 5483
     case .kEmsgClientVerifyPasswordResponse: return 5484
     case .kEmsgClientDrmdownloadRequest: return 5485
-    default: break
-    }
-    switch self {
     case .kEmsgClientDrmdownloadResponse: return 5486
     case .kEmsgClientDrmfinalResult: return 5487
     case .kEmsgClientGetFriendsWhoPlayGame: return 5488
     case .kEmsgClientGetFriendsWhoPlayGameResponse: return 5489
     case .kEmsgClientOgsbeginSession: return 5490
     case .kEmsgClientOgsbeginSessionResponse: return 5491
+    default: break
+    }
+    switch self {
     case .kEmsgClientOgsendSession: return 5492
     case .kEmsgClientOgsendSessionResponse: return 5493
     case .kEmsgClientOgswriteRow: return 5494
-    case .kEmsgClientDrmtest: return 5495
-    case .kEmsgClientDrmtestResult: return 5496
+    case .kEmsgClientStartPeerContentServer: return 5497
+    case .kEmsgClientStartPeerContentServerResponse: return 5498
     case .kEmsgClientServerUnavailable: return 5500
     case .kEmsgClientServersAvailable: return 5501
     case .kEmsgClientRegisterAuthTicketWithCm: return 5502
@@ -4118,8 +4108,8 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgClientNetworkingMobileCertRequest: return 5626
     case .kEmsgClientNetworkingMobileCertRequestResponse: return 5627
     case .kEmsgBaseMds: return 5800
-    case .kEmsgAmtoMdsgetDepotDecryptionKey: return 5812
-    case .kEmsgMdstoAmgetDepotDecryptionKeyResponse: return 5813
+    case .kEmsgMdsgetDepotDecryptionKey: return 5812
+    case .kEmsgMdsgetDepotDecryptionKeyResponse: return 5813
     case .kEmsgMdscontentServerConfigRequest: return 5827
     case .kEmsgMdscontentServerConfig: return 5828
     case .kEmsgMdsgetDepotManifest: return 5829
@@ -4224,8 +4214,6 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgClientUcmupdatePublishedFileResponse: return 7326
     case .kEmsgUcmupdatePublishedFile: return 7327
     case .kEmsgUcmupdatePublishedFileResponse: return 7328
-    case .kEmsgUcmdeletePublishedFile: return 7329
-    case .kEmsgUcmdeletePublishedFileResponse: return 7330
     case .kEmsgUcmupdatePublishedFileStat: return 7331
     case .kEmsgUcmreloadPublishedFile: return 7337
     case .kEmsgUcmreloadUserFileListCaches: return 7338
@@ -4434,8 +4422,14 @@ enum EMsg: SwiftProtobuf.Enum {
     case .kEmsgClientVoiceCallPreAuthorizeResponse: return 9801
     case .kEmsgClientServerTimestampRequest: return 9802
     case .kEmsgClientServerTimestampResponse: return 9803
+    case .kEmsgServiceMethodCallFromClientNonAuthed: return 9804
+    case .kEmsgClientHello: return 9805
+    case .kEmsgClientEnableOrDisableDownloads: return 9806
+    case .kEmsgClientEnableOrDisableDownloadsResponse: return 9807
     case .kEmsgClientLanp2Pbase: return 9900
     case .kEmsgClientLanp2PrequestChunkResponse: return 9901
+    case .kEmsgClientPeerChunkRequest: return 9902
+    case .kEmsgClientPeerChunkResponse: return 9903
     case .kEmsgClientLanp2Pmax: return 9999
     case .kEmsgBaseWatchdogServer: return 10000
     case .kEmsgClientSiteLicenseBase: return 10100
@@ -4748,8 +4742,8 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     426: .same(proto: "k_EMsgAIGetAppListResponse"),
     429: .same(proto: "k_EMsgAISGetCouponDefinition"),
     430: .same(proto: "k_EMsgAISGetCouponDefinitionResponse"),
-    431: .same(proto: "k_EMsgAISUpdateSlaveContentDescription"),
-    432: .same(proto: "k_EMsgAISUpdateSlaveContentDescriptionResponse"),
+    431: .same(proto: "k_EMsgAISUpdateSubordinateContentDescription"),
+    432: .same(proto: "k_EMsgAISUpdateSubordinateContentDescriptionResponse"),
     433: .same(proto: "k_EMsgAISTestEnableGC"),
     500: .same(proto: "k_EMsgBaseAM"),
     504: .same(proto: "k_EMsgAMUpdateUserBanRequest"),
@@ -4898,7 +4892,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     758: .same(proto: "k_EMsgGSApprove"),
     759: .same(proto: "k_EMsgGSDeny"),
     760: .same(proto: "k_EMsgGSKick"),
-    761: .same(proto: "k_EMsgClientCreateAcctResponse"),
     763: .same(proto: "k_EMsgClientPurchaseResponse"),
     764: .same(proto: "k_EMsgClientPing"),
     765: .same(proto: "k_EMsgClientNOP"),
@@ -5053,8 +5046,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     1425: .same(proto: "k_EMsgBSCommitGCTxn"),
     1426: .same(proto: "k_EMsgBSQueryTransactionStatus"),
     1427: .same(proto: "k_EMsgBSQueryTransactionStatusResponse"),
-    1431: .same(proto: "k_EMsgBSQueryPaymentInstUsage"),
-    1432: .same(proto: "k_EMsgBSQueryPaymentInstResponse"),
     1433: .same(proto: "k_EMsgBSQueryTxnExtendedInfo"),
     1434: .same(proto: "k_EMsgBSQueryTxnExtendedInfoResponse"),
     1435: .same(proto: "k_EMsgBSUpdateConversionRates"),
@@ -5193,6 +5184,8 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     2242: .same(proto: "k_EMsgGCHAppCheersReceived"),
     2243: .same(proto: "k_EMsgGCHAppCheersGetAllowedTypes"),
     2244: .same(proto: "k_EMsgGCHAppCheersGetAllowedTypesResponse"),
+    2245: .same(proto: "k_EMsgGCHRoutingRulesFromGCHtoGM"),
+    2246: .same(proto: "k_EMsgGCHRoutingRulesToGCHfromGM"),
     2500: .same(proto: "k_EMsgBaseP2P"),
     2502: .same(proto: "k_EMsgP2PIntroducerMessage"),
     2900: .same(proto: "k_EMsgBaseSM"),
@@ -5278,10 +5271,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     4066: .same(proto: "k_EMsgAMGetChatBanListResponse"),
     4067: .same(proto: "k_EMsgAMUnBanFromChat"),
     4068: .same(proto: "k_EMsgAMSetClanDetails"),
-    4069: .same(proto: "k_EMsgAMGetAccountLinks"),
-    4070: .same(proto: "k_EMsgAMGetAccountLinksResponse"),
-    4071: .same(proto: "k_EMsgAMSetAccountLinks"),
-    4072: .same(proto: "k_EMsgAMSetAccountLinksResponse"),
     4073: .same(proto: "k_EMsgUGSGetUserGameStats"),
     4074: .same(proto: "k_EMsgUGSGetUserGameStatsResponse"),
     4075: .same(proto: "k_EMsgAMCheckClanMembership"),
@@ -5342,8 +5331,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     4152: .same(proto: "k_EMsgAMSendQueuedEmails"),
     4153: .same(proto: "k_EMsgAMSetLicenseFlags"),
     4155: .same(proto: "k_EMsgCommunityDeleteUserNews"),
-    4156: .same(proto: "k_EMsgAMAllowUserFilesRequest"),
-    4157: .same(proto: "k_EMsgAMAllowUserFilesResponse"),
     4158: .same(proto: "k_EMsgAMGetAccountStatus"),
     4159: .same(proto: "k_EMsgAMGetAccountStatusResponse"),
     4160: .same(proto: "k_EMsgAMEditBanReason"),
@@ -5370,7 +5357,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     4209: .same(proto: "k_EMsgAMSupportIsAccountEnabled"),
     4210: .same(proto: "k_EMsgAMSupportIsAccountEnabledResponse"),
     4211: .same(proto: "k_EMsgUGSGetUserStats"),
-    4212: .same(proto: "k_EMsgAMSupportKickSession"),
     4213: .same(proto: "k_EMsgAMGSSearch"),
     4216: .same(proto: "k_EMsgMarketingMessageUpdate"),
     4219: .same(proto: "k_EMsgChatServerRouteFriendMsg"),
@@ -5399,7 +5385,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     4265: .same(proto: "k_EMsgAMCreateFinancialAdjustment"),
     4266: .same(proto: "k_EMsgAMPlayerNicknameList"),
     4267: .same(proto: "k_EMsgAMPlayerNicknameListResponse"),
-    4268: .same(proto: "k_EMsgAMSetDRMTestConfig"),
     4269: .same(proto: "k_EMsgAMGetUserCurrentGameInfo"),
     4270: .same(proto: "k_EMsgAMGetUserCurrentGameInfoResponse"),
     4271: .same(proto: "k_EMsgAMGetGSPlayerList"),
@@ -5528,6 +5513,9 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     4420: .same(proto: "k_EMsgAMRequestPersonaUpdateForChatServer"),
     4421: .same(proto: "k_EMsgAMPerfectWorldPayment"),
     4422: .same(proto: "k_EMsgAMPerfectWorldPaymentResponse"),
+    4423: .same(proto: "k_EMsgAMECommPayPayment"),
+    4424: .same(proto: "k_EMsgAMECommPayPaymentResponse"),
+    4425: .same(proto: "k_EMsgAMSetRemoteClientID"),
     5000: .same(proto: "k_EMsgBasePSRange"),
     5001: .same(proto: "k_EMsgPSCreateShoppingCart"),
     5002: .same(proto: "k_EMsgPSCreateShoppingCartResponse"),
@@ -5657,8 +5645,8 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     5492: .same(proto: "k_EMsgClientOGSEndSession"),
     5493: .same(proto: "k_EMsgClientOGSEndSessionResponse"),
     5494: .same(proto: "k_EMsgClientOGSWriteRow"),
-    5495: .same(proto: "k_EMsgClientDRMTest"),
-    5496: .same(proto: "k_EMsgClientDRMTestResult"),
+    5497: .same(proto: "k_EMsgClientStartPeerContentServer"),
+    5498: .same(proto: "k_EMsgClientStartPeerContentServerResponse"),
     5500: .same(proto: "k_EMsgClientServerUnavailable"),
     5501: .same(proto: "k_EMsgClientServersAvailable"),
     5502: .same(proto: "k_EMsgClientRegisterAuthTicketWithCM"),
@@ -5777,8 +5765,8 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     5626: .same(proto: "k_EMsgClientNetworkingMobileCertRequest"),
     5627: .same(proto: "k_EMsgClientNetworkingMobileCertRequestResponse"),
     5800: .same(proto: "k_EMsgBaseMDS"),
-    5812: .same(proto: "k_EMsgAMToMDSGetDepotDecryptionKey"),
-    5813: .same(proto: "k_EMsgMDSToAMGetDepotDecryptionKeyResponse"),
+    5812: .same(proto: "k_EMsgMDSGetDepotDecryptionKey"),
+    5813: .same(proto: "k_EMsgMDSGetDepotDecryptionKeyResponse"),
     5827: .same(proto: "k_EMsgMDSContentServerConfigRequest"),
     5828: .same(proto: "k_EMsgMDSContentServerConfig"),
     5829: .same(proto: "k_EMsgMDSGetDepotManifest"),
@@ -5883,8 +5871,6 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     7326: .same(proto: "k_EMsgClientUCMUpdatePublishedFileResponse"),
     7327: .same(proto: "k_EMsgUCMUpdatePublishedFile"),
     7328: .same(proto: "k_EMsgUCMUpdatePublishedFileResponse"),
-    7329: .same(proto: "k_EMsgUCMDeletePublishedFile"),
-    7330: .same(proto: "k_EMsgUCMDeletePublishedFileResponse"),
     7331: .same(proto: "k_EMsgUCMUpdatePublishedFileStat"),
     7337: .same(proto: "k_EMsgUCMReloadPublishedFile"),
     7338: .same(proto: "k_EMsgUCMReloadUserFileListCaches"),
@@ -6093,8 +6079,14 @@ extension EMsg: SwiftProtobuf._ProtoNameProviding {
     9801: .same(proto: "k_EMsgClientVoiceCallPreAuthorizeResponse"),
     9802: .same(proto: "k_EMsgClientServerTimestampRequest"),
     9803: .same(proto: "k_EMsgClientServerTimestampResponse"),
+    9804: .same(proto: "k_EMsgServiceMethodCallFromClientNonAuthed"),
+    9805: .same(proto: "k_EMsgClientHello"),
+    9806: .same(proto: "k_EMsgClientEnableOrDisableDownloads"),
+    9807: .same(proto: "k_EMsgClientEnableOrDisableDownloadsResponse"),
     9900: .aliased(proto: "k_EMsgClientLANP2PBase", aliases: ["k_EMsgClientLANP2PRequestChunk"]),
     9901: .same(proto: "k_EMsgClientLANP2PRequestChunkResponse"),
+    9902: .same(proto: "k_EMsgClientPeerChunkRequest"),
+    9903: .same(proto: "k_EMsgClientPeerChunkResponse"),
     9999: .same(proto: "k_EMsgClientLANP2PMax"),
     10000: .aliased(proto: "k_EMsgBaseWatchdogServer", aliases: ["k_EMsgNotifyWatchdog"]),
     10100: .aliased(proto: "k_EMsgClientSiteLicenseBase", aliases: ["k_EMsgClientSiteLicenseSiteInfoNotification"]),

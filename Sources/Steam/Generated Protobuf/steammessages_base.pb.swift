@@ -20,6 +20,58 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+enum EBanContentCheckResult: SwiftProtobuf.Enum {
+  typealias RawValue = Int
+  case kEbanContentCheckResultNotScanned // = 0
+  case kEbanContentCheckResultReset // = 1
+  case kEbanContentCheckResultNeedsChecking // = 2
+  case kEbanContentCheckResultVeryUnlikely // = 5
+  case kEbanContentCheckResultUnlikely // = 30
+  case kEbanContentCheckResultPossible // = 50
+  case kEbanContentCheckResultLikely // = 75
+  case kEbanContentCheckResultVeryLikely // = 100
+
+  init() {
+    self = .kEbanContentCheckResultNotScanned
+  }
+
+  init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .kEbanContentCheckResultNotScanned
+    case 1: self = .kEbanContentCheckResultReset
+    case 2: self = .kEbanContentCheckResultNeedsChecking
+    case 5: self = .kEbanContentCheckResultVeryUnlikely
+    case 30: self = .kEbanContentCheckResultUnlikely
+    case 50: self = .kEbanContentCheckResultPossible
+    case 75: self = .kEbanContentCheckResultLikely
+    case 100: self = .kEbanContentCheckResultVeryLikely
+    default: return nil
+    }
+  }
+
+  var rawValue: Int {
+    switch self {
+    case .kEbanContentCheckResultNotScanned: return 0
+    case .kEbanContentCheckResultReset: return 1
+    case .kEbanContentCheckResultNeedsChecking: return 2
+    case .kEbanContentCheckResultVeryUnlikely: return 5
+    case .kEbanContentCheckResultUnlikely: return 30
+    case .kEbanContentCheckResultPossible: return 50
+    case .kEbanContentCheckResultLikely: return 75
+    case .kEbanContentCheckResultVeryLikely: return 100
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension EBanContentCheckResult: CaseIterable {
+  // Support synthesized by the compiler.
+}
+
+#endif  // swift(>=4.2)
+
 enum EProtoClanEventType: SwiftProtobuf.Enum {
   typealias RawValue = Int
   case kEclanOtherEvent // = 1
@@ -276,6 +328,37 @@ struct CMsgIPAddressBucket {
   fileprivate var _bucket: UInt64? = nil
 }
 
+struct CMsgGCRoutingProtoBufHeader {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var dstGcidQueue: UInt64 {
+    get {return _dstGcidQueue ?? 0}
+    set {_dstGcidQueue = newValue}
+  }
+  /// Returns true if `dstGcidQueue` has been explicitly set.
+  var hasDstGcidQueue: Bool {return self._dstGcidQueue != nil}
+  /// Clears the value of `dstGcidQueue`. Subsequent reads from it will return its default value.
+  mutating func clearDstGcidQueue() {self._dstGcidQueue = nil}
+
+  var dstGcDirIndex: UInt32 {
+    get {return _dstGcDirIndex ?? 0}
+    set {_dstGcDirIndex = newValue}
+  }
+  /// Returns true if `dstGcDirIndex` has been explicitly set.
+  var hasDstGcDirIndex: Bool {return self._dstGcDirIndex != nil}
+  /// Clears the value of `dstGcDirIndex`. Subsequent reads from it will return its default value.
+  mutating func clearDstGcDirIndex() {self._dstGcDirIndex = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _dstGcidQueue: UInt64? = nil
+  fileprivate var _dstGcDirIndex: UInt32? = nil
+}
+
 struct CMsgProtoBufHeader {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -466,15 +549,6 @@ struct CMsgProtoBufHeader {
   /// Clears the value of `cmSysid`. Subsequent reads from it will return its default value.
   mutating func clearCmSysid() {_uniqueStorage()._cmSysid = nil}
 
-  var wgToken: String {
-    get {return _storage._wgToken ?? String()}
-    set {_uniqueStorage()._wgToken = newValue}
-  }
-  /// Returns true if `wgToken` has been explicitly set.
-  var hasWgToken: Bool {return _storage._wgToken != nil}
-  /// Clears the value of `wgToken`. Subsequent reads from it will return its default value.
-  mutating func clearWgToken() {_uniqueStorage()._wgToken = nil}
-
   var launcherType: UInt32 {
     get {return _storage._launcherType ?? 0}
     set {_uniqueStorage()._launcherType = newValue}
@@ -492,6 +566,51 @@ struct CMsgProtoBufHeader {
   var hasRealm: Bool {return _storage._realm != nil}
   /// Clears the value of `realm`. Subsequent reads from it will return its default value.
   mutating func clearRealm() {_uniqueStorage()._realm = nil}
+
+  var timeoutMs: Int32 {
+    get {return _storage._timeoutMs ?? -1}
+    set {_uniqueStorage()._timeoutMs = newValue}
+  }
+  /// Returns true if `timeoutMs` has been explicitly set.
+  var hasTimeoutMs: Bool {return _storage._timeoutMs != nil}
+  /// Clears the value of `timeoutMs`. Subsequent reads from it will return its default value.
+  mutating func clearTimeoutMs() {_uniqueStorage()._timeoutMs = nil}
+
+  var debugSource: String {
+    get {return _storage._debugSource ?? String()}
+    set {_uniqueStorage()._debugSource = newValue}
+  }
+  /// Returns true if `debugSource` has been explicitly set.
+  var hasDebugSource: Bool {return _storage._debugSource != nil}
+  /// Clears the value of `debugSource`. Subsequent reads from it will return its default value.
+  mutating func clearDebugSource() {_uniqueStorage()._debugSource = nil}
+
+  var debugSourceStringIndex: UInt32 {
+    get {return _storage._debugSourceStringIndex ?? 0}
+    set {_uniqueStorage()._debugSourceStringIndex = newValue}
+  }
+  /// Returns true if `debugSourceStringIndex` has been explicitly set.
+  var hasDebugSourceStringIndex: Bool {return _storage._debugSourceStringIndex != nil}
+  /// Clears the value of `debugSourceStringIndex`. Subsequent reads from it will return its default value.
+  mutating func clearDebugSourceStringIndex() {_uniqueStorage()._debugSourceStringIndex = nil}
+
+  var tokenID: UInt64 {
+    get {return _storage._tokenID ?? 0}
+    set {_uniqueStorage()._tokenID = newValue}
+  }
+  /// Returns true if `tokenID` has been explicitly set.
+  var hasTokenID: Bool {return _storage._tokenID != nil}
+  /// Clears the value of `tokenID`. Subsequent reads from it will return its default value.
+  mutating func clearTokenID() {_uniqueStorage()._tokenID = nil}
+
+  var routingGc: CMsgGCRoutingProtoBufHeader {
+    get {return _storage._routingGc ?? CMsgGCRoutingProtoBufHeader()}
+    set {_uniqueStorage()._routingGc = newValue}
+  }
+  /// Returns true if `routingGc` has been explicitly set.
+  var hasRoutingGc: Bool {return _storage._routingGc != nil}
+  /// Clears the value of `routingGc`. Subsequent reads from it will return its default value.
+  mutating func clearRoutingGc() {_uniqueStorage()._routingGc = nil}
 
   var ipAddr: OneOf_IpAddr? {
     get {return _storage._ipAddr}
@@ -665,6 +784,15 @@ struct CMsgAuthTicket {
   /// Clears the value of `ticket`. Subsequent reads from it will return its default value.
   mutating func clearTicket() {self._ticket = nil}
 
+  var serverSecret: Data {
+    get {return _serverSecret ?? Data()}
+    set {_serverSecret = newValue}
+  }
+  /// Returns true if `serverSecret` has been explicitly set.
+  var hasServerSecret: Bool {return self._serverSecret != nil}
+  /// Clears the value of `serverSecret`. Subsequent reads from it will return its default value.
+  mutating func clearServerSecret() {self._serverSecret = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -676,6 +804,7 @@ struct CMsgAuthTicket {
   fileprivate var _hSteamPipe: UInt32? = nil
   fileprivate var _ticketCrc: UInt32? = nil
   fileprivate var _ticket: Data? = nil
+  fileprivate var _serverSecret: Data? = nil
 }
 
 struct CCDDBAppDetailCommon {
@@ -709,24 +838,6 @@ struct CCDDBAppDetailCommon {
   var hasIcon: Bool {return self._icon != nil}
   /// Clears the value of `icon`. Subsequent reads from it will return its default value.
   mutating func clearIcon() {self._icon = nil}
-
-  var logo: String {
-    get {return _logo ?? String()}
-    set {_logo = newValue}
-  }
-  /// Returns true if `logo` has been explicitly set.
-  var hasLogo: Bool {return self._logo != nil}
-  /// Clears the value of `logo`. Subsequent reads from it will return its default value.
-  mutating func clearLogo() {self._logo = nil}
-
-  var logoSmall: String {
-    get {return _logoSmall ?? String()}
-    set {_logoSmall = newValue}
-  }
-  /// Returns true if `logoSmall` has been explicitly set.
-  var hasLogoSmall: Bool {return self._logoSmall != nil}
-  /// Clears the value of `logoSmall`. Subsequent reads from it will return its default value.
-  mutating func clearLogoSmall() {self._logoSmall = nil}
 
   var tool: Bool {
     get {return _tool ?? false}
@@ -800,6 +911,15 @@ struct CCDDBAppDetailCommon {
   /// Clears the value of `isVisibleInSteamChina`. Subsequent reads from it will return its default value.
   mutating func clearIsVisibleInSteamChina() {self._isVisibleInSteamChina = nil}
 
+  var appType: UInt32 {
+    get {return _appType ?? 0}
+    set {_appType = newValue}
+  }
+  /// Returns true if `appType` has been explicitly set.
+  var hasAppType: Bool {return self._appType != nil}
+  /// Clears the value of `appType`. Subsequent reads from it will return its default value.
+  mutating func clearAppType() {self._appType = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -807,8 +927,6 @@ struct CCDDBAppDetailCommon {
   fileprivate var _appid: UInt32? = nil
   fileprivate var _name: String? = nil
   fileprivate var _icon: String? = nil
-  fileprivate var _logo: String? = nil
-  fileprivate var _logoSmall: String? = nil
   fileprivate var _tool: Bool? = nil
   fileprivate var _demo: Bool? = nil
   fileprivate var _media: Bool? = nil
@@ -817,6 +935,7 @@ struct CCDDBAppDetailCommon {
   fileprivate var _propagation: String? = nil
   fileprivate var _hasAdultContent_p: Bool? = nil
   fileprivate var _isVisibleInSteamChina: Bool? = nil
+  fileprivate var _appType: UInt32? = nil
 }
 
 struct CMsgAppRights {
@@ -1437,6 +1556,15 @@ struct CCommunity_ClanAnnouncementInfo {
   /// Clears the value of `votedowncount`. Subsequent reads from it will return its default value.
   mutating func clearVotedowncount() {self._votedowncount = nil}
 
+  var banCheckResult: EBanContentCheckResult {
+    get {return _banCheckResult ?? .kEbanContentCheckResultNotScanned}
+    set {_banCheckResult = newValue}
+  }
+  /// Returns true if `banCheckResult` has been explicitly set.
+  var hasBanCheckResult: Bool {return self._banCheckResult != nil}
+  /// Clears the value of `banCheckResult`. Subsequent reads from it will return its default value.
+  mutating func clearBanCheckResult() {self._banCheckResult = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -1455,6 +1583,7 @@ struct CCommunity_ClanAnnouncementInfo {
   fileprivate var _eventGid: UInt64? = nil
   fileprivate var _voteupcount: Int32? = nil
   fileprivate var _votedowncount: Int32? = nil
+  fileprivate var _banCheckResult: EBanContentCheckResult? = nil
 }
 
 struct CClanEventData {
@@ -1937,12 +2066,57 @@ struct CPackageReservationStatus {
   fileprivate var _timeReserved: UInt32? = nil
 }
 
+struct CMsgKeyValuePair {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var name: String {
+    get {return _name ?? String()}
+    set {_name = newValue}
+  }
+  /// Returns true if `name` has been explicitly set.
+  var hasName: Bool {return self._name != nil}
+  /// Clears the value of `name`. Subsequent reads from it will return its default value.
+  mutating func clearName() {self._name = nil}
+
+  var value: String {
+    get {return _value ?? String()}
+    set {_value = newValue}
+  }
+  /// Returns true if `value` has been explicitly set.
+  var hasValue: Bool {return self._value != nil}
+  /// Clears the value of `value`. Subsequent reads from it will return its default value.
+  mutating func clearValue() {self._value = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _name: String? = nil
+  fileprivate var _value: String? = nil
+}
+
+struct CMsgKeyValueSet {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var pairs: [CMsgKeyValuePair] = []
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
+extension EBanContentCheckResult: @unchecked Sendable {}
 extension EProtoClanEventType: @unchecked Sendable {}
 extension PartnerEventNotificationType: @unchecked Sendable {}
 extension CMsgIPAddress: @unchecked Sendable {}
 extension CMsgIPAddress.OneOf_Ip: @unchecked Sendable {}
 extension CMsgIPAddressBucket: @unchecked Sendable {}
+extension CMsgGCRoutingProtoBufHeader: @unchecked Sendable {}
 extension CMsgProtoBufHeader: @unchecked Sendable {}
 extension CMsgProtoBufHeader.OneOf_IpAddr: @unchecked Sendable {}
 extension CMsgMulti: @unchecked Sendable {}
@@ -1958,6 +2132,8 @@ extension CCommunity_ClanAnnouncementInfo: @unchecked Sendable {}
 extension CClanEventData: @unchecked Sendable {}
 extension CBilling_Address: @unchecked Sendable {}
 extension CPackageReservationStatus: @unchecked Sendable {}
+extension CMsgKeyValuePair: @unchecked Sendable {}
+extension CMsgKeyValueSet: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Extension support defined in steammessages_base.proto.
@@ -2098,6 +2274,19 @@ let Extensions_allow_field_named_steam_id = SwiftProtobuf.MessageExtension<Swift
 )
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+extension EBanContentCheckResult: SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "k_EBanContentCheckResult_NotScanned"),
+    1: .same(proto: "k_EBanContentCheckResult_Reset"),
+    2: .same(proto: "k_EBanContentCheckResult_NeedsChecking"),
+    5: .same(proto: "k_EBanContentCheckResult_VeryUnlikely"),
+    30: .same(proto: "k_EBanContentCheckResult_Unlikely"),
+    50: .same(proto: "k_EBanContentCheckResult_Possible"),
+    75: .same(proto: "k_EBanContentCheckResult_Likely"),
+    100: .same(proto: "k_EBanContentCheckResult_VeryLikely"),
+  ]
+}
 
 extension EProtoClanEventType: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -2250,6 +2439,48 @@ extension CMsgIPAddressBucket: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
+extension CMsgGCRoutingProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CMsgGCRoutingProtoBufHeader"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "dst_gcid_queue"),
+    2: .standard(proto: "dst_gc_dir_index"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt64Field(value: &self._dstGcidQueue) }()
+      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._dstGcDirIndex) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._dstGcidQueue {
+      try visitor.visitSingularUInt64Field(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._dstGcDirIndex {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CMsgGCRoutingProtoBufHeader, rhs: CMsgGCRoutingProtoBufHeader) -> Bool {
+    if lhs._dstGcidQueue != rhs._dstGcidQueue {return false}
+    if lhs._dstGcDirIndex != rhs._dstGcDirIndex {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CMsgProtoBufHeader"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -2274,9 +2505,13 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     26: .standard(proto: "is_from_external_source"),
     27: .standard(proto: "forward_to_sysid"),
     28: .standard(proto: "cm_sysid"),
-    30: .standard(proto: "wg_token"),
     31: .standard(proto: "launcher_type"),
     32: .same(proto: "realm"),
+    33: .standard(proto: "timeout_ms"),
+    34: .standard(proto: "debug_source"),
+    35: .standard(proto: "debug_source_string_index"),
+    36: .standard(proto: "token_id"),
+    37: .standard(proto: "routing_gc"),
     15: .same(proto: "ip"),
     29: .standard(proto: "ip_v6"),
   ]
@@ -2303,9 +2538,13 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _isFromExternalSource: Bool? = nil
     var _forwardToSysid: [UInt32] = []
     var _cmSysid: UInt32? = nil
-    var _wgToken: String? = nil
     var _launcherType: UInt32? = nil
     var _realm: UInt32? = nil
+    var _timeoutMs: Int32? = nil
+    var _debugSource: String? = nil
+    var _debugSourceStringIndex: UInt32? = nil
+    var _tokenID: UInt64? = nil
+    var _routingGc: CMsgGCRoutingProtoBufHeader? = nil
     var _ipAddr: CMsgProtoBufHeader.OneOf_IpAddr?
 
     static let defaultInstance = _StorageClass()
@@ -2334,9 +2573,13 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       _isFromExternalSource = source._isFromExternalSource
       _forwardToSysid = source._forwardToSysid
       _cmSysid = source._cmSysid
-      _wgToken = source._wgToken
       _launcherType = source._launcherType
       _realm = source._realm
+      _timeoutMs = source._timeoutMs
+      _debugSource = source._debugSource
+      _debugSourceStringIndex = source._debugSourceStringIndex
+      _tokenID = source._tokenID
+      _routingGc = source._routingGc
       _ipAddr = source._ipAddr
     }
   }
@@ -2393,9 +2636,13 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
             _storage._ipAddr = .ipV6(v)
           }
         }()
-        case 30: try { try decoder.decodeSingularStringField(value: &_storage._wgToken) }()
         case 31: try { try decoder.decodeSingularUInt32Field(value: &_storage._launcherType) }()
         case 32: try { try decoder.decodeSingularUInt32Field(value: &_storage._realm) }()
+        case 33: try { try decoder.decodeSingularInt32Field(value: &_storage._timeoutMs) }()
+        case 34: try { try decoder.decodeSingularStringField(value: &_storage._debugSource) }()
+        case 35: try { try decoder.decodeSingularUInt32Field(value: &_storage._debugSourceStringIndex) }()
+        case 36: try { try decoder.decodeSingularUInt64Field(value: &_storage._tokenID) }()
+        case 37: try { try decoder.decodeSingularMessageField(value: &_storage._routingGc) }()
         default: break
         }
       }
@@ -2477,14 +2724,26 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       try { if case .ipV6(let v)? = _storage._ipAddr {
         try visitor.visitSingularBytesField(value: v, fieldNumber: 29)
       } }()
-      try { if let v = _storage._wgToken {
-        try visitor.visitSingularStringField(value: v, fieldNumber: 30)
-      } }()
       try { if let v = _storage._launcherType {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 31)
       } }()
       try { if let v = _storage._realm {
         try visitor.visitSingularUInt32Field(value: v, fieldNumber: 32)
+      } }()
+      try { if let v = _storage._timeoutMs {
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 33)
+      } }()
+      try { if let v = _storage._debugSource {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 34)
+      } }()
+      try { if let v = _storage._debugSourceStringIndex {
+        try visitor.visitSingularUInt32Field(value: v, fieldNumber: 35)
+      } }()
+      try { if let v = _storage._tokenID {
+        try visitor.visitSingularUInt64Field(value: v, fieldNumber: 36)
+      } }()
+      try { if let v = _storage._routingGc {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 37)
       } }()
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -2516,9 +2775,13 @@ extension CMsgProtoBufHeader: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
         if _storage._isFromExternalSource != rhs_storage._isFromExternalSource {return false}
         if _storage._forwardToSysid != rhs_storage._forwardToSysid {return false}
         if _storage._cmSysid != rhs_storage._cmSysid {return false}
-        if _storage._wgToken != rhs_storage._wgToken {return false}
         if _storage._launcherType != rhs_storage._launcherType {return false}
         if _storage._realm != rhs_storage._realm {return false}
+        if _storage._timeoutMs != rhs_storage._timeoutMs {return false}
+        if _storage._debugSource != rhs_storage._debugSource {return false}
+        if _storage._debugSourceStringIndex != rhs_storage._debugSourceStringIndex {return false}
+        if _storage._tokenID != rhs_storage._tokenID {return false}
+        if _storage._routingGc != rhs_storage._routingGc {return false}
         if _storage._ipAddr != rhs_storage._ipAddr {return false}
         return true
       }
@@ -2617,6 +2880,7 @@ extension CMsgAuthTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     5: .standard(proto: "h_steam_pipe"),
     6: .standard(proto: "ticket_crc"),
     7: .same(proto: "ticket"),
+    8: .standard(proto: "server_secret"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2632,6 +2896,7 @@ extension CMsgAuthTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
       case 5: try { try decoder.decodeSingularUInt32Field(value: &self._hSteamPipe) }()
       case 6: try { try decoder.decodeSingularUInt32Field(value: &self._ticketCrc) }()
       case 7: try { try decoder.decodeSingularBytesField(value: &self._ticket) }()
+      case 8: try { try decoder.decodeSingularBytesField(value: &self._serverSecret) }()
       default: break
       }
     }
@@ -2663,6 +2928,9 @@ extension CMsgAuthTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     try { if let v = self._ticket {
       try visitor.visitSingularBytesField(value: v, fieldNumber: 7)
     } }()
+    try { if let v = self._serverSecret {
+      try visitor.visitSingularBytesField(value: v, fieldNumber: 8)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2674,6 +2942,7 @@ extension CMsgAuthTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
     if lhs._hSteamPipe != rhs._hSteamPipe {return false}
     if lhs._ticketCrc != rhs._ticketCrc {return false}
     if lhs._ticket != rhs._ticket {return false}
+    if lhs._serverSecret != rhs._serverSecret {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -2685,8 +2954,6 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     1: .same(proto: "appid"),
     2: .same(proto: "name"),
     3: .same(proto: "icon"),
-    4: .same(proto: "logo"),
-    5: .standard(proto: "logo_small"),
     6: .same(proto: "tool"),
     7: .same(proto: "demo"),
     8: .same(proto: "media"),
@@ -2695,6 +2962,7 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     11: .same(proto: "propagation"),
     12: .standard(proto: "has_adult_content"),
     13: .standard(proto: "is_visible_in_steam_china"),
+    14: .standard(proto: "app_type"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -2706,8 +2974,6 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 1: try { try decoder.decodeSingularUInt32Field(value: &self._appid) }()
       case 2: try { try decoder.decodeSingularStringField(value: &self._name) }()
       case 3: try { try decoder.decodeSingularStringField(value: &self._icon) }()
-      case 4: try { try decoder.decodeSingularStringField(value: &self._logo) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self._logoSmall) }()
       case 6: try { try decoder.decodeSingularBoolField(value: &self._tool) }()
       case 7: try { try decoder.decodeSingularBoolField(value: &self._demo) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self._media) }()
@@ -2716,6 +2982,7 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
       case 11: try { try decoder.decodeSingularStringField(value: &self._propagation) }()
       case 12: try { try decoder.decodeSingularBoolField(value: &self._hasAdultContent_p) }()
       case 13: try { try decoder.decodeSingularBoolField(value: &self._isVisibleInSteamChina) }()
+      case 14: try { try decoder.decodeSingularUInt32Field(value: &self._appType) }()
       default: break
       }
     }
@@ -2734,12 +3001,6 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     } }()
     try { if let v = self._icon {
       try visitor.visitSingularStringField(value: v, fieldNumber: 3)
-    } }()
-    try { if let v = self._logo {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 4)
-    } }()
-    try { if let v = self._logoSmall {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
     } }()
     try { if let v = self._tool {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
@@ -2765,6 +3026,9 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try { if let v = self._isVisibleInSteamChina {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
     } }()
+    try { if let v = self._appType {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 14)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -2772,8 +3036,6 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs._appid != rhs._appid {return false}
     if lhs._name != rhs._name {return false}
     if lhs._icon != rhs._icon {return false}
-    if lhs._logo != rhs._logo {return false}
-    if lhs._logoSmall != rhs._logoSmall {return false}
     if lhs._tool != rhs._tool {return false}
     if lhs._demo != rhs._demo {return false}
     if lhs._media != rhs._media {return false}
@@ -2782,6 +3044,7 @@ extension CCDDBAppDetailCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     if lhs._propagation != rhs._propagation {return false}
     if lhs._hasAdultContent_p != rhs._hasAdultContent_p {return false}
     if lhs._isVisibleInSteamChina != rhs._isVisibleInSteamChina {return false}
+    if lhs._appType != rhs._appType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3301,6 +3564,7 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
     13: .standard(proto: "event_gid"),
     14: .same(proto: "voteupcount"),
     15: .same(proto: "votedowncount"),
+    16: .standard(proto: "ban_check_result"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -3324,6 +3588,7 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
       case 13: try { try decoder.decodeSingularFixed64Field(value: &self._eventGid) }()
       case 14: try { try decoder.decodeSingularInt32Field(value: &self._voteupcount) }()
       case 15: try { try decoder.decodeSingularInt32Field(value: &self._votedowncount) }()
+      case 16: try { try decoder.decodeSingularEnumField(value: &self._banCheckResult) }()
       default: break
       }
     }
@@ -3379,6 +3644,9 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
     try { if let v = self._votedowncount {
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 15)
     } }()
+    try { if let v = self._banCheckResult {
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 16)
+    } }()
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -3398,6 +3666,7 @@ extension CCommunity_ClanAnnouncementInfo: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs._eventGid != rhs._eventGid {return false}
     if lhs._voteupcount != rhs._voteupcount {return false}
     if lhs._votedowncount != rhs._votedowncount {return false}
+    if lhs._banCheckResult != rhs._banCheckResult {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -3866,6 +4135,80 @@ extension CPackageReservationStatus: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs._expired != rhs._expired {return false}
     if lhs._timeExpires != rhs._timeExpires {return false}
     if lhs._timeReserved != rhs._timeReserved {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension CMsgKeyValuePair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CMsgKeyValuePair"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "value"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self._name) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self._value) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._name {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._value {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CMsgKeyValuePair, rhs: CMsgKeyValuePair) -> Bool {
+    if lhs._name != rhs._name {return false}
+    if lhs._value != rhs._value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension CMsgKeyValueSet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CMsgKeyValueSet"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "pairs"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.pairs) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.pairs.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.pairs, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CMsgKeyValueSet, rhs: CMsgKeyValueSet) -> Bool {
+    if lhs.pairs != rhs.pairs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -260,7 +260,7 @@ extension SteamService {
                 session = .loggedOn(sessionIdentifier: sessionIdentifier, steamIdentifier: steamIdentifier)
             }
 
-            let heartbeatInterval = response.outOfGameHeartbeatSeconds
+            let heartbeatInterval = response.heartbeatSeconds
             startHeartbeat(interval: TimeInterval(heartbeatInterval))
 
         default:

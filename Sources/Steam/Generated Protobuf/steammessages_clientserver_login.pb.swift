@@ -154,6 +154,27 @@ struct CMsgClientSecret {
   fileprivate var _hmac: Data? = nil
 }
 
+struct CMsgClientHello {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var protocolVersion: UInt32 {
+    get {return _protocolVersion ?? 0}
+    set {_protocolVersion = newValue}
+  }
+  /// Returns true if `protocolVersion` has been explicitly set.
+  var hasProtocolVersion: Bool {return self._protocolVersion != nil}
+  /// Clears the value of `protocolVersion`. Subsequent reads from it will return its default value.
+  mutating func clearProtocolVersion() {self._protocolVersion = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _protocolVersion: UInt32? = nil
+}
+
 struct CMsgClientLogon {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -636,6 +657,24 @@ struct CMsgClientLogon {
   /// Clears the value of `disablePartnerAutogrants`. Subsequent reads from it will return its default value.
   mutating func clearDisablePartnerAutogrants() {_uniqueStorage()._disablePartnerAutogrants = nil}
 
+  var isSteamDeck: Bool {
+    get {return _storage._isSteamDeck ?? false}
+    set {_uniqueStorage()._isSteamDeck = newValue}
+  }
+  /// Returns true if `isSteamDeck` has been explicitly set.
+  var hasIsSteamDeck: Bool {return _storage._isSteamDeck != nil}
+  /// Clears the value of `isSteamDeck`. Subsequent reads from it will return its default value.
+  mutating func clearIsSteamDeck() {_uniqueStorage()._isSteamDeck = nil}
+
+  var accessToken: String {
+    get {return _storage._accessToken ?? String()}
+    set {_uniqueStorage()._accessToken = newValue}
+  }
+  /// Returns true if `accessToken` has been explicitly set.
+  var hasAccessToken: Bool {return _storage._accessToken != nil}
+  /// Clears the value of `accessToken`. Subsequent reads from it will return its default value.
+  mutating func clearAccessToken() {_uniqueStorage()._accessToken = nil}
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -657,23 +696,23 @@ struct CMsgClientLogonResponse {
   /// Clears the value of `eresult`. Subsequent reads from it will return its default value.
   mutating func clearEresult() {_uniqueStorage()._eresult = nil}
 
-  var outOfGameHeartbeatSeconds: Int32 {
-    get {return _storage._outOfGameHeartbeatSeconds ?? 0}
-    set {_uniqueStorage()._outOfGameHeartbeatSeconds = newValue}
+  var legacyOutOfGameHeartbeatSeconds: Int32 {
+    get {return _storage._legacyOutOfGameHeartbeatSeconds ?? 0}
+    set {_uniqueStorage()._legacyOutOfGameHeartbeatSeconds = newValue}
   }
-  /// Returns true if `outOfGameHeartbeatSeconds` has been explicitly set.
-  var hasOutOfGameHeartbeatSeconds: Bool {return _storage._outOfGameHeartbeatSeconds != nil}
-  /// Clears the value of `outOfGameHeartbeatSeconds`. Subsequent reads from it will return its default value.
-  mutating func clearOutOfGameHeartbeatSeconds() {_uniqueStorage()._outOfGameHeartbeatSeconds = nil}
+  /// Returns true if `legacyOutOfGameHeartbeatSeconds` has been explicitly set.
+  var hasLegacyOutOfGameHeartbeatSeconds: Bool {return _storage._legacyOutOfGameHeartbeatSeconds != nil}
+  /// Clears the value of `legacyOutOfGameHeartbeatSeconds`. Subsequent reads from it will return its default value.
+  mutating func clearLegacyOutOfGameHeartbeatSeconds() {_uniqueStorage()._legacyOutOfGameHeartbeatSeconds = nil}
 
-  var inGameHeartbeatSeconds: Int32 {
-    get {return _storage._inGameHeartbeatSeconds ?? 0}
-    set {_uniqueStorage()._inGameHeartbeatSeconds = newValue}
+  var heartbeatSeconds: Int32 {
+    get {return _storage._heartbeatSeconds ?? 0}
+    set {_uniqueStorage()._heartbeatSeconds = newValue}
   }
-  /// Returns true if `inGameHeartbeatSeconds` has been explicitly set.
-  var hasInGameHeartbeatSeconds: Bool {return _storage._inGameHeartbeatSeconds != nil}
-  /// Clears the value of `inGameHeartbeatSeconds`. Subsequent reads from it will return its default value.
-  mutating func clearInGameHeartbeatSeconds() {_uniqueStorage()._inGameHeartbeatSeconds = nil}
+  /// Returns true if `heartbeatSeconds` has been explicitly set.
+  var hasHeartbeatSeconds: Bool {return _storage._heartbeatSeconds != nil}
+  /// Clears the value of `heartbeatSeconds`. Subsequent reads from it will return its default value.
+  mutating func clearHeartbeatSeconds() {_uniqueStorage()._heartbeatSeconds = nil}
 
   var deprecatedPublicIp: UInt32 {
     get {return _storage._deprecatedPublicIp ?? 0}
@@ -872,6 +911,15 @@ struct CMsgClientLogonResponse {
   var hasAgreementSessionURL: Bool {return _storage._agreementSessionURL != nil}
   /// Clears the value of `agreementSessionURL`. Subsequent reads from it will return its default value.
   mutating func clearAgreementSessionURL() {_uniqueStorage()._agreementSessionURL = nil}
+
+  var tokenID: UInt64 {
+    get {return _storage._tokenID ?? 0}
+    set {_uniqueStorage()._tokenID = newValue}
+  }
+  /// Returns true if `tokenID` has been explicitly set.
+  var hasTokenID: Bool {return _storage._tokenID != nil}
+  /// Clears the value of `tokenID`. Subsequent reads from it will return its default value.
+  mutating func clearTokenID() {_uniqueStorage()._tokenID = nil}
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1203,6 +1251,7 @@ extension CMsgClientHeartBeat: @unchecked Sendable {}
 extension CMsgClientServerTimestampRequest: @unchecked Sendable {}
 extension CMsgClientServerTimestampResponse: @unchecked Sendable {}
 extension CMsgClientSecret: @unchecked Sendable {}
+extension CMsgClientHello: @unchecked Sendable {}
 extension CMsgClientLogon: @unchecked Sendable {}
 extension CMsgClientLogonResponse: @unchecked Sendable {}
 extension CMsgClientRequestWebAPIAuthenticateUserNonce: @unchecked Sendable {}
@@ -1392,6 +1441,42 @@ extension CMsgClientSecret: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
+extension CMsgClientHello: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CMsgClientHello"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "protocol_version"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._protocolVersion) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._protocolVersion {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CMsgClientHello, rhs: CMsgClientHello) -> Bool {
+    if lhs._protocolVersion != rhs._protocolVersion {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CMsgClientLogon"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1448,6 +1533,8 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     104: .standard(proto: "priority_reason"),
     105: .standard(proto: "embedded_client_secret"),
     106: .standard(proto: "disable_partner_autogrants"),
+    107: .standard(proto: "is_steam_deck"),
+    108: .standard(proto: "access_token"),
   ]
 
   fileprivate class _StorageClass {
@@ -1504,6 +1591,8 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     var _priorityReason: Int32? = nil
     var _embeddedClientSecret: CMsgClientSecret? = nil
     var _disablePartnerAutogrants: Bool? = nil
+    var _isSteamDeck: Bool? = nil
+    var _accessToken: String? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1563,6 +1652,8 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       _priorityReason = source._priorityReason
       _embeddedClientSecret = source._embeddedClientSecret
       _disablePartnerAutogrants = source._disablePartnerAutogrants
+      _isSteamDeck = source._isSteamDeck
+      _accessToken = source._accessToken
     }
   }
 
@@ -1634,6 +1725,8 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         case 104: try { try decoder.decodeSingularInt32Field(value: &_storage._priorityReason) }()
         case 105: try { try decoder.decodeSingularMessageField(value: &_storage._embeddedClientSecret) }()
         case 106: try { try decoder.decodeSingularBoolField(value: &_storage._disablePartnerAutogrants) }()
+        case 107: try { try decoder.decodeSingularBoolField(value: &_storage._isSteamDeck) }()
+        case 108: try { try decoder.decodeSingularStringField(value: &_storage._accessToken) }()
         default: break
         }
       }
@@ -1805,6 +1898,12 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       try { if let v = _storage._disablePartnerAutogrants {
         try visitor.visitSingularBoolField(value: v, fieldNumber: 106)
       } }()
+      try { if let v = _storage._isSteamDeck {
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 107)
+      } }()
+      try { if let v = _storage._accessToken {
+        try visitor.visitSingularStringField(value: v, fieldNumber: 108)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1867,6 +1966,8 @@ extension CMsgClientLogon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
         if _storage._priorityReason != rhs_storage._priorityReason {return false}
         if _storage._embeddedClientSecret != rhs_storage._embeddedClientSecret {return false}
         if _storage._disablePartnerAutogrants != rhs_storage._disablePartnerAutogrants {return false}
+        if _storage._isSteamDeck != rhs_storage._isSteamDeck {return false}
+        if _storage._accessToken != rhs_storage._accessToken {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1880,8 +1981,8 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
   static let protoMessageName: String = "CMsgClientLogonResponse"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "eresult"),
-    2: .standard(proto: "out_of_game_heartbeat_seconds"),
-    3: .standard(proto: "in_game_heartbeat_seconds"),
+    2: .standard(proto: "legacy_out_of_game_heartbeat_seconds"),
+    3: .standard(proto: "heartbeat_seconds"),
     4: .standard(proto: "deprecated_public_ip"),
     5: .standard(proto: "rtime32_server_time"),
     6: .standard(proto: "account_flags"),
@@ -1904,12 +2005,13 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
     27: .standard(proto: "client_instance_id"),
     28: .standard(proto: "force_client_update_check"),
     29: .standard(proto: "agreement_session_url"),
+    30: .standard(proto: "token_id"),
   ]
 
   fileprivate class _StorageClass {
     var _eresult: Int32? = nil
-    var _outOfGameHeartbeatSeconds: Int32? = nil
-    var _inGameHeartbeatSeconds: Int32? = nil
+    var _legacyOutOfGameHeartbeatSeconds: Int32? = nil
+    var _heartbeatSeconds: Int32? = nil
     var _deprecatedPublicIp: UInt32? = nil
     var _rtime32ServerTime: UInt32? = nil
     var _accountFlags: UInt32? = nil
@@ -1932,6 +2034,7 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
     var _clientInstanceID: UInt64? = nil
     var _forceClientUpdateCheck: Bool? = nil
     var _agreementSessionURL: String? = nil
+    var _tokenID: UInt64? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1939,8 +2042,8 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
 
     init(copying source: _StorageClass) {
       _eresult = source._eresult
-      _outOfGameHeartbeatSeconds = source._outOfGameHeartbeatSeconds
-      _inGameHeartbeatSeconds = source._inGameHeartbeatSeconds
+      _legacyOutOfGameHeartbeatSeconds = source._legacyOutOfGameHeartbeatSeconds
+      _heartbeatSeconds = source._heartbeatSeconds
       _deprecatedPublicIp = source._deprecatedPublicIp
       _rtime32ServerTime = source._rtime32ServerTime
       _accountFlags = source._accountFlags
@@ -1963,6 +2066,7 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
       _clientInstanceID = source._clientInstanceID
       _forceClientUpdateCheck = source._forceClientUpdateCheck
       _agreementSessionURL = source._agreementSessionURL
+      _tokenID = source._tokenID
     }
   }
 
@@ -1982,8 +2086,8 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
         // enabled. https://github.com/apple/swift-protobuf/issues/1034
         switch fieldNumber {
         case 1: try { try decoder.decodeSingularInt32Field(value: &_storage._eresult) }()
-        case 2: try { try decoder.decodeSingularInt32Field(value: &_storage._outOfGameHeartbeatSeconds) }()
-        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._inGameHeartbeatSeconds) }()
+        case 2: try { try decoder.decodeSingularInt32Field(value: &_storage._legacyOutOfGameHeartbeatSeconds) }()
+        case 3: try { try decoder.decodeSingularInt32Field(value: &_storage._heartbeatSeconds) }()
         case 4: try { try decoder.decodeSingularUInt32Field(value: &_storage._deprecatedPublicIp) }()
         case 5: try { try decoder.decodeSingularFixed32Field(value: &_storage._rtime32ServerTime) }()
         case 6: try { try decoder.decodeSingularUInt32Field(value: &_storage._accountFlags) }()
@@ -2006,6 +2110,7 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
         case 27: try { try decoder.decodeSingularUInt64Field(value: &_storage._clientInstanceID) }()
         case 28: try { try decoder.decodeSingularBoolField(value: &_storage._forceClientUpdateCheck) }()
         case 29: try { try decoder.decodeSingularStringField(value: &_storage._agreementSessionURL) }()
+        case 30: try { try decoder.decodeSingularUInt64Field(value: &_storage._tokenID) }()
         default: break
         }
       }
@@ -2021,10 +2126,10 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
       try { if let v = _storage._eresult {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 1)
       } }()
-      try { if let v = _storage._outOfGameHeartbeatSeconds {
+      try { if let v = _storage._legacyOutOfGameHeartbeatSeconds {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
       } }()
-      try { if let v = _storage._inGameHeartbeatSeconds {
+      try { if let v = _storage._heartbeatSeconds {
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
       } }()
       try { if let v = _storage._deprecatedPublicIp {
@@ -2093,6 +2198,9 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
       try { if let v = _storage._agreementSessionURL {
         try visitor.visitSingularStringField(value: v, fieldNumber: 29)
       } }()
+      try { if let v = _storage._tokenID {
+        try visitor.visitSingularUInt64Field(value: v, fieldNumber: 30)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -2103,8 +2211,8 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._eresult != rhs_storage._eresult {return false}
-        if _storage._outOfGameHeartbeatSeconds != rhs_storage._outOfGameHeartbeatSeconds {return false}
-        if _storage._inGameHeartbeatSeconds != rhs_storage._inGameHeartbeatSeconds {return false}
+        if _storage._legacyOutOfGameHeartbeatSeconds != rhs_storage._legacyOutOfGameHeartbeatSeconds {return false}
+        if _storage._heartbeatSeconds != rhs_storage._heartbeatSeconds {return false}
         if _storage._deprecatedPublicIp != rhs_storage._deprecatedPublicIp {return false}
         if _storage._rtime32ServerTime != rhs_storage._rtime32ServerTime {return false}
         if _storage._accountFlags != rhs_storage._accountFlags {return false}
@@ -2127,6 +2235,7 @@ extension CMsgClientLogonResponse: SwiftProtobuf.Message, SwiftProtobuf._Message
         if _storage._clientInstanceID != rhs_storage._clientInstanceID {return false}
         if _storage._forceClientUpdateCheck != rhs_storage._forceClientUpdateCheck {return false}
         if _storage._agreementSessionURL != rhs_storage._agreementSessionURL {return false}
+        if _storage._tokenID != rhs_storage._tokenID {return false}
         return true
       }
       if !storagesAreEqual {return false}

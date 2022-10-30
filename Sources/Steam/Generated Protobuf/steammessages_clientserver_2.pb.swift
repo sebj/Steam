@@ -5086,6 +5086,78 @@ struct CMsgBadgeCraftedNotification {
   fileprivate var _badgeLevel: UInt32? = nil
 }
 
+struct CMsgClientStartPeerContentServer {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var steamid: UInt64 {
+    get {return _steamid ?? 0}
+    set {_steamid = newValue}
+  }
+  /// Returns true if `steamid` has been explicitly set.
+  var hasSteamid: Bool {return self._steamid != nil}
+  /// Clears the value of `steamid`. Subsequent reads from it will return its default value.
+  mutating func clearSteamid() {self._steamid = nil}
+
+  var clientRemoteID: UInt64 {
+    get {return _clientRemoteID ?? 0}
+    set {_clientRemoteID = newValue}
+  }
+  /// Returns true if `clientRemoteID` has been explicitly set.
+  var hasClientRemoteID: Bool {return self._clientRemoteID != nil}
+  /// Clears the value of `clientRemoteID`. Subsequent reads from it will return its default value.
+  mutating func clearClientRemoteID() {self._clientRemoteID = nil}
+
+  var appID: UInt32 {
+    get {return _appID ?? 0}
+    set {_appID = newValue}
+  }
+  /// Returns true if `appID` has been explicitly set.
+  var hasAppID: Bool {return self._appID != nil}
+  /// Clears the value of `appID`. Subsequent reads from it will return its default value.
+  mutating func clearAppID() {self._appID = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _steamid: UInt64? = nil
+  fileprivate var _clientRemoteID: UInt64? = nil
+  fileprivate var _appID: UInt32? = nil
+}
+
+struct CMsgClientStartPeerContentServerResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  var result: UInt32 {
+    get {return _result ?? 0}
+    set {_result = newValue}
+  }
+  /// Returns true if `result` has been explicitly set.
+  var hasResult: Bool {return self._result != nil}
+  /// Clears the value of `result`. Subsequent reads from it will return its default value.
+  mutating func clearResult() {self._result = nil}
+
+  var serverPort: UInt32 {
+    get {return _serverPort ?? 0}
+    set {_serverPort = newValue}
+  }
+  /// Returns true if `serverPort` has been explicitly set.
+  var hasServerPort: Bool {return self._serverPort != nil}
+  /// Clears the value of `serverPort`. Subsequent reads from it will return its default value.
+  mutating func clearServerPort() {self._serverPort = nil}
+
+  var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  init() {}
+
+  fileprivate var _result: UInt32? = nil
+  fileprivate var _serverPort: UInt32? = nil
+}
+
 #if swift(>=5.5) && canImport(_Concurrency)
 extension CMsgClientUpdateUserGameInfo: @unchecked Sendable {}
 extension CMsgClientRichPresenceUpload: @unchecked Sendable {}
@@ -5212,6 +5284,8 @@ extension CMsgClientKickPlayingSession: @unchecked Sendable {}
 extension CMsgClientVoiceCallPreAuthorize: @unchecked Sendable {}
 extension CMsgClientVoiceCallPreAuthorizeResponse: @unchecked Sendable {}
 extension CMsgBadgeCraftedNotification: @unchecked Sendable {}
+extension CMsgClientStartPeerContentServer: @unchecked Sendable {}
+extension CMsgClientStartPeerContentServerResponse: @unchecked Sendable {}
 #endif  // swift(>=5.5) && canImport(_Concurrency)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -11361,6 +11435,96 @@ extension CMsgBadgeCraftedNotification: SwiftProtobuf.Message, SwiftProtobuf._Me
   static func ==(lhs: CMsgBadgeCraftedNotification, rhs: CMsgBadgeCraftedNotification) -> Bool {
     if lhs._appid != rhs._appid {return false}
     if lhs._badgeLevel != rhs._badgeLevel {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension CMsgClientStartPeerContentServer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CMsgClientStartPeerContentServer"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "steamid"),
+    2: .standard(proto: "client_remote_id"),
+    3: .standard(proto: "app_id"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularFixed64Field(value: &self._steamid) }()
+      case 2: try { try decoder.decodeSingularFixed64Field(value: &self._clientRemoteID) }()
+      case 3: try { try decoder.decodeSingularUInt32Field(value: &self._appID) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._steamid {
+      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._clientRemoteID {
+      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 2)
+    } }()
+    try { if let v = self._appID {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 3)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CMsgClientStartPeerContentServer, rhs: CMsgClientStartPeerContentServer) -> Bool {
+    if lhs._steamid != rhs._steamid {return false}
+    if lhs._clientRemoteID != rhs._clientRemoteID {return false}
+    if lhs._appID != rhs._appID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension CMsgClientStartPeerContentServerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = "CMsgClientStartPeerContentServerResponse"
+  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "result"),
+    2: .standard(proto: "server_port"),
+  ]
+
+  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularUInt32Field(value: &self._result) }()
+      case 2: try { try decoder.decodeSingularUInt32Field(value: &self._serverPort) }()
+      default: break
+      }
+    }
+  }
+
+  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._result {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 1)
+    } }()
+    try { if let v = self._serverPort {
+      try visitor.visitSingularUInt32Field(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  static func ==(lhs: CMsgClientStartPeerContentServerResponse, rhs: CMsgClientStartPeerContentServerResponse) -> Bool {
+    if lhs._result != rhs._result {return false}
+    if lhs._serverPort != rhs._serverPort {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
